@@ -5,11 +5,19 @@
   height: 15vh;
   display: flex;
   justify-content: space-between;
-  vertical-align: middle;
-  color: vars.$color2;
+  margin-top: vars.$size2;
+  color: vars.$color1;
 
   &-logo {
   
+  }
+
+  &-connection-button {
+    height: vars.$size4;
+    border: 1px solid vars.$color2;
+    border-radius: vars.$size2;
+    background-color: vars.$color5;
+    color: vars.$color1;
   }
 }
 

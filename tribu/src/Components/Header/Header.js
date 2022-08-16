@@ -2,7 +2,7 @@ import React from 'react';
 
 // Imports locaux
 import '../../styles/styles.scss';
-import logo from '../../assets/images/logo.jpg';
+import logo from '../../assets/images/logo.png';
 
 function Header() {
   return (
