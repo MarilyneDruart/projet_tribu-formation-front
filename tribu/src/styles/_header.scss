@@ -5,11 +5,12 @@
   height: 15vh;
   display: flex;
   justify-content: space-between;
-  margin-top: vars.$size2;
+  align-items: center;
+  margin: 0 vars.$size1;
   color: vars.$color1;
 
   &-logo {
-  
+    height: vars.$size6;
   }
 
   &-connection-button {
@@ -18,6 +19,11 @@
     border-radius: vars.$size2;
     background-color: vars.$color5;
     color: vars.$color1;
+  }
+
+  &-title {
+    font-size: vars.$size2;
+    max-width: 35%;
   }
 }
 
