@@ -8,7 +8,14 @@ function Header() {
   return (
     <div id="header">
       <img src={logo} className="header-logo" alt="Logo Tribu" />
-      Meet, Visit, Share it, Repeat
+      <h1>Meet, Visit, Share it, Repeat</h1>
+      <button
+        type="button"
+        className="connection-button"
+      >
+        Connexion
+      </button>
+
     </div>
   );
 }
