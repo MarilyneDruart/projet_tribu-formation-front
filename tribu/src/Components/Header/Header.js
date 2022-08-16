@@ -1,12 +1,14 @@
+import React from 'react';
+
 // Imports locaux
 import '../../styles/styles.scss';
-
-import React from 'react';
+import logo from '../../assets/images/logo.jpg';
 
 function Header() {
   return (
     <div id="header">
-      Header
+      <img src={logo} className="header-logo" alt="Logo Tribu" />
+      Meet, Visit, Share it, Repeat
     </div>
   );
 }
