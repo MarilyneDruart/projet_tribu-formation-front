@@ -1,6 +1,15 @@
 @use 'vars';
 
 
-#header {
+.header {
+  height: 15vh;
+  display: flex;
+  justify-content: space-between;
+  vertical-align: middle;
   color: vars.$color2;
+
+  &-logo {
+  
+  }
 }
+

@@ -6,12 +6,12 @@ import logo from '../../assets/images/logo.jpg';
 
 function Header() {
   return (
-    <div id="header">
+    <div className="header">
       <img src={logo} className="header-logo" alt="Logo Tribu" />
       <h1>Meet, Visit, Share it, Repeat</h1>
       <button
         type="button"
-        className="connection-button"
+        className="header-connection-button"
       >
         Connexion
       </button>
