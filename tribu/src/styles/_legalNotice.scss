@@ -1,1 +1,15 @@
 @use 'vars';
+
+.LegalNotice {
+  max-width: 50%;
+  margin: auto;
+
+  &_ul {
+    margin: 1em;
+  }
+  
+  &_li {
+    list-style: disc;
+    margin-left: 1em;
+  }
+}
