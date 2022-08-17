@@ -2,12 +2,17 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 
 import { openInscriptionForm } from '../../actions/actions';
+// import NewAccountForm from '../NewAccountForm/NewAccountForm';
 
 import '../../styles/styles.scss';
 import logo from '../../assets/images/logo.png';
 
 function Header() {
   const dispatch = useDispatch();
+
+  // const { isDisplayed, isLogged } = useSelector((state) => state.inscriptionForm);
+  // console.log(isDisplayed);
+  // console.log(isLogged);
 
   return (
     <div className="header">
@@ -20,6 +25,12 @@ function Header() {
       >
         Connexion
       </button>
+
+      {/* {isDisplayed && <NewAccountForm />} */}
+
+      {/* {isLogged && (
+        <p>Connecté !</p>
+      )} */}
 
     </div>
   );

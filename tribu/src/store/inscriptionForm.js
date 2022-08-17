@@ -8,6 +8,7 @@ const initialState = {
 function inscriptionForm(state = initialState, action = {}) {
   switch (action.type) {
     case OPEN_INSCRIPTION_FORM:
+      console.log('on passe dans l\'action');
       return {
         ...state,
         isDisplayed: true,
