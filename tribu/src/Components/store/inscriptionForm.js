@@ -1,12 +1,13 @@
+
 const initialState = {
   isLogged: false,
 };
 
-function reducer(state = initialState, action = {}) {
+function inscriptionForm(state = initialState, action = {}) {
   switch (action.type) {
     default:
       return state;
   }
 }
 
-export default reducer;
+export default inscriptionForm;
