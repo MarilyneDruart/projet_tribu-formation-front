@@ -2,7 +2,6 @@ import { OPEN_INSCRIPTION_FORM } from '../actions/actions';
 
 const initialState = {
   isDisplayed: false,
-  isLogged: false,
 };
 
 function inscriptionForm(state = initialState, action = {}) {

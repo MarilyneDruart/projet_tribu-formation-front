@@ -10,9 +10,8 @@ import logo from '../../assets/images/logo.png';
 function Header() {
   const dispatch = useDispatch();
 
-  // const { isDisplayed, isLogged } = useSelector((state) => state.inscriptionForm);
+  // const isDisplayed = useSelector((state) => state.inscriptionForm);
   // console.log(isDisplayed);
-  // console.log(isLogged);
 
   return (
     <div className="header">
@@ -27,10 +26,6 @@ function Header() {
       </button>
 
       {/* {isDisplayed && <NewAccountForm />} */}
-
-      {/* {isLogged && (
-        <p>Connecté !</p>
-      )} */}
 
     </div>
   );
