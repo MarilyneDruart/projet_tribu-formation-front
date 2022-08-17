@@ -10,6 +10,10 @@ import LegalNotice from '../Footer/LegalNotice';
 import AboutUs from '../Footer/AboutUs';
 import NotFound from '../NotFound/NotFound';
 import Interest from '../Interest/Interest';
+import LoginForm from '../LoginForm/LoginForm';
+import NewAccountForm from '../NewAccountForm/NewAccountForm';
+import UserProfilePage from '../UserProfilePage/UserProfilePage';
+import AddPOIForm from '../AddPOIForm/AddPOIForm';
 
 import '../../styles/styles.scss';
 
@@ -22,6 +26,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/:slug" element={<CityPage />} />
         <Route path="/:slug/:id" element={<Interest />} />
+        <Route path="/connexion" element={<LoginForm />} />
+        <Route path="/inscription" element={<NewAccountForm />} />
+        <Route path="/profil/:id" element={<UserProfilePage />} />
+        <Route path="/:slug/ajouter" element={<AddPOIForm />} />
         <Route path="/contact" element={<Contacts />} />
         <Route path="/mentions-legales" element={<LegalNotice />} />
         <Route path="/a-propos" element={<AboutUs />} />
