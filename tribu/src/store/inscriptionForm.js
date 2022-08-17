@@ -1,3 +1,4 @@
+import { OPEN_INSCRIPTION_FORM } from '../actions/actions';
 
 const initialState = {
   isLogged: false,
