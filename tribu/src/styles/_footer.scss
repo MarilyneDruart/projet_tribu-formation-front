@@ -2,19 +2,25 @@
 
 .Footer {
   height: 10vh;
-  background-color: vars.$color5;
+  width: 100%;
   display: flex;
   justify-content: center;
-  margin: 0 auto;
+  align-items: center;
+  margin: auto;
+  background-color: vars.$color5;
+  color: vars.$color2;
+
 
   &_NavLink {
-  margin: 2rem;
-  }
-
-  &--active {
-    color: vars.$color1;
-    box-shadow: inset -3px 0 0 vars.$color5;
-    border-bottom: 1px solid vars.$color1;
+  margin: 1rem 2rem;
+  text-align: center;
+    &--active {
+      color: vars.$color1;
+      box-shadow: inset -3px 0 0 vars.$color5;
+      border-bottom: 1px solid vars.$color1;
+      padding-bottom: vars.$size1;
+    }
   }
 }
+
 
