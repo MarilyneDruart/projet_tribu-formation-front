@@ -2,28 +2,24 @@
 
 .MainImage {
   position: relative;
-  margin: 2rem auto;
   color: #fff;
-  max-width: 70%;
-  
+  max-width: 100%;
+ 
 
   &-img{
     display: block;
-    max-width: 90%;
-    height: 50%;
-    border-radius: 1rem;
+    max-width: 100%;
     margin: auto;
-    clip-path: polygon(0 25%, 100% 25%, 100% 75%, 0 75%);
+    clip-path: polygon(0 25%, 100% 25%, 100% 60%, 0 60%);
   }
 
   &-content {
     position: absolute;
-    width: 90%;
-    bottom: 30%;
-    padding: 0.5rem;
+    width: 100%;
+    bottom: 45%;
+    padding: 0.2rem;
     text-align: center;
     background: rgba(0,0,0,0.5);
-    margin-left: 5%;
   
   .MainImage-title {
       font-size: vars.$size4;
