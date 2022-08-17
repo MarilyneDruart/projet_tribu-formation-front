@@ -9,6 +9,7 @@ import Contacts from '../Footer/Contacts';
 import LegalNotice from '../Footer/LegalNotice';
 import AboutUs from '../Footer/AboutUs';
 import NotFound from '../NotFound/NotFound';
+import Interest from '../Interest/Interest';
 
 import '../../styles/styles.scss';
 
@@ -20,6 +21,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/:slug" element={<CityPage />} />
+        <Route path="/:slug/:id" element={<Interest />} />
         <Route path="/contact" element={<Contacts />} />
         <Route path="/mentions-legales" element={<LegalNotice />} />
         <Route path="/a-propos" element={<AboutUs />} />

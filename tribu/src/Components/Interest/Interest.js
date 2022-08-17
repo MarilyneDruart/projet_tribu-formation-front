@@ -3,10 +3,10 @@ import React from 'react';
 // Imports locaux
 import '../../styles/styles.scss';
 
-function Home() {
+function Interest() {
   return (
-    <div>Home Page</div>
+    <div>A Point of Interest</div>
   );
 }
 
-export default Home;
+export default Interest;

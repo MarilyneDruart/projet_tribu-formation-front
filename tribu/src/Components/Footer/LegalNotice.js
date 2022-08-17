@@ -1,5 +1,8 @@
 import React from 'react';
 
+// Imports locaux
+import '../../styles/styles.scss';
+
 function LegalNotice() {
   return (
     <div>
