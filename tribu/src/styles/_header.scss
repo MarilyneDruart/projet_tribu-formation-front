@@ -9,11 +9,11 @@
   margin: vars.$size1;
   color: vars.$color1;
 
-  &-logo {
+  &_logo {
     height: vars.$size6;
   }
 
-  &-connection-button {
+  &_connection-button {
     height: vars.$size4;
     border: 1px solid vars.$color2;
     border-radius: vars.$size2;
@@ -21,7 +21,7 @@
     color: vars.$color1;
   }
 
-  &-title {
+  &_title {
     font-size: vars.$size2;
     max-width: 35%;
   }

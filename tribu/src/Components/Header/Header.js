@@ -7,11 +7,11 @@ import logo from '../../assets/images/logo.png';
 function Header() {
   return (
     <div className="header">
-      <img src={logo} className="header-logo" alt="Logo Tribu" />
-      <h1 className="header-title">Meet, Visit, Share it, Repeat</h1>
+      <img src={logo} className="header_logo" alt="Logo Tribu" />
+      <h1 className="header_title">Meet, Visit, Share it, Repeat</h1>
       <button
         type="button"
-        className="header-connection-button"
+        className="header_connection-button"
       >
         Connexion
       </button>
