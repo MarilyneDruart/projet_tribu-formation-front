@@ -1,6 +1,8 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 
-// Imports locaux
+import { openInscriptionForm } from '../../actions/actions';
+
 import '../../styles/styles.scss';
 import logo from '../../assets/images/logo.png';
 
