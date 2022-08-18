@@ -78,6 +78,7 @@ function NewAccountForm() {
       >
         <input
           {...register('firstName')}
+          className="new-account_field"
           type="text"
           placeholder="Prénom"
         />
@@ -85,6 +86,7 @@ function NewAccountForm() {
 
         <input
           {...register('lastName')}
+          className="new-account_field"
           type="text"
           placeholder="Nom"
         />
@@ -92,6 +94,7 @@ function NewAccountForm() {
 
         <input
           {...register('city')}
+          className="new-account_field"
           type="text"
           placeholder="Ville"
         />
@@ -99,6 +102,7 @@ function NewAccountForm() {
 
         <input
           {...register('email')}
+          className="new-account_field"
           type="email"
           placeholder="Email"
         />
@@ -106,6 +110,7 @@ function NewAccountForm() {
 
         <input
           {...register('description')}
+          className="new-account_field"
           type="text"
           placeholder="Description"
         />
@@ -113,6 +118,7 @@ function NewAccountForm() {
 
         <input
           {...register('password')}
+          className="new-account_field"
           type="password"
           placeholder="Mot de passe"
         />
@@ -120,6 +126,7 @@ function NewAccountForm() {
 
         <input
           {...register('passwordConfirm')}
+          className="new-account_field"
           type="password"
           placeholder="Confirmation du mot de passe"
         />
@@ -127,13 +134,14 @@ function NewAccountForm() {
 
         <input
           {...register('avatar')}
+          className="new-account_field"
           type="file"
           placeholder="Avatar"
           accept="image/png, image/jpeg"
         />
         <p>{errors.avatar?.message}</p>
 
-        <input className="new-account_form_button" type="submit" />
+        <input className="new-account_button" type="submit" />
       </form>
     </div>
   );
