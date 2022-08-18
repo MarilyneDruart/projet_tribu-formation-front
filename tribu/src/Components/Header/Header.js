@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { openInscriptionForm } from '../../actions/actions';
 import NewAccountForm from '../NewAccountForm/NewAccountForm';
@@ -14,7 +15,9 @@ function Header() {
 
   return (
     <div className="header">
-      <img src={logo} className="header_logo" alt="Logo Tribu" />
+      <Link to="/">
+        <img src={logo} className="header_logo" alt="Logo Tribu" />
+      </Link>
       <h1 className="header_title">Meet, Visit, Share it, Repeat</h1>
       <button
         type="button"
