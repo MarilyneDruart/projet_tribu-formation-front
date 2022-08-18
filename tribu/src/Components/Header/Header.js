@@ -1,18 +1,16 @@
-import React, { useState } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-// import { openInscriptionForm } from '../../actions/actions';
+import { openInscriptionForm } from '../../actions/actions';
 import NewAccountForm from '../NewAccountForm/NewAccountForm';
 
 import '../../styles/styles.scss';
 import logo from '../../assets/images/logo.png';
 
 function Header() {
-  // const isDisplayed = useSelector((state) => state.inscriptionForm.isDisplayed);
+  const isDisplayed = useSelector((state) => state.isDisplayed);
   // console.log(isDisplayed);
-  // console.log(typeof isDisplayed);
-  const [isDisplayed, setIsDisplayed] = useState(false);
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   return (
     <div className="header">
@@ -21,12 +19,12 @@ function Header() {
       <button
         type="button"
         className="header_connection-button"
-        onClick={() => setIsDisplayed(true)}
+        onClick={() => dispatch(openInscriptionForm())}
       >
         Connexion
       </button>
 
-      {isDisplayed === true && <NewAccountForm />}
+      {isDisplayed && <NewAccountForm />}
 
     </div>
   );
