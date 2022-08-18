@@ -17,7 +17,7 @@ function Header() {
       <h1 className="header_title">Meet, Visit, Share it, Repeat</h1>
       <button
         type="button"
-        className="header_connection-button"
+        className="header_inscription-button"
         onClick={() => dispatch(toggleinscriptionForm())}
       >
         Inscription
