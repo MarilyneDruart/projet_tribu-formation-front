@@ -1,11 +1,10 @@
 import React from 'react';
-
-// Imports locaux
+import MainImage from '../MainImage/MainImage';
 import '../../styles/styles.scss';
 
 function Home() {
   return (
-    <div>Home Page</div>
+    <MainImage />
   );
 }
 
