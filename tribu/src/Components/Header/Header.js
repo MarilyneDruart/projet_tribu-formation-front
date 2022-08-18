@@ -21,7 +21,7 @@ function Header() {
         className="header_connection-button"
         onClick={() => dispatch(openInscriptionForm())}
       >
-        Connexion
+        Inscription
       </button>
 
       {isDisplayed && <NewAccountForm />}
