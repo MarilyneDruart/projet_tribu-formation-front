@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { openInscriptionForm } from '../../actions/actions';
+import { toggleInscriptionForm } from '../../actions/actions';
 import NewAccountForm from '../NewAccountForm/NewAccountForm';
 
 import '../../styles/styles.scss';
@@ -19,7 +19,7 @@ function Header() {
       <button
         type="button"
         className="header_connection-button"
-        onClick={() => dispatch(openInscriptionForm())}
+        onClick={() => dispatch(toggleInscriptionForm())}
       >
         Inscription
       </button>
