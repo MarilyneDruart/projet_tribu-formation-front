@@ -1,4 +1,4 @@
-import { OPEN_INSCRIPTION_FORM } from '../actions/actions';
+import { CLOSE_INSCRIPTION_FORM, TOGGLE_INSCRIPTION_FORM } from '../actions/actions';
 
 const initialState = {
   isDisplayed: false,
@@ -6,11 +6,16 @@ const initialState = {
 
 function inscriptionForm(state = initialState, action = {}) {
   switch (action.type) {
-    case OPEN_INSCRIPTION_FORM:
-      console.log('on passe dans l\'action');
+    case TOGGLE_INSCRIPTION_FORM:
       return {
         ...state,
-        isDisplayed: true,
+        isDisplayed: !state.isDisplayed,
+      };
+
+    case CLOSE_INSCRIPTION_FORM:
+      return {
+        ...state,
+        isDisplayed: false,
       };
 
     default:
