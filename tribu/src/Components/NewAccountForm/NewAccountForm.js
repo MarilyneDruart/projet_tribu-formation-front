@@ -71,7 +71,7 @@ function NewAccountForm() {
 
   return (
     <div className="new-account">
-      <h1 className="new-account_title">Inscris-toi !</h1>
+      <h1 className="new-account_title">Rejoins la tribu !</h1>
       <form
         className="new-account_form"
         onSubmit={handleSubmit(onSubmit)}
@@ -80,66 +80,67 @@ function NewAccountForm() {
           {...register('firstName')}
           className="new-account_field"
           type="text"
-          placeholder="Prénom"
+          placeholder="Ton prénom"
         />
-        <p>{errors.firstName?.message}</p>
+        <p className="new-account_error-message">{errors.firstName?.message}</p>
 
         <input
           {...register('lastName')}
           className="new-account_field"
           type="text"
-          placeholder="Nom"
+          placeholder="Ton nom"
         />
-        <p>{errors.lastName?.message}</p>
+        <p className="new-account_error-message">{errors.lastName?.message}</p>
 
         <input
           {...register('city')}
           className="new-account_field"
           type="text"
-          placeholder="Ville"
+          placeholder="Ta ville"
         />
-        <p>{errors.city?.message}</p>
+        <p className="new-account_error-message">{errors.city?.message}</p>
 
         <input
           {...register('email')}
           className="new-account_field"
           type="email"
-          placeholder="Email"
+          placeholder="Ton email"
         />
-        <p>{errors.email?.message}</p>
+        <p className="new-account_error-message">{errors.email?.message}</p>
 
-        <input
+        <textarea
           {...register('description')}
           className="new-account_field"
-          type="text"
-          placeholder="Description"
+          placeholder="Parle-nous de toi"
+          rows="3"
         />
-        <p>{errors.description?.message}</p>
+        <p className="new-account_error-message">{errors.description?.message}</p>
 
         <input
           {...register('password')}
           className="new-account_field"
           type="password"
-          placeholder="Mot de passe"
+          placeholder="Ton mot de passe"
         />
-        <p>{errors.password?.message}</p>
+        <p className="new-account_error-message">{errors.password?.message}</p>
 
         <input
           {...register('passwordConfirm')}
           className="new-account_field"
           type="password"
-          placeholder="Confirmation du mot de passe"
+          placeholder="Confirme ton mot de passe"
         />
-        <p>{errors.passwordConfirm?.message}</p>
+        <p className="new-account_error-message">{errors.passwordConfirm?.message}</p>
 
         <input
           {...register('avatar')}
-          className="new-account_field"
+          className="new-account_avatar"
+          name="avatar"
           type="file"
           placeholder="Avatar"
           accept="image/png, image/jpeg"
         />
-        <p>{errors.avatar?.message}</p>
+        <p className="new-account_error-message">{errors.avatar?.message}</p>
 
         <input className="new-account_button" type="submit" />
       </form>
