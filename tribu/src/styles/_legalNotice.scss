@@ -1,12 +1,12 @@
 @use 'vars';
 
 .LegalNotice {
-  max-width: 100%;
   margin: auto;
   padding: 2rem;
 
-  &_h2{
-    size: vars.$size5;
+  &_h2 {
+    font-size: vars.$size4;
+    text-align: center;
   }
 
   &_ul {
@@ -20,4 +20,4 @@
 }
 
 //* MEDIA QUERIES
-//TODO Changer la margin pour réduire la largeur du texte
+//TODO Changer la margin max width pour réduire la largeur du texte
