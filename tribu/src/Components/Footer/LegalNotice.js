@@ -8,7 +8,7 @@ function LegalNotice() {
   return (
     <div className="LegalNotice">
 
-      <h1 className="LegalNotice_h1">Mentions légales</h1>
+      <h2 className="LegalNotice_h2">Mentions légales</h2>
 
       <p>Tout comme nos formateurs, nous sommes conscients que cette page sera lue par peu de lecteurs, voir personne.</p>
       <p>Pour autant, nous y avons mis tout notre coeur car nous savons à quel point sa place est importante ♥ (obligatoire en fait).</p>
@@ -28,21 +28,21 @@ function LegalNotice() {
         <li className="LegalNotice_li">Le premier nom de Google était BackRub (qui signifie massage de dos)</li>
       </ul>
 
-      <h2 className="LegalNotice_h2">Voici les mentions légales de notre école préférée:</h2>
+      <h3 className="LegalNotice_h3">Voici les mentions légales de notre école préférée:</h3>
 
-      <h3 className="LegalNotice_h3">Editeur</h3>
+      <h4 className="LegalNotice_h4">Editeur</h4>
       <p>Ecole O’clock, SAS au capital de 1 680 026 € ayant son siège social au 10 rue de Penthievre à Paris (75008), immatriculée sous le numéro 818 614 588 au RCS de Paris.</p>
 
-      <h3 className="LegalNotice_h3">Directeur de la publication</h3>
+      <h4 className="LegalNotice_h4">Directeur de la publication</h4>
       <p> Anthony Marais</p>
 
-      <h3 className="LegalNotice_h3">Adresse de courrier électronique et numéro de téléphone</h3>
+      <h4 className="LegalNotice_h4">Adresse de courrier électronique et numéro de téléphone</h4>
       <p>hey@oclock.io - 09.74.76.80.67</p>
 
-      <h3 className="LegalNotice_h3">Hébergeur du site</h3>
+      <h4 className="LegalNotice_h4">Hébergeur du site</h4>
       <p>Gandi SAS au capital de 800 000 € ayant son siège social au 63-65 boulevard Massena à Paris (75013), immatriculée sous le numéro 423 093 459 au RCS de Paris.</p>
 
-      <h3 className="LegalNotice_h3">Déclaration CNIL</h3>
+      <h4 className="LegalNotice_h4">Déclaration CNIL</h4>
       <p>Conformément à la loi N°78-17 du 6 janvier 1978 relative à l’informatique, aux fichiers et aux libertés, la société O’clock a fait l’objet d’une déclaration auprès de la CNIL sous le numéro d’enregistrement 2027779</p>
 
     </div>
