@@ -3,9 +3,11 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import { useDispatch } from 'react-redux';
 
 // Imports locaux
 import '../../styles/styles.scss';
+import { closeinscriptionForm } from '../../actions/actions';
 
 // Validation pattern of the user datas
 const validationSchema = yup.object({
@@ -69,11 +71,19 @@ function NewAccountForm() {
     reset();
   };
 
+  const dispatch = useDispatch();
+
   return (
     <div className="new-account">
       <h1 className="new-account_title">
         Rejoins la tribu !
-        <button className="new-account_button" type="button">X</button>
+        <button
+          className="new-account_button"
+          type="button"
+          onClick={() => dispatch(closeinscriptionForm())}
+        >
+          X
+        </button>
       </h1>
       <form
         className="new-account_form"
