@@ -36,7 +36,7 @@ function LegalNotice() {
       <h4 className="LegalNotice_h4">Directeur de la publication</h4>
       <p> Anthony Marais</p>
 
-      <h4 className="LegalNotice_h4">Adresse de courrier électronique et numéro de téléphone</h4>
+      <h4 className="LegalNotice_h4">Contacter O’clock</h4>
       <p>hey@oclock.io - 09.74.76.80.67</p>
 
       <h4 className="LegalNotice_h4">Hébergeur du site</h4>
