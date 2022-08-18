@@ -16,11 +16,23 @@
   background-color: white;
   z-index: 1;
 
+  &_button {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgb(121, 145, 212);
+    border-radius: 20px;
+    background: rgb(121, 145, 212);
+    color: white;
+    position: absolute;
+    right: vars.$size1;
+  }
+
   &_title {
-    text-align: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: vars.$size3;
     margin-bottom: vars.$size1;
-
   }
 
   &_field{
@@ -44,9 +56,9 @@
     padding: 0.4rem;
   }
 
-  &_button {
+  &_submit {
     margin-top: 1rem;
-    border: 1px solid rgb(159, 159, 235);
+    border: 1px solid rgb(121, 145, 212);
     border-radius: 5px;
     padding: vars.$size1;
     width: 100%;

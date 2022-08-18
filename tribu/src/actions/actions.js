@@ -1,4 +1,4 @@
 export const TOGGLE_INSCRIPTION_FORM = 'TOGGLE_INSCRIPTION_FORM';
-export const toggleInscriptionForm = () => ({
+export const toggleinscriptionForm = () => ({
   type: TOGGLE_INSCRIPTION_FORM,
 });

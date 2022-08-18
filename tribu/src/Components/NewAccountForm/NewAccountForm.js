@@ -71,7 +71,10 @@ function NewAccountForm() {
 
   return (
     <div className="new-account">
-      <h1 className="new-account_title">Rejoins la tribu !</h1>
+      <h1 className="new-account_title">
+        Rejoins la tribu !
+        <button className="new-account_button" type="button">X</button>
+      </h1>
       <form
         className="new-account_form"
         onSubmit={handleSubmit(onSubmit)}
@@ -142,7 +145,7 @@ function NewAccountForm() {
         />
         <p className="new-account_error-message">{errors.avatar?.message}</p>
 
-        <input className="new-account_button" type="submit" />
+        <input className="new-account_submit" type="submit" />
       </form>
     </div>
   );

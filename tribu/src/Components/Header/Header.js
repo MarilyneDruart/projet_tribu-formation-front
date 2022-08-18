@@ -1,16 +1,15 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { toggleInscriptionForm } from '../../actions/actions';
+import { toggleinscriptionForm } from '../../actions/actions';
 import NewAccountForm from '../NewAccountForm/NewAccountForm';
 
 import '../../styles/styles.scss';
 import logo from '../../assets/images/logo.png';
 
 function Header() {
-  const isDisplayed = useSelector((state) => state.isDisplayed);
-  // console.log(isDisplayed);
   const dispatch = useDispatch();
+  const isDisplayed = useSelector((state) => state.isDisplayed);
 
   return (
     <div className="header">
@@ -19,7 +18,7 @@ function Header() {
       <button
         type="button"
         className="header_connection-button"
-        onClick={() => dispatch(toggleInscriptionForm())}
+        onClick={() => dispatch(toggleinscriptionForm())}
       >
         Inscription
       </button>
