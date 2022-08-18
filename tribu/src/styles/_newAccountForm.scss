@@ -5,11 +5,16 @@
   height: auto;
   margin: vars.$size5 auto vars.$size7 auto;
   max-width: 80%;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: calc(100%/10);
+  right: calc(100%/10);
   padding: vars.$size2;
   border: 1px solid vars.$color4;
   border-radius: 10px;
   box-shadow: 0px 0px 50px 2px black;
+  background-color: white;
+  z-index: 1;
 
   &_title {
     text-align: center; 
@@ -53,6 +58,3 @@
   }
 
 }
-
-//*MEDIA QUERIES
-//TODO Changer la max width des input et de la div globale pour les widescreen (autour de 30/40%)
