@@ -2,6 +2,7 @@ import { React } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
+import CityInterests from './CityInterests';
 import '../../styles/styles.scss';
 
 function CityPage() {
@@ -21,6 +22,8 @@ function CityPage() {
         <h2 className="CityPage_title">{currentCity.name}</h2>
       </div>
       <p className="CityPage_description">{currentCity.description}</p>
+
+      <CityInterests name={currentCity.name} />
     </div>
 
   );
