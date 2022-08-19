@@ -18,7 +18,6 @@ function Home() {
             <div className="Home_city-card-content">
               <h2 className="Home_city-card-name">{city.name}</h2>
               <p className="Home_city-card-country">{city.country}</p>
-              <p className="Home_city-card-desc">{city.description}</p>
             </div>
           </Link>
         </article>
