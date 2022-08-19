@@ -13,12 +13,13 @@
     height: vars.$size6;
   }
 
-  &_connection-button {
-    height: vars.$size4;
-    border: 1px solid vars.$color2;
-    border-radius: vars.$size2;
+  &_inscription-button {
+    border: 1px solid vars.$color5;
+    border-radius: vars.$size4;
     background-color: vars.$color5;
     color: vars.$color1;
+    font-weight: bold;
+    padding: vars.$size1;
   }
 
   &_title {
