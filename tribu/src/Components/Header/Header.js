@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { toggleinscriptionForm } from '../../actions/actions';
+import { toggleinscriptionForm } from '../../actions/inscriptionForm';
 import NewAccountForm from '../NewAccountForm/NewAccountForm';
 
 import '../../styles/styles.scss';

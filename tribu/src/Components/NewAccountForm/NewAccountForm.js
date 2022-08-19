@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux';
 
 // Imports locaux
 import '../../styles/styles.scss';
-import { closeinscriptionForm } from '../../actions/actions';
+import { closeinscriptionForm } from '../../actions/inscriptionForm';
 
 // Validation pattern of the user datas
 const validationSchema = yup.object({
