@@ -9,9 +9,12 @@ function Footer() {
 
   return (
     <div className="Footer">
-      <NavLink to="/a-propos" className={classNames}>A propos</NavLink>
-      <NavLink to="/mentions-legales" className={classNames}>Mentions légales</NavLink>
-      <NavLink to="/contact" className={classNames}>Nous Contacter</NavLink>
+      <div>
+        <NavLink to="/a-propos" className={classNames}>A propos</NavLink>
+        <NavLink to="/mentions-legales" className={classNames}>Mentions légales</NavLink>
+        <NavLink to="/contact" className={classNames}>Nous Contacter</NavLink>
+      </div>
+      <p className="Footer_love">Tribu made with ♥</p>
     </div>
   );
 }

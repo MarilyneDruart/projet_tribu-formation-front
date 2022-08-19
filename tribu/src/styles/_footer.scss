@@ -1,19 +1,20 @@
 @use 'vars';
 
 .Footer {
-  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: auto;
+  margin-top: 1rem;
   background-color: vars.$color5;
   color: vars.$color2;
 
 
   &_NavLink {
-  margin: 1rem 2rem;
-  text-align: center;
+    margin: 0.5rem;
     &--active {
       color: vars.$color1;
       box-shadow: inset -3px 0 0 vars.$color5;
@@ -21,6 +22,58 @@
       padding-bottom: 0.4rem;
     }
   }
+
+  &_love{
+    color: vars.$color3;
+    margin-top: 4rem;
+    margin-bottom: 0.5rem;
+  }
 }
 
+//*===========================================*//
+//*               Media Queries               *//
+//*===========================================*//
 
+/* width 700px --> 999px*/
+@media screen and (min-width: 700px) and (max-width: 999px) {
+  .Footer {
+    padding-top: 1.5rem;
+  
+    &_NavLink {
+      margin: 0.5rem;
+    }
+}
+}
+
+/* width 1000px --> 1199px*/
+@media screen and (min-width: 1000px) and (max-width: 1199px) {
+  .Footer {
+    padding-top: 1.5rem;
+  
+    &_NavLink {
+      margin: 2rem;
+    }
+}
+}
+
+/* width 1200px --> 1499px*/
+@media screen and (min-width: 1200px) and (max-width: 1499px) {
+  .Footer {
+    padding-top: 2rem;
+  
+    &_NavLink {
+      margin: 5rem;
+    }
+}
+}
+
+/* width min 1500px*/
+@media screen and (min-width: 1500px) {
+  .Footer {
+    padding-top: 2.5rem;
+  
+    &_NavLink {
+      margin: 7rem;
+    }
+}
+}
