@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { fetchCities } from '../../actions/cities';
 
 import Header from '../Header/Header';
 import Home from '../Home/Home';
@@ -18,6 +20,12 @@ import AddPOIForm from '../AddPOIForm/AddPOIForm';
 import '../../styles/styles.scss';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCities());
+  }, []);
+
   return (
     <div className="App">
       <Header />

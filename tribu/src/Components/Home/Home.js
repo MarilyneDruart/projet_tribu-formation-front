@@ -1,15 +1,28 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+
 import MainImage from '../MainImage/MainImage';
 import '../../styles/styles.scss';
 
 function Home() {
+  const citiesList = useSelector((state) => state.cities.list);
+
   return (
     <div className="Home">
       <MainImage />
-      {/* On veut afficher les villes de notre BDD
-          On map sur notre tableau de villes
-          et on affiche chaque ville sous forme de card cliquable (liens)
-          on récupère les noms des villes et leur image avec une requête axios GET */}
+      {citiesList.map((city) => (
+        <article className="Home_city-card" key={city.id}>
+          <Link to={`/${city.slug}`} className="Home_city-card-link">
+            <img className="Home_city-card_img" src={city.image} alt={city.name} />
+            <div className="Home_city-card-content">
+              <h2 className="Home_city-card-name">{city.name}</h2>
+              <p className="Home_city-card-country">{city.country}</p>
+              <p className="Home_city-card-desc">{city.description}</p>
+            </div>
+          </Link>
+        </article>
+      ))}
     </div>
   );
 }

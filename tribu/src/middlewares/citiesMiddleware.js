@@ -6,8 +6,8 @@ const citiesMiddleware = (store) => (next) => (action) => {
     case FETCH_CITIES:
       axios
         .get('http://svitlana-burlak-kuzoski.vpnuser.lan:8000/api/cities')
-        .then((res) => {
-          store.dispatch(setCitiesList(res.data));
+        .then((response) => {
+          store.dispatch(setCitiesList(response.data));
         })
         .catch((error) => {
           console.error(error);
