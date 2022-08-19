@@ -1,5 +1,8 @@
 import axios from 'axios';
-import { FETCH_CITIES, setCitiesList } from '../actions/cities';
+import {
+  FETCH_CITIES,
+  setCitiesList,
+} from '../actions/cities';
 
 const citiesMiddleware = (store) => (next) => (action) => {
   switch (action.type) {

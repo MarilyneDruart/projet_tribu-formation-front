@@ -1,35 +1,26 @@
-import { React, useEffect, useState } from 'react';
-import axios from 'axios';
+import { React } from 'react';
+import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import '../../styles/styles.scss';
 
 function CityPage() {
-  const [city, setCity] = useState([]);
+  const { slug } = useParams();
 
-  const fetchResults = () => {
-    axios
-      .get('http://svitlana-burlak-kuzoski.vpnuser.lan:8000/api/cities/31')
-      .then((response) => {
-        console.log(response.data);
-        setCity(response.data);
-        console.log(Object.keys(city));
-      })
-      .catch((error) => {
-        console.log('Erreur !', error);
-      });
+  const findCity = (citiesList, searchedSlug) => {
+    const city = citiesList.find((testedCity) => testedCity.slug === searchedSlug);
+    return city;
   };
 
-  useEffect(() => {
-    fetchResults();
-  }, []);
+  const currentCity = useSelector((state) => findCity(state.cities.list, slug));
 
   return (
     <div className="CityPage">
-      <img src={city.image} className="CityPage_img" alt="ville" />
+      <img src={currentCity.image} className="CityPage_img" alt={currentCity.name} />
       <div className="CityPage_content">
-        <h2 className="CityPage_title">{city.name}</h2>
+        <h2 className="CityPage_title">{currentCity.name}</h2>
       </div>
-      <p className="CityPage_description">{city.description}</p>
+      <p className="CityPage_description">{currentCity.description}</p>
     </div>
 
   );
