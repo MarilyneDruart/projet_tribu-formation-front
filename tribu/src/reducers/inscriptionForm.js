@@ -1,4 +1,4 @@
-import { CLOSE_INSCRIPTION_FORM, TOGGLE_INSCRIPTION_FORM } from '../actions/actions';
+import { CLOSE_INSCRIPTION_FORM, TOGGLE_INSCRIPTION_FORM } from '../actions/inscriptionForm';
 
 const initialState = {
   isDisplayed: false,

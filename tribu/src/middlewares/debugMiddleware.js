@@ -1,4 +1,4 @@
-import { TOGGLE_INSCRIPTION_FORM } from '../actions/actions';
+import { TOGGLE_INSCRIPTION_FORM } from '../actions/inscriptionForm';
 
 // eslint-disable-next-line no-unused-vars
 const debugMiddleware = (store) => (next) => (action) => {
