@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchCities } from '../../actions/cities';
 
 import Header from '../Header/Header';
@@ -12,6 +12,7 @@ import LegalNotice from '../Footer/LegalNotice';
 import AboutUs from '../Footer/AboutUs';
 import NotFound from '../NotFound/NotFound';
 import Interest from '../Interest/Interest';
+import Loading from '../Loading/Loading';
 // import LoginForm from '../LoginForm/LoginForm';
 // import NewAccountForm from '../NewAccountForm/NewAccountForm';
 import UserProfilePage from '../UserProfilePage/UserProfilePage';
@@ -21,10 +22,15 @@ import '../../styles/styles.scss';
 
 function App() {
   const dispatch = useDispatch();
+  const loading = useSelector((state) => state.cities.loading);
 
   useEffect(() => {
     dispatch(fetchCities());
   }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div className="App">

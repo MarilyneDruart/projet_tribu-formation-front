@@ -14,6 +14,7 @@ function CityPage() {
   };
 
   const currentCity = useSelector((state) => findCity(state.cities.list, slug));
+  console.log(currentCity);
 
   return (
     <div className="CityPage">
