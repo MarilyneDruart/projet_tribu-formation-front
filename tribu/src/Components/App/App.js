@@ -13,8 +13,6 @@ import AboutUs from '../Footer/AboutUs';
 import NotFound from '../NotFound/NotFound';
 import Interest from '../Interest/Interest';
 import Loading from '../Loading/Loading';
-// import LoginForm from '../LoginForm/LoginForm';
-// import NewAccountForm from '../NewAccountForm/NewAccountForm';
 import UserProfilePage from '../UserProfilePage/UserProfilePage';
 import AddPOIForm from '../AddPOIForm/AddPOIForm';
 
@@ -28,7 +26,7 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchCities());
-  }, []);
+  }, [Home]);
 
   useEffect(() => {
     dispatch(fetchInterests());
@@ -46,8 +44,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/:slug" element={<CityPage />} />
         <Route path="/:slug/:id" element={<Interest />} />
-        {/* <Route path="/connexion" element={<LoginForm />} /> */}
-        {/* <Route path="/inscription" element={<NewAccountForm />} /> */}
         <Route path="/profil/:id" element={<UserProfilePage />} />
         <Route path="/:slug/ajouter" element={<AddPOIForm />} />
         <Route path="/contact" element={<Contacts />} />
