@@ -20,6 +20,7 @@ import AddPOIForm from '../AddPOIForm/AddPOIForm';
 
 import '../../styles/styles.scss';
 import { fetchInterests } from '../../actions/interests';
+import CityInterests from '../CityPage/CityInterests/CityInterests';
 
 function App() {
   const dispatch = useDispatch();
@@ -31,7 +32,7 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchInterests());
-  }, [CityPage]);
+  }, [CityInterests]);
 
   if (loading) {
     return <Loading />;

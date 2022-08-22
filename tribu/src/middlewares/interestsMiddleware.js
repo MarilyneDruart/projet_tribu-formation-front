@@ -11,8 +11,8 @@ const interestsMiddleware = (store) => (next) => (action) => {
       axios
         .get('http://pierre-henri-kocan-server.eddi.cloud/projet-reseau-social-back/public/api/cities/4')
         .then((response) => {
-          console.log(response.data);
-          store.dispatch(setInterestsList(Object.entries(response.data)));
+          // converting object into array
+          store.dispatch(setInterestsList(Object.entries(response.data.posts)));
         })
         .catch((error) => {
           console.error(error);
