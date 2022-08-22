@@ -17,8 +17,8 @@ import UserProfilePage from '../UserProfilePage/UserProfilePage';
 import AddPOIForm from '../AddPOIForm/AddPOIForm';
 
 import '../../styles/styles.scss';
-import { fetchInterests } from '../../actions/interests';
-import CityInterests from '../CityPage/CityInterests/CityInterests';
+// import { fetchInterests } from '../../actions/interests';
+// import CityInterests from '../CityPage/CityInterests/CityInterests';
 
 function App() {
   const dispatch = useDispatch();
@@ -28,9 +28,9 @@ function App() {
     dispatch(fetchCities());
   }, [Home]);
 
-  useEffect(() => {
-    dispatch(fetchInterests());
-  }, [CityInterests]);
+  // useEffect(() => {
+  //   dispatch(fetchInterests());
+  // }, [CityInterests]);
 
   if (loading) {
     return <Loading />;

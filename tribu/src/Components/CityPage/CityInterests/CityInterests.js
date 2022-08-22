@@ -1,10 +1,25 @@
-import { React } from 'react';
+import { React, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import '../../../styles/styles.scss';
+import axios from 'axios';
+import { setInterestsList } from '../../../actions/interests';
 
 function CityInterests({ id, name }) {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    axios
+      .get(`http://pierre-henri-kocan-server.eddi.cloud/projet-reseau-social-back/public/api/cities/${id}`)
+      .then((response) => {
+        dispatch(setInterestsList(response.data.posts));
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
   const interestsList = useSelector((state) => state.interests.list);
   console.log(interestsList);
 
@@ -15,8 +30,6 @@ function CityInterests({ id, name }) {
       </h2>
       <h2>
         {name}
-        n°
-        {id}
       </h2>
       {interestsList.map((interests) => (
         <article className="CityInterests_card" key={interests.id}>

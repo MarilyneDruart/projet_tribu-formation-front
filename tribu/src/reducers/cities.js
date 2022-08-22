@@ -2,7 +2,6 @@ import { SET_CITIES_LIST } from '../actions/cities';
 
 export const initialState = {
   list: [],
-  currentCityData: {},
   loading: true,
 };
 
