@@ -1,5 +1,5 @@
 import { React, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import '../../../styles/styles.scss';
@@ -22,6 +22,10 @@ function CityInterests({ id, name, slug }) {
 
   const interestsList = useSelector((state) => state.interests.list);
   console.log(interestsList);
+
+  if (!interestsList) {
+    return <Navigate to="/error" replace />;
+  }
 
   return (
     <div className="CityInterests">
