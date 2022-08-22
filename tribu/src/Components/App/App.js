@@ -20,13 +20,13 @@ import '../../styles/styles.scss';
 
 function App() {
   const dispatch = useDispatch();
-  const loading = useSelector((state) => state.cities.loading);
+  const citiesLoading = useSelector((state) => state.cities.loading);
 
   useEffect(() => {
     dispatch(fetchCities());
   }, []);
 
-  if (loading) {
+  if (citiesLoading) {
     return <Loading />;
   }
 

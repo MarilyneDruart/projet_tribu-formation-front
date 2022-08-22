@@ -17,7 +17,7 @@ function CityPage() {
   console.log(currentCity);
 
   if (!findCity) {
-    return <Navigate to="/error" replace />;
+    return <Navigate to="/NotFound" replace />;
   }
 
   return (
