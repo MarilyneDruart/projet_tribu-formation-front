@@ -8,7 +8,7 @@ const interestsMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_INTERESTS:
       axios
-        .get(`http://pierre-henri-kocan-server.eddi.cloud/projet-reseau-social-back/public/api/cities/${id}`)
+        .get('http://pierre-henri-kocan-server.eddi.cloud/projet-reseau-social-back/public/api/cities/4')
         .then((response) => {
           store.dispatch(setInterestsList(response.data));
         })

@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import '../../../styles/styles.scss';
 
-function CityInterests({ name }) {
+function CityInterests({ id, name }) {
   const interestsList = useSelector((state) => state.interests.list);
 
   return (
@@ -12,7 +12,11 @@ function CityInterests({ name }) {
       <h2>
         Intérêts partagés par la communauté pour
       </h2>
-      <h2>{name}</h2>
+      <h2>
+        {name}
+        n°
+        {id}
+      </h2>
       {interestsList.map((interests) => (
         <article className="Home_interests-card" key={interests.id}>
           <Link to={`/${interests.slug}`} className="Home_interests-card-link">
@@ -29,6 +33,7 @@ function CityInterests({ name }) {
 }
 
 CityInterests.propTypes = {
+  id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
 };
 

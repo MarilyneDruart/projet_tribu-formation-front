@@ -24,7 +24,7 @@ function CityPage() {
       </div>
       <p className="CityPage_description">{currentCity.description}</p>
 
-      <CityInterests name={currentCity.name} />
+      <CityInterests name={currentCity.name} id={currentCity.id} />
     </div>
 
   );
