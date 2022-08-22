@@ -33,11 +33,21 @@ function CityInterests({ id, name }) {
       </h2>
       {interestsList.map((interests) => (
         <article className="CityInterests_card" key={interests.id}>
-          <Link to={`/ville/${interests.id}`} className="CityInterests_card_link">
-            <img className="CityInterests_card_img" src={interests.image} alt={interests.name} />
-            <div className="CityInterests_card-content">
-              <h2 className="CityInterests_card-title">{interests.title}</h2>
-              <p className="CityInterests_card-description">{interests.content}</p>
+          <Link to={`/ville/${interests.id}`}>
+            <div className="CityInterests_header">
+              <img src={interests.image} alt={interests.name} />
+            </div>
+            <div className="CityInterests_content">
+              <span className="CityInterests_tag CityInterests_tag--category">Catégorie</span>
+              <h4 className="CityInterests_title">{interests.title}</h4>
+              <p className="CityInterests_content">{interests.content}</p>
+              <div className="CityInterests_user">
+                <img className="CityInterests_user-img" src="#" alt="Nom du user à dynamiser" />
+                <div className="CityInterests_user-info">
+                  <h5>Nom du user</h5>
+                  <small>Date de publication</small>
+                </div>
+              </div>
             </div>
           </Link>
         </article>
