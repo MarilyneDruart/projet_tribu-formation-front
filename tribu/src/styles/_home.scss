@@ -1,13 +1,18 @@
 @use 'vars';
 
-.Home_city-card {
+
+.Home {
+
+  &_city-card{
   display: flex;
   flex-wrap: wrap;
   width: 80px;
   height: 80px;
   border-radius: 50%;
-
-  &_img{
-    max-width: 50%;
+  
+    &-img{
+    max-width: 30vw;
+  }
   }
 }
+

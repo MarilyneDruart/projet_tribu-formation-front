@@ -1,35 +1,35 @@
 @use 'vars';
 
 .MainImage {
-  position: relative;
-  color: #fff;
-  max-width: 100%;
+  width: 100%;
+  height: 50%;
+  background-color: bisque;
+  background-image: url('../assets/images/main-image1.jpg');
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-position: 50% -50%; 
+  position: absolute;
+
  
-
-  &_img{
-    display: block;
-    max-width: 100%;
-    margin: auto;
-    clip-path: polygon(0 25%, 100% 25%, 100% 60%, 0 60%);
-  }
-
   &_content {
     position: absolute;
     width: 100%;
-    bottom: 45%;
+    bottom: 10%;
     padding: 0.2rem;
     text-align: center;
     background: rgba(0,0,0,0.5);
   }
 
   &_title {
-      font-size: vars.$size4;
-      font-style: italic;
-      font-weight: bold;
-      text-transform: uppercase;
+    color: white;
+    font-size: vars.$size3;
+    font-style: italic;
+    font-weight: bold;
+    // text-transform: uppercase;
     }
   }
 
 
 //* MEDIA QUERIES
-//*TODO Augmenter le padding dans content pour afficher la partie grise en plus gros sur widescreen
+
+
