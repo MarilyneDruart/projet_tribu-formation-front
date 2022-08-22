@@ -28,7 +28,7 @@ function CityPage() {
       </div>
       <p className="CityPage_description">{currentCity.description}</p>
 
-      <CityInterests name={currentCity.name} id={currentCity.id} />
+      <CityInterests name={currentCity.name} id={currentCity.id} slug={slug} />
     </div>
 
   );

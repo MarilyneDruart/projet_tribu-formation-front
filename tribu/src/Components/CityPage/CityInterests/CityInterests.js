@@ -6,7 +6,7 @@ import '../../../styles/styles.scss';
 import axios from 'axios';
 import { setInterestsList } from '../../../actions/interests';
 
-function CityInterests({ id, name }) {
+function CityInterests({ id, name, slug }) {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -33,7 +33,7 @@ function CityInterests({ id, name }) {
       </h2>
       {interestsList.map((interests) => (
         <article className="CityInterests_card" key={interests.id}>
-          <Link to={`/ville/${interests.id}`}>
+          <Link to={`/ville/${slug}/${id}`}>
             <div className="CityInterests_header">
               <img src={interests.image} alt={interests.name} />
             </div>
@@ -59,6 +59,7 @@ function CityInterests({ id, name }) {
 CityInterests.propTypes = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired,
 };
 
 export default CityInterests;
