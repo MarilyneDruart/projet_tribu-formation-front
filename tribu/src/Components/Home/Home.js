@@ -12,17 +12,19 @@ function Home() {
     <div className="Home">
       <MainImage />
       <h2 className="Home_title">Choisis ta ville </h2>
-      {citiesList.map((city) => (
-        <article className="Home_city-card" key={city.id}>
-          <Link to={`/${city.slug}`} className="Home_city-card-link">
-            <img className="Home_city-card_img" src={city.image} alt={city.name} />
-            <div className="Home_city-card-content">
-              <h2 className="Home_city-card-name">{city.name}</h2>
-              <p className="Home_city-card-country">{city.country}</p>
-            </div>
-          </Link>
-        </article>
-      ))}
+      <div className="Home_cards-list">
+        {citiesList.map((city) => (
+          <article className="Home_card" key={city.id}>
+            <Link to={`/${city.slug}`} className="Home_city-card-link">
+              <img className="Home_card-image" src={city.image} alt={city.name} />
+              <div className="Home_city-card-content">
+                <h2 className="Home_card-name">{city.name}</h2>
+                <p className="Home_card-country">{city.country}</p>
+              </div>
+            </Link>
+          </article>
+        ))}
+      </div>
     </div>
   );
 }
