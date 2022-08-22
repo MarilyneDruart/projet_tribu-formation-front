@@ -2,8 +2,8 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import MainImage from '../MainImage/MainImage';
 import '../../styles/styles.scss';
+import MainImage from '../MainImage/MainImage';
 
 function Home() {
   const citiesList = useSelector((state) => state.cities.list);
@@ -11,6 +11,7 @@ function Home() {
   return (
     <div className="Home">
       <MainImage />
+      <h2 className="Home_title">Choisis ta ville </h2>
       {citiesList.map((city) => (
         <article className="Home_city-card" key={city.id}>
           <Link to={`/${city.slug}`} className="Home_city-card-link">
