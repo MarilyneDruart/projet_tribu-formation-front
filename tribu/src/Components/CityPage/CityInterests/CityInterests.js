@@ -23,7 +23,7 @@ function CityInterests({ id, name, slug }) {
   const interestsList = useSelector((state) => state.interests.list);
   console.log(interestsList);
 
-  if (!interestsList) {
+  if (interestsList.length === 0) {
     return <Navigate to="/error" replace />;
   }
 
