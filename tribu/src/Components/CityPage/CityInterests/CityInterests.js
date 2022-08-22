@@ -33,7 +33,7 @@ function CityInterests({ id, name }) {
       </h2>
       {interestsList.map((interests) => (
         <article className="CityInterests_card" key={interests.id}>
-          <Link to={`/${interests.id}`} className="CityInterests_card_link">
+          <Link to={`/ville/${interests.id}`} className="CityInterests_card_link">
             <img className="CityInterests_card_img" src={interests.image} alt={interests.name} />
             <div className="CityInterests_card-content">
               <h2 className="CityInterests_card-title">{interests.title}</h2>
