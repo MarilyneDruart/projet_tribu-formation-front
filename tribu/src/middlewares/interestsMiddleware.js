@@ -8,7 +8,7 @@ const interestsMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_INTERESTS:
       axios
-        .get('http://svitlana-burlak-kuzoski.vpnuser.lan:8000/api/posts')
+        .get('http://svitlana-burlak-kuzoski.vpnuser.lan:8000/api/cities/1')
         .then((response) => {
           store.dispatch(setInterestsList(response.data));
         })
