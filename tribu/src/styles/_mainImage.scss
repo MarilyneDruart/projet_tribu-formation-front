@@ -7,13 +7,13 @@
   background-image: url('../assets/images/main-image1.jpg');
   background-size: cover;
   background-repeat:no-repeat;
-  background-position: 50% -50%;
+  background-position: 50%;
  
  
   &_content {
-    position: absolute;
+    position: relative;
     width: 100%;
-    bottom: 30%;
+    top: 60%;
     padding: 0.2rem;
     text-align: center;
     background: rgba(0,0,0,0.5);
@@ -24,11 +24,5 @@
     font-size: vars.$size3;
     font-style: italic;
     font-weight: bold;
-    // text-transform: uppercase;
     }
   }
-
-
-//* MEDIA QUERIES
-
-
