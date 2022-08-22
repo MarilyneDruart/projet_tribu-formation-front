@@ -2,6 +2,7 @@ import { React } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
+import CityInterests from './CityInterests/CityInterests';
 import '../../styles/styles.scss';
 
 function CityPage() {
@@ -13,6 +14,7 @@ function CityPage() {
   };
 
   const currentCity = useSelector((state) => findCity(state.cities.list, slug));
+  console.log(currentCity);
 
   return (
     <div className="CityPage">
@@ -21,6 +23,8 @@ function CityPage() {
         <h2 className="CityPage_title">{currentCity.name}</h2>
       </div>
       <p className="CityPage_description">{currentCity.description}</p>
+
+      <CityInterests name={currentCity.name} id={currentCity.id} />
     </div>
 
   );

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchCities } from '../../actions/cities';
 
 import Header from '../Header/Header';
@@ -12,19 +12,29 @@ import LegalNotice from '../Footer/LegalNotice';
 import AboutUs from '../Footer/AboutUs';
 import NotFound from '../NotFound/NotFound';
 import Interest from '../Interest/Interest';
-// import LoginForm from '../LoginForm/LoginForm';
-// import NewAccountForm from '../NewAccountForm/NewAccountForm';
+import Loading from '../Loading/Loading';
 import UserProfilePage from '../UserProfilePage/UserProfilePage';
 import AddPOIForm from '../AddPOIForm/AddPOIForm';
 
 import '../../styles/styles.scss';
+// import { fetchInterests } from '../../actions/interests';
+// import CityInterests from '../CityPage/CityInterests/CityInterests';
 
 function App() {
   const dispatch = useDispatch();
+  const loading = useSelector((state) => state.cities.loading);
 
   useEffect(() => {
     dispatch(fetchCities());
-  }, []);
+  }, [Home]);
+
+  // useEffect(() => {
+  //   dispatch(fetchInterests());
+  // }, [CityInterests]);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div className="App">
@@ -34,8 +44,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/:slug" element={<CityPage />} />
         <Route path="/:slug/:id" element={<Interest />} />
-        {/* <Route path="/connexion" element={<LoginForm />} /> */}
-        {/* <Route path="/inscription" element={<NewAccountForm />} /> */}
         <Route path="/profil/:id" element={<UserProfilePage />} />
         <Route path="/:slug/ajouter" element={<AddPOIForm />} />
         <Route path="/contact" element={<Contacts />} />

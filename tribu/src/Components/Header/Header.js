@@ -11,7 +11,6 @@ import logo from '../../assets/images/logo.png';
 function Header() {
   const dispatch = useDispatch();
   const isDisplayed = useSelector((state) => state.inscriptionForm.isDisplayed);
-  console.log(isDisplayed);
 
   return (
     <div className="header">
