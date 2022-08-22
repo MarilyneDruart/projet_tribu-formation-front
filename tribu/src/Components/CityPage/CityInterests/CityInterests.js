@@ -5,13 +5,8 @@ import PropTypes from 'prop-types';
 import '../../../styles/styles.scss';
 
 function CityInterests({ id, name }) {
-  const interestsListObject = useSelector((state) => state.interests.list);
-  console.log(interestsListObject);
-
-  // const interestsListArray = (
-  //   Object.keys(interestsListObject).map((key) => [key, interestsListObject[key]]));
-
-  // console.log(interestsListArray);
+  const interestsList = useSelector((state) => state.interests.list);
+  console.log(interestsList);
 
   return (
     <div className="CityInterests">
@@ -23,13 +18,13 @@ function CityInterests({ id, name }) {
         n°
         {id}
       </h2>
-      {interestsListObject.map((interests) => (
-        <article className="Home_interests-card" key={interests.id}>
-          <Link to={`/${interests.id}`} className="Home_interests-card-link">
-            <img className="Home_interests-card_img" src={interests.image} alt={interests.name} />
-            <div className="Home_interests-card-content">
-              <h2 className="Home_interests-card-name">{interests.name}</h2>
-              <p className="Home_interests-card-country">{interests.country}</p>
+      {interestsList.map((interests) => (
+        <article className="CityInterests_card" key={interests.id}>
+          <Link to={`/${interests.id}`} className="CityInterests_card_link">
+            <img className="CityInterests_card_img" src={interests.image} alt={interests.name} />
+            <div className="CityInterests_card-content">
+              <h2 className="CityInterests_card-title">{interests.title}</h2>
+              <p className="CityInterests_card-description">{interests.content}</p>
             </div>
           </Link>
         </article>
