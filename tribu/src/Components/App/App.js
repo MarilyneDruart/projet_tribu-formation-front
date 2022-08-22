@@ -26,7 +26,7 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchCities());
-  }, [Home]);
+  }, []);
 
   // useEffect(() => {
   //   dispatch(fetchInterests());
