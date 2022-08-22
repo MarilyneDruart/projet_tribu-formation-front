@@ -13,3 +13,9 @@ export const setCitiesList = (cities) => ({
   type: SET_CITIES_LIST,
   payload: { cities },
 });
+
+export const SET_CITY_DATA = 'SET_CITY_DATA';
+export const setCityData = (currentCityData) => ({
+  type: SET_CITY_DATA,
+  payload: { currentCityData },
+});
