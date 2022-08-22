@@ -1,5 +1,5 @@
 import { React } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import CityInterests from './CityInterests/CityInterests';
@@ -15,6 +15,10 @@ function CityPage() {
 
   const currentCity = useSelector((state) => findCity(state.cities.list, slug));
   console.log(currentCity);
+
+  if (!findCity) {
+    return <Navigate to="/error" replace />;
+  }
 
   return (
     <div className="CityPage">
