@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import axios from 'axios';
 import {
   FETCH_INTERESTS,
@@ -10,7 +11,8 @@ const interestsMiddleware = (store) => (next) => (action) => {
       axios
         .get('http://pierre-henri-kocan-server.eddi.cloud/projet-reseau-social-back/public/api/cities/4')
         .then((response) => {
-          store.dispatch(setInterestsList(response.data));
+          console.log(response.data);
+          store.dispatch(setInterestsList(Object.entries(response.data)));
         })
         .catch((error) => {
           console.error(error);

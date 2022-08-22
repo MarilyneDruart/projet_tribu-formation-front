@@ -19,6 +19,7 @@ import UserProfilePage from '../UserProfilePage/UserProfilePage';
 import AddPOIForm from '../AddPOIForm/AddPOIForm';
 
 import '../../styles/styles.scss';
+import { fetchInterests } from '../../actions/interests';
 
 function App() {
   const dispatch = useDispatch();
@@ -27,6 +28,10 @@ function App() {
   useEffect(() => {
     dispatch(fetchCities());
   }, []);
+
+  useEffect(() => {
+    dispatch(fetchInterests());
+  }, [CityPage]);
 
   if (loading) {
     return <Loading />;
