@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCities } from '../../actions/cities';
+import { setUser } from '../../actions/loginForm';
 
 import Header from '../Header/Header';
 import Home from '../Home/Home';
@@ -23,8 +24,7 @@ import '../../styles/styles.scss';
 function App() {
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.cities.loading);
-  const token = JSON.parse(localStorage.getItem("user"));
-
+  const token = JSON.parse(localStorage.getItem('user'));
 
   useEffect(() => {
     dispatch(fetchCities());
@@ -39,7 +39,7 @@ function App() {
   }
 
   if (token) {
-    dispatch(setToken(token));
+    dispatch(setUser(token));
   }
 
   return (
