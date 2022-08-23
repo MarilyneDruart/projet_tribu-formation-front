@@ -9,7 +9,7 @@
   top: 0;
   left: calc(100%/10);
   right: calc(100%/10);
-  padding: vars.$size2;
+  padding: vars.$size3;
   border: 1px solid vars.$color4;
   border-radius: 10px;
   box-shadow: 0px 0px 50px 2px black;
@@ -20,10 +20,10 @@
     width: 40px;
     height: 40px;
     position: absolute;
-    right: vars.$size1;
-    border: 1px solid rgb(121, 145, 212);
+    right: vars.$size3;
+    border: 1px solid vars.$colorpink;
     border-radius: 20px;
-    background: rgb(121, 145, 212);
+    background: vars.$colorpink;
     color: white;
     font-weight: bold;
     
@@ -60,15 +60,26 @@
 
   &_submit {
     margin-top: 1rem;
-    border: 1px solid rgb(121, 145, 212);
+    border: 1px solid vars.$colorpink;
     border-radius: 5px;
     padding: vars.$size1;
     width: 100%;
-    background-color: rgb(121, 145, 212);
+    background-color: vars.$colorpink;
     color: white;
     font-weight: bold;
     letter-spacing: 0.05rem;
     font-size: vars.$size2;
   }
 
+}
+
+.login {
+  margin-top: vars.$size2;
+  text-align: center;
+
+  &_link {
+    all: unset;
+    text-decoration: underline;
+    margin-left: 0.3rem;
+  }
 }
