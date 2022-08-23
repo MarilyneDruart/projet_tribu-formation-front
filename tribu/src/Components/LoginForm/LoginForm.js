@@ -4,10 +4,12 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useDispatch } from 'react-redux';
+// import { Link } from 'react-router-dom';
 
 // Imports locaux
 import '../../styles/styles.scss';
 import { closeLoginForm } from '../../actions/loginForm';
+import { openInscriptionForm } from '../../actions/inscriptionForm';
 
 // Validation pattern of the user datas
 const validationSchema = yup.object({
@@ -84,6 +86,21 @@ function LoginForm() {
 
         <input className="Login_submit" type="submit" />
       </form>
+
+      <p className="inscription">
+        Tu ne fais pas encore parti de la tribu ?
+        <button
+          type="button"
+          className="inscription_link"
+          onClick={() => {
+            dispatch(openInscriptionForm());
+            dispatch(closeLoginForm());
+          }}
+        >
+          Inscris-toi
+        </button>
+      </p>
+
     </div>
   );
 }

@@ -64,5 +64,15 @@
     letter-spacing: 0.05rem;
     font-size: vars.$size2;
   }
+}
 
+.inscription {
+  margin-top: vars.$size2;
+  text-align: center;
+
+  &_link {
+    all: unset;
+    text-decoration: underline;
+    margin-left: 0.3rem;
+  }
 }
