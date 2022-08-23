@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux';
 
 // Imports locaux
 import '../../styles/styles.scss';
-import { closeinscriptionForm } from '../../actions/inscriptionForm';
+import { closeInscriptionForm } from '../../actions/inscriptionForm';
 
 // Validation pattern of the user datas
 const validationSchema = yup.object({
@@ -80,7 +80,7 @@ function NewAccountForm() {
         <button
           className="new-account_button"
           type="button"
-          onClick={() => dispatch(closeinscriptionForm())}
+          onClick={() => dispatch(closeInscriptionForm())}
         >
           X
         </button>

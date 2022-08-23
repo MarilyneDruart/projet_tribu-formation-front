@@ -1,4 +1,7 @@
+import { CLOSE_LOGIN_FORM, TOGGLE_LOGIN_FORM } from '../actions/loginForm';
+
 export const initialState = {
+  loginFormisDisplayed: false,
   logged: false,
   email: '',
   token: '',
@@ -11,6 +14,17 @@ export const initialState = {
 
 function user(state = initialState, action = {}) {
   switch (action.type) {
+    case TOGGLE_LOGIN_FORM:
+      return {
+        ...state,
+        loginFormIsDisplayed: !state.loginFormIsDisplayed,
+      };
+
+    case CLOSE_LOGIN_FORM:
+      return {
+        ...state,
+        loginFormIsDisplayed: false,
+      };
     default:
       return state;
   }

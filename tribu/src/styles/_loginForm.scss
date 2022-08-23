@@ -1,6 +1,6 @@
 @use 'vars';
-
-.login {
+ 
+.Login {
   // border: 1px solid vars.$color5;
   height: auto;
   margin: vars.$size5 auto vars.$size7 auto;
@@ -9,7 +9,7 @@
   top: 0;
   left: calc(100%/10);
   right: calc(100%/10);
-  padding: vars.$size2;
+  padding: vars.$size3;
   border: 1px solid vars.$color4;
   border-radius: 10px;
   box-shadow: 0px 0px 50px 2px black;
@@ -20,7 +20,7 @@
     width: 40px;
     height: 40px;
     position: absolute;
-    right: vars.$size1;
+    right: vars.$size3;
     border: 1px solid rgb(121, 145, 212);
     border-radius: 20px;
     background: rgb(121, 145, 212);

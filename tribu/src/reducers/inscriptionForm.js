@@ -1,7 +1,7 @@
 import { CLOSE_INSCRIPTION_FORM, TOGGLE_INSCRIPTION_FORM } from '../actions/inscriptionForm';
 
 const initialState = {
-  isDisplayed: false,
+  inscriptionFormIsDisplayed: false,
 };
 
 function inscriptionForm(state = initialState, action = {}) {
@@ -9,13 +9,13 @@ function inscriptionForm(state = initialState, action = {}) {
     case TOGGLE_INSCRIPTION_FORM:
       return {
         ...state,
-        isDisplayed: !state.isDisplayed,
+        inscriptionFormIsDisplayed: !state.inscriptionFormIsDisplayed,
       };
 
     case CLOSE_INSCRIPTION_FORM:
       return {
         ...state,
-        isDisplayed: false,
+        inscriptionFormIsDisplayed: false,
       };
 
     default:
