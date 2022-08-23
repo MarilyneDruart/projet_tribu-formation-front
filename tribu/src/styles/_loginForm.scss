@@ -1,1 +1,68 @@
 @use 'vars';
+
+.login {
+  // border: 1px solid vars.$color5;
+  height: auto;
+  margin: vars.$size5 auto vars.$size7 auto;
+  max-width: 80%;
+  position: absolute;
+  top: 0;
+  left: calc(100%/10);
+  right: calc(100%/10);
+  padding: vars.$size2;
+  border: 1px solid vars.$color4;
+  border-radius: 10px;
+  box-shadow: 0px 0px 50px 2px black;
+  background-color: white;
+  z-index: 1;
+
+  &_button {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: vars.$size1;
+    border: 1px solid rgb(121, 145, 212);
+    border-radius: 20px;
+    background: rgb(121, 145, 212);
+    color: white;
+    font-weight: bold;
+    
+  }
+
+  &_title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: vars.$size3;
+    margin-bottom: vars.$size1;
+  }
+
+  &_field{
+    margin-top: 1rem;
+    border: 1px solid rgb(234, 234, 240);
+    border-radius: 5px;
+    padding: vars.$size1;
+    width: 100%;
+    background-color: rgb(234, 234, 240);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  &_error-message{
+    margin-top: 0.2rem;
+    color: red;
+  }
+
+  &_submit {
+    margin-top: 1rem;
+    border: 1px solid rgb(121, 145, 212);
+    border-radius: 5px;
+    padding: vars.$size1;
+    width: 100%;
+    background-color: rgb(121, 145, 212);
+    color: white;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    font-size: vars.$size2;
+  }
+
+}
