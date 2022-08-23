@@ -23,6 +23,8 @@ import '../../styles/styles.scss';
 function App() {
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.cities.loading);
+  const token = JSON.parse(localStorage.getItem("user"));
+
 
   useEffect(() => {
     dispatch(fetchCities());
@@ -34,6 +36,10 @@ function App() {
 
   if (loading) {
     return <Loading />;
+  }
+
+  if (token) {
+    dispatch(setToken(token));
   }
 
   return (
