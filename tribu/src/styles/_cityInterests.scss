@@ -4,6 +4,8 @@
   box-sizing: border-box;
 }
 
+
+
 .container {
   display: flex;
   justify-content: center;
@@ -17,15 +19,12 @@
 .CityInterests {
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
   flex-wrap: wrap;
-  width: 1040px;
-  margin: 0;
-  background-color: #f7f8fc;
-  color: #10182f;
+  // width: 1040px;
 
   &_card {
     margin: 10px;
+    margin-bottom: 0;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
@@ -45,7 +44,7 @@
     justify-content: center;
     align-items: flex-start;
     padding: 20px;
-    min-height: 250px;
+    // min-height: 250px;
   }
 
   &__tag {
@@ -65,12 +64,11 @@
   }
 
   &__title {
-    font-size: vars.$size2;
+    font-size: 1rem;
   }
 
   &_content {
-    font-size: vars.$size1;
-    margin: 0 0 40px;
+    font-size: 0.75rem;
   }
 
   &_user {
@@ -90,6 +88,6 @@
   }
 
   &_user-info small {
-    color: vars.$color2;
+    color: #545d7a;;
   }
 }
