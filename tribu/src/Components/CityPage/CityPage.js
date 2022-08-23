@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 
 import CityInterests from './CityInterests/CityInterests';
 import '../../styles/styles.scss';
+import CityImage from './CityImage/CityImage';
 
 function CityPage() {
   const { slug } = useParams();
@@ -22,7 +23,8 @@ function CityPage() {
 
   return (
     <div className="CityPage">
-      <img src={currentCity.image} className="CityPage_img" alt={currentCity.name} />
+      <CityImage image={currentCity.image} name={currentCity.name} />
+      {/* <img src={currentCity.image} className="CityPage_img" alt={currentCity.name} /> */}
       <div className="CityPage_content">
         <h2 className="CityPage_title">{currentCity.name}</h2>
       </div>

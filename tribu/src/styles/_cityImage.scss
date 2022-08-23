@@ -1,1 +1,10 @@
 @use 'vars';
+
+.cityImage {
+  width: 100%;
+  height: 300px;
+  background-color: vars.$color7;
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-position: 50%;
+}

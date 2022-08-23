@@ -1,21 +1,27 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import '../../../styles/styles.scss';
 
-function CityImage() {
-  const image = `
+function CityImage({ image, name }) {
+  const cityImage = `
   div {
-    background-image: url('../assets/images/main-image2.jpg');
+    background-image: url(${image});
   }
   `;
   return (
     <div className="CityImage">
-      <style>{image}</style>
+      <style>{cityImage}</style>
       <div className="CityImage_content">
-        <h2 className="CityImage_title">Nom de la ville</h2>
+        <h2 className="CityImage_title">{name}</h2>
       </div>
     </div>
   );
 }
+
+CityImage.propTypes = {
+  image: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+};
 
 export default CityImage;
