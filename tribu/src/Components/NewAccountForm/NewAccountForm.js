@@ -7,7 +7,8 @@ import { useDispatch } from 'react-redux';
 
 // Imports locaux
 import '../../styles/styles.scss';
-import { closeinscriptionForm } from '../../actions/inscriptionForm';
+import { closeInscriptionForm } from '../../actions/inscriptionForm';
+import { openLoginForm } from '../../actions/loginForm';
 
 // Validation pattern of the user datas
 const validationSchema = yup.object({
@@ -36,7 +37,7 @@ const validationSchema = yup.object({
   password: yup
     .string()
     .required('Le mot de passe est obligatoire')
-    .matches(/([0-9])/, 'Le mot de passe doit contenir au moins un entier')
+    .matches(/([0-9])/, 'Le mot de passe doit contenir au moins un chiffre')
     .min(8, 'Le mot de passe doit contenir au minimum 8 caractères'),
   passwordConfirm: yup
     .string()
@@ -80,7 +81,7 @@ function NewAccountForm() {
         <button
           className="new-account_button"
           type="button"
-          onClick={() => dispatch(closeinscriptionForm())}
+          onClick={() => dispatch(closeInscriptionForm())}
         >
           X
         </button>
@@ -114,7 +115,7 @@ function NewAccountForm() {
         <p className="new-account_error-message">{errors.city?.message}</p>
 
         <input
-          {...register('email')}
+          {...register('username')}
           className="new-account_field"
           type="email"
           placeholder="Ton email"
@@ -157,6 +158,21 @@ function NewAccountForm() {
 
         <input className="new-account_submit" type="submit" />
       </form>
+
+      <p className="login">
+        Tu fais déjà parti de la tribu ?
+        <button
+          type="button"
+          className="login_link"
+          onClick={() => {
+            dispatch(openLoginForm());
+            dispatch(closeInscriptionForm());
+          }}
+        >
+          Connecte-toi
+        </button>
+      </p>
+
     </div>
   );
 }

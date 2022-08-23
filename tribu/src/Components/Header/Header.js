@@ -2,15 +2,20 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { toggleinscriptionForm } from '../../actions/inscriptionForm';
+import { toggleInscriptionForm } from '../../actions/inscriptionForm';
+import { toggleLoginForm } from '../../actions/loginForm';
 import NewAccountForm from '../NewAccountForm/NewAccountForm';
+import LoginForm from '../LoginForm/LoginForm';
 
 import '../../styles/styles.scss';
 import logo from '../../assets/images/logo.png';
 
 function Header() {
   const dispatch = useDispatch();
-  const isDisplayed = useSelector((state) => state.inscriptionForm.isDisplayed);
+  const inscriptionFormIsDisplayed = useSelector(
+    (state) => state.inscriptionForm.inscriptionFormIsDisplayed,
+  );
+  const loginFormIsDisplayed = useSelector((state) => state.user.loginFormIsDisplayed);
 
   return (
     <div className="header">
@@ -20,13 +25,21 @@ function Header() {
       <h1 className="header_title">Meet, Visit, Share it, Repeat</h1>
       <button
         type="button"
+        className="header_connexion-button"
+        onClick={() => dispatch(toggleLoginForm())}
+      >
+        Connexion
+      </button>
+      <button
+        type="button"
         className="header_inscription-button"
-        onClick={() => dispatch(toggleinscriptionForm())}
+        onClick={() => dispatch(toggleInscriptionForm())}
       >
         Inscription
       </button>
 
-      {isDisplayed && <NewAccountForm />}
+      {inscriptionFormIsDisplayed && <NewAccountForm />}
+      {loginFormIsDisplayed && <LoginForm />}
 
     </div>
   );

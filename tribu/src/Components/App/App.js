@@ -17,22 +17,16 @@ import UserProfilePage from '../UserProfilePage/UserProfilePage';
 import AddPOIForm from '../AddPOIForm/AddPOIForm';
 
 import '../../styles/styles.scss';
-// import { fetchInterests } from '../../actions/interests';
-// import CityInterests from '../CityPage/CityInterests/CityInterests';
 
 function App() {
   const dispatch = useDispatch();
-  const loading = useSelector((state) => state.cities.loading);
+  const citiesLoading = useSelector((state) => state.cities.loading);
 
   useEffect(() => {
     dispatch(fetchCities());
-  }, [Home]);
+  }, []);
 
-  // useEffect(() => {
-  //   dispatch(fetchInterests());
-  // }, [CityInterests]);
-
-  if (loading) {
+  if (citiesLoading) {
     return <Loading />;
   }
 
@@ -42,10 +36,10 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/:slug" element={<CityPage />} />
-        <Route path="/:slug/:id" element={<Interest />} />
+        <Route path="/ville/:slug" element={<CityPage />} />
+        <Route path="/ville/:slug/:id" element={<Interest />} />
         <Route path="/profil/:id" element={<UserProfilePage />} />
-        <Route path="/:slug/ajouter" element={<AddPOIForm />} />
+        <Route path="/ville/:slug/ajouter" element={<AddPOIForm />} />
         <Route path="/contact" element={<Contacts />} />
         <Route path="/mentions-legales" element={<LegalNotice />} />
         <Route path="/a-propos" element={<AboutUs />} />
