@@ -21,9 +21,9 @@
     height: 40px;
     position: absolute;
     right: vars.$size3;
-    border: 1px solid rgb(121, 145, 212);
+    border: 1px solid vars.$colorpink;
     border-radius: 20px;
-    background: rgb(121, 145, 212);
+    background: vars.$colorpink;
     color: white;
     font-weight: bold;
     
@@ -54,11 +54,11 @@
 
   &_submit {
     margin-top: 1rem;
-    border: 1px solid rgb(121, 145, 212);
+    border: 1px solid vars.$colorpink;
     border-radius: 5px;
     padding: vars.$size1;
     width: 100%;
-    background-color: rgb(121, 145, 212);
+    background-color: vars.$colorpink;
     color: white;
     font-weight: bold;
     letter-spacing: 0.05rem;
