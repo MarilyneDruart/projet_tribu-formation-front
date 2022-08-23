@@ -7,3 +7,8 @@ export const CLOSE_LOGIN_FORM = 'CLOSE_LOGIN_FORM';
 export const closeLoginForm = () => ({
   type: CLOSE_LOGIN_FORM,
 });
+
+export const OPEN_LOGIN_FORM = 'OPEN_LOGIN_FORM';
+export const openLoginForm = () => ({
+  type: OPEN_LOGIN_FORM,
+});

@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux';
 // Imports locaux
 import '../../styles/styles.scss';
 import { closeInscriptionForm } from '../../actions/inscriptionForm';
+import { openLoginForm } from '../../actions/loginForm';
 
 // Validation pattern of the user datas
 const validationSchema = yup.object({
@@ -157,6 +158,21 @@ function NewAccountForm() {
 
         <input className="new-account_submit" type="submit" />
       </form>
+
+      <p className="login">
+        Tu fais déjà parti de la tribu ?
+        <button
+          type="button"
+          className="login_link"
+          onClick={() => {
+            dispatch(openLoginForm());
+            dispatch(closeInscriptionForm());
+          }}
+        >
+          Connecte-toi
+        </button>
+      </p>
+
     </div>
   );
 }

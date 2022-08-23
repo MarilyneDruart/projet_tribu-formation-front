@@ -72,3 +72,14 @@
   }
 
 }
+
+.login {
+  margin-top: vars.$size2;
+  text-align: center;
+
+  &_link {
+    all: unset;
+    text-decoration: underline;
+    margin-left: 0.3rem;
+  }
+}

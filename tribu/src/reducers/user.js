@@ -1,4 +1,4 @@
-import { CLOSE_LOGIN_FORM, TOGGLE_LOGIN_FORM } from '../actions/loginForm';
+import { CLOSE_LOGIN_FORM, TOGGLE_LOGIN_FORM, OPEN_LOGIN_FORM } from '../actions/loginForm';
 
 export const initialState = {
   loginFormisDisplayed: false,
@@ -14,6 +14,12 @@ export const initialState = {
 
 function user(state = initialState, action = {}) {
   switch (action.type) {
+    case OPEN_LOGIN_FORM:
+      return {
+        ...state,
+        loginFormIsDisplayed: true,
+      };
+
     case TOGGLE_LOGIN_FORM:
       return {
         ...state,
