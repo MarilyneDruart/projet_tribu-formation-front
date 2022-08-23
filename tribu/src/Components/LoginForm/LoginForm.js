@@ -4,27 +4,33 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useDispatch } from 'react-redux';
-// import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 // Imports locaux
 import '../../styles/styles.scss';
-import { closeLoginForm } from '../../actions/loginForm';
+import {
+  closeLoginForm,
+  login,
+  // LOGOUT,
+  setUser,
+} from '../../actions/loginForm';
 import { openInscriptionForm } from '../../actions/inscriptionForm';
 
 // Validation pattern of the user datas
 const validationSchema = yup.object({
-  email: yup
+  username: yup
     .string()
     .email('L\'email est invalide')
     .required('L\'email est obligatoire'),
   password: yup
     .string()
-    .required('Le mot de passe est obligatoire')
-    .matches(/([0-9])/, 'Le mot de passe doit contenir au moins un entier')
-    .min(8, 'Le mot de passe doit contenir au minimum 8 caractères'),
+    .required('Le mot de passe est obligatoire'),
 }).required();
 
 function LoginForm() {
+  // const { username, password } = useSelector((state) => state.user.loginForm);
+  const dispatch = useDispatch();
+
   const {
     register,
     handleSubmit,
@@ -34,23 +40,35 @@ function LoginForm() {
     resolver: yupResolver(validationSchema),
     mode: 'onBlur',
     defaultValues: {
-      firstName: '',
-      lastName: '',
-      city: '',
-      email: '',
-      avatar: '',
-      description: '',
+      username: '',
       password: '',
-      passwordConfirm: '',
     },
   });
 
   const onSubmit = (data) => {
-    console.log(data);
+    dispatch(login());
+
+    axios
+      .post('http://svitlana-burlak-kuzoski.vpnuser.lan:8000/api/login_check', data, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+      .then((response) => {
+        const { pseudo, token } = response.data;
+        console.log(response);
+
+        dispatch(setUser(pseudo, token));
+
+        // localStorage.setItem('user', JSON.stringify({
+        //   pseudo,
+        //   token,
+      })
+      .catch((error) => {
+        console.log(error);
+      });
     reset();
   };
-
-  const dispatch = useDispatch();
 
   return (
     <div className="Login">
@@ -69,7 +87,7 @@ function LoginForm() {
         onSubmit={handleSubmit(onSubmit)}
       >
         <input
-          {...register('email')}
+          {...register('username')}
           className="Login_field"
           type="email"
           placeholder="Ton email"

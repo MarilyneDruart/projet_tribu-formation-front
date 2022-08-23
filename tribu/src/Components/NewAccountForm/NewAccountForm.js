@@ -37,7 +37,7 @@ const validationSchema = yup.object({
   password: yup
     .string()
     .required('Le mot de passe est obligatoire')
-    .matches(/([0-9])/, 'Le mot de passe doit contenir au moins un entier')
+    .matches(/([0-9])/, 'Le mot de passe doit contenir au moins un chiffre')
     .min(8, 'Le mot de passe doit contenir au minimum 8 caractères'),
   passwordConfirm: yup
     .string()
@@ -115,7 +115,7 @@ function NewAccountForm() {
         <p className="new-account_error-message">{errors.city?.message}</p>
 
         <input
-          {...register('email')}
+          {...register('username')}
           className="new-account_field"
           type="email"
           placeholder="Ton email"
