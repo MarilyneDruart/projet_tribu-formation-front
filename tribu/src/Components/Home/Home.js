@@ -15,7 +15,7 @@ function Home() {
       <div className="Home_cards-list">
         {citiesList.map((city) => (
           <article className="Home_card" key={city.id}>
-            <Link to={`/${city.slug}`} className="Home_city-card-link">
+            <Link to={`/ville/${city.slug}`} className="Home_city-card-link">
               <img className="Home_card-image" src={city.image} alt={city.name} />
               <div className="Home_city-card-content">
                 <h2 className="Home_card-name">{city.name}</h2>
