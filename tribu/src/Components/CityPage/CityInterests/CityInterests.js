@@ -11,7 +11,7 @@ function CityInterests({ id, name }) {
 
   useEffect(() => {
     axios
-      .get(`http://pierre-henri-kocan-server.eddi.cloud/projet-reseau-social-back/public/api/cities/${id}`)
+      .get(`//pierre-henri-kocan-server.eddi.cloud/projet-reseau-social-back/public/api/cities/${id}`)
       .then((response) => {
         dispatch(setInterestsList(response.data.posts));
       })
