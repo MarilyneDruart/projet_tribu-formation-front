@@ -6,11 +6,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: vars.$size1;
+  margin: vars.$size4;
   color: vars.$color1;
 
   &_logo {
-    height: vars.$size6;
+    height: vars.$size8;
   }
 
   &_inscription-button {
