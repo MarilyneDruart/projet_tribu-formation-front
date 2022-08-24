@@ -4,14 +4,9 @@ import PropTypes from 'prop-types';
 import '../../../styles/styles.scss';
 
 function CityImage({ image, name }) {
-  const cityImage = `
-  div {
-    background-image: url(${image});
-  }
-  `;
   return (
     <div className="CityImage">
-      <style>{cityImage}</style>
+      <div style={{ backgroundImage: `url(${image})` }} />
       <div className="CityImage_content">
         <h2 className="CityImage_title">{name}</h2>
       </div>
