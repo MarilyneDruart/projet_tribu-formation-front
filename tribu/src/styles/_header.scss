@@ -23,11 +23,30 @@
     all: unset;
     text-decoration: underline;
     padding: vars.$size1;
+    text-underline-offset: 3px;
+  }
+
+  &_disconnect-button {
+    all: unset;
+    text-decoration: underline;
+    margin-top: vars.$size1;
+    text-underline-offset: 3px;
   }
 
   &_connexion-button {
     border: 1px solid vars.$colorpink;
     border-radius: vars.$size4;
+    background-color: vars.$colorpink;
+    color: white;
+    font-weight: bold;
+    padding: vars.$size1;
+  }
+
+  &_profile-button {
+    border: 1px solid vars.$colorpink;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
     background-color: vars.$colorpink;
     color: white;
     font-weight: bold;

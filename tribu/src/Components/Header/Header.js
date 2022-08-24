@@ -27,17 +27,31 @@ function Header() {
       <h1 className="header_title">Meet, Visit, Share it, Repeat</h1>
       <div className="header_buttons">
         {logged && (
-          <button
-            type="button"
-            className="header_connexion-button"
-            onClick={() => {
-              localStorage.removeItem('user');
-              dispatch(logout());
-            }}
-          >
-            Déconnexion
-          </button>
+          <>
+            <Link to="/profil/:id">
+              <button
+                type="button"
+                className="header_profile-button"
+                onClick={() => {
+                  localStorage.removeItem('user');
+                  dispatch(logout());
+                }}
+              >
+                Mon profil
+              </button>
+            </Link>
 
+            <button
+              type="button"
+              className="header_disconnect-button"
+              onClick={() => {
+                localStorage.removeItem('user');
+                dispatch(logout());
+              }}
+            >
+              Déconnexion
+            </button>
+          </>
         )}
         {!logged && (
           <>
