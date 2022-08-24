@@ -55,14 +55,11 @@ function LoginForm() {
         },
       })
       .then((response) => {
-        const { pseudo, token } = response.data;
-        console.log(response);
+        const { pseudo, token } = response.data.token;
+
+        localStorage.setItem('user', JSON.stringify(token));
 
         dispatch(setUser(pseudo, token));
-
-        // localStorage.setItem('user', JSON.stringify({
-        //   pseudo,
-        //   token,
       })
       .catch((error) => {
         console.log(error);
