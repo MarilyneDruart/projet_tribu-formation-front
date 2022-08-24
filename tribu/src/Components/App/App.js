@@ -21,8 +21,8 @@ import '../../styles/styles.scss';
 
 function App() {
   const dispatch = useDispatch();
-  
-  const loading = useSelector((state) => state.cities.loading);
+
+  const citiesLoading = useSelector((state) => state.cities.loading);
   const token = JSON.parse(localStorage.getItem('user'));
 
   useEffect(() => {
