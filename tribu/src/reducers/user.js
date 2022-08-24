@@ -10,7 +10,6 @@ import {
 export const initialState = {
   loginFormisDisplayed: false,
   logged: false,
-  username: '',
   token: '',
 
   loginForm: {
@@ -49,7 +48,6 @@ function user(state = initialState, action = {}) {
       return {
         ...state,
         logged: true,
-        email: action.payload.email,
         token: action.payload.token,
       };
 
@@ -58,11 +56,10 @@ function user(state = initialState, action = {}) {
         ...state,
 
         logged: false,
-        pseudo: '',
         token: '',
 
         loginForm: {
-          email: '',
+          username: '',
           password: '',
         },
       };

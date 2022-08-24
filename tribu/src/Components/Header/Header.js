@@ -27,14 +27,20 @@ function Header() {
         <button
           type="button"
           className="header_connexion-button"
-          onClick={() => dispatch(toggleLoginForm())}
+          onClick={() => {
+            // dispatch(closeInscriptionForm());
+            dispatch(toggleLoginForm());
+          }}
         >
           Connexion
         </button>
         <button
           type="button"
           className="header_inscription-button"
-          onClick={() => dispatch(toggleInscriptionForm())}
+          onClick={() => {
+            // dispatch(closeLoginForm());
+            dispatch(toggleInscriptionForm());
+          }}
         >
           Inscription
         </button>

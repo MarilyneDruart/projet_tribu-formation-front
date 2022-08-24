@@ -24,10 +24,9 @@ export const logout = () => ({
 });
 
 export const SET_USER = 'SET_USER';
-export const setUser = (pseudo, token) => ({
+export const setUser = (token) => ({
   type: SET_USER,
   payload: {
-    pseudo,
     token,
   },
 });
