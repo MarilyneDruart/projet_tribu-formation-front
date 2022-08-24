@@ -38,7 +38,7 @@ function CityInterests({ id, name, slug }) {
       <div className="container">
         {interestsList.map((interests) => (
           <article className="CityInterests_card" key={interests.id}>
-            <Link to={`/ville/${slug}/${id}`}>
+            <Link to={`/ville/${slug}/${interests.id}`}>
               <div className="CityInterests_header">
                 <img src={interests.image} alt={interests.name} />
               </div>
