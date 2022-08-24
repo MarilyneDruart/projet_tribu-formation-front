@@ -23,7 +23,6 @@ function CityInterests({ id, name, slug }) {
   }, []);
 
   const interestsList = useSelector((state) => state.interests.list);
-  console.log(interestsList);
 
   if (interestsLoading) {
     return <Loading />;
@@ -44,11 +43,11 @@ function CityInterests({ id, name, slug }) {
                 <img src={interests.image} alt={interests.title} />
               </div>
               <div className="CityInterests_content">
-                <span className={`CityInterests_tag CityInterests_tag--${interests.category.name}`}>{interests.category.name}</span>
+                <span className={`CityInterests_tag CityInterests_tag--${interests.category.name}`}>{interests.category.map((category) => category.name)}</span>
                 <h4 className="CityInterests_title">{interests.title}</h4>
                 <p className="CityInterests_content">{interests.content}</p>
                 <div className="CityInterests_user">
-                  <img className="CityInterests_user-img" src="#" alt="" />
+                  <img className="CityInterests_user-img" src="#" alt="auteur du post" />
                   <div className="CityInterests_user-info">
                     <h5>
                       {interests.user.firstname}
