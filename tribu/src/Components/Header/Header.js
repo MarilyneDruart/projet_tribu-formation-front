@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { toggleInscriptionForm, closeInscriptionForm } from '../../actions/inscriptionForm';
-import { toggleLoginForm, closeLoginForm } from '../../actions/loginForm';
+import { toggleLoginForm, closeLoginForm, logout } from '../../actions/loginForm';
 import NewAccountForm from '../NewAccountForm/NewAccountForm';
 import LoginForm from '../LoginForm/LoginForm';
 
@@ -30,7 +30,10 @@ function Header() {
           <button
             type="button"
             className="header_connexion-button"
-            // onClick={}
+            onClick={() => {
+              localStorage.removeItem('user');
+              dispatch(logout());
+            }}
           >
             Déconnexion
           </button>
