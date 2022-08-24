@@ -31,8 +31,7 @@ function CityInterests({ id, name, slug }) {
     <div className="CityInterests">
       <h2>
         Intérêts partagés par la communauté pour
-      </h2>
-      <h2>
+        {' '}
         {name}
       </h2>
       <div className="container">
@@ -40,17 +39,21 @@ function CityInterests({ id, name, slug }) {
           <article className="CityInterests_card" key={interests.id}>
             <Link to={`/ville/${slug}/${interests.id}`}>
               <div className="CityInterests_header">
-                <img src={interests.image} alt={interests.name} />
+                <img src={interests.image} alt={interests.title} />
               </div>
               <div className="CityInterests_content">
-                <span className="CityInterests_tag CityInterests_tag--category">Catégorie</span>
+                <span className={`CityInterests_tag CityInterests_tag--${interests.category.name}`}>{interests.category.name}</span>
                 <h4 className="CityInterests_title">{interests.title}</h4>
                 <p className="CityInterests_content">{interests.content}</p>
                 <div className="CityInterests_user">
-                  <img className="CityInterests_user-img" src="#" alt="Nom du user à dynamiser" />
+                  <img className="CityInterests_user-img" src="#" alt="" />
                   <div className="CityInterests_user-info">
-                    <h5>Nom du user</h5>
-                    <small>Date de publication</small>
+                    <h5>
+                      {interests.user.firstname}
+                      {' '}
+                      {interests.user.lastname}
+                    </h5>
+                    <small>{interests.createdAt}</small>
                   </div>
                 </div>
               </div>
