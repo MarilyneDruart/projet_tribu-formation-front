@@ -7,7 +7,6 @@ import '../../styles/styles.scss';
 function Interest() {
   const { id } = useParams();
   const interestsList = useSelector((state) => state.interests.list);
-  console.log(interestsList);
 
   const currentInterest = interestsList.find((interest) => interest.id === Number(id));
 
