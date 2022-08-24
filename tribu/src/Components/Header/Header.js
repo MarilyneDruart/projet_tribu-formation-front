@@ -9,6 +9,7 @@ import LoginForm from '../LoginForm/LoginForm';
 
 import '../../styles/styles.scss';
 import logo from '../../assets/images/logo.png';
+import slogan from '../../assets/images/slogan.png';
 
 function Header() {
   const dispatch = useDispatch();
@@ -24,7 +25,7 @@ function Header() {
       <Link to="/">
         <img src={logo} className="header_logo" alt="Logo Tribu" />
       </Link>
-      <h1 className="header_title">Meet, Visit, Share it, Repeat</h1>
+      <img src={slogan} className="header_title" alt="Slogan Tribu" />
       <div className="header_buttons">
         {logged && (
           <>
