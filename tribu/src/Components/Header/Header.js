@@ -2,8 +2,8 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { toggleInscriptionForm } from '../../actions/inscriptionForm';
-import { toggleLoginForm } from '../../actions/loginForm';
+import { toggleInscriptionForm, closeInscriptionForm } from '../../actions/inscriptionForm';
+import { toggleLoginForm, closeLoginForm } from '../../actions/loginForm';
 import NewAccountForm from '../NewAccountForm/NewAccountForm';
 import LoginForm from '../LoginForm/LoginForm';
 
@@ -42,7 +42,7 @@ function Header() {
               type="button"
               className="header_connexion-button"
               onClick={() => {
-                // dispatch(closeInscriptionForm());
+                dispatch(closeInscriptionForm());
                 dispatch(toggleLoginForm());
               }}
             >
@@ -53,7 +53,7 @@ function Header() {
               type="button"
               className="header_inscription-button"
               onClick={() => {
-                // dispatch(closeLoginForm());
+                dispatch(closeLoginForm());
                 dispatch(toggleInscriptionForm());
               }}
             >

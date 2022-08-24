@@ -45,11 +45,6 @@ function LoginForm() {
   });
 
   const onSubmit = (data) => {
-    // { logged
-    //   ? dispatch(closeLoginForm())
-    //   : 'email ou mot de passe inconnu'
-    // };
-
     axios
       .post('http://svitlana-burlak-kuzoski.vpnuser.lan:8000/api/login_check', data, {
         headers: {
@@ -62,8 +57,8 @@ function LoginForm() {
         localStorage.setItem('user', JSON.stringify({
           token,
         }));
-
         dispatch(setUser(token));
+        dispatch(closeLoginForm());
       })
       .catch((error) => {
         console.log(error);
