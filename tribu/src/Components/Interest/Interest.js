@@ -6,21 +6,11 @@ import '../../styles/styles.scss';
 
 function Interest() {
   const { id } = useParams();
-  console.log(id);
+  const interestsList = useSelector((state) => state.interests.list);
+  console.log(interestsList);
 
-  const findInterest = (interestsList, searchedId) => {
-    const interest = interestsList.find((testedInterest) => testedInterest.id === searchedId);
-    console.log(interestsList);
-    console.log(interest);
-    console.log(searchedId);
+  const currentInterest = interestsList.find((interest) => interest.id === Number(id));
 
-    if (id !== searchedId) {
-      <Navigate to="/NotFound" replace />;
-    }
-    return interest;
-  };
-
-  const currentInterest = useSelector((state) => findInterest(state.interests.list, id));
   console.log(currentInterest);
 
   if (!currentInterest) {
