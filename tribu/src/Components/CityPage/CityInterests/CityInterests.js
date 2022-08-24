@@ -5,9 +5,11 @@ import PropTypes from 'prop-types';
 import '../../../styles/styles.scss';
 import axios from 'axios';
 import { setInterestsList } from '../../../actions/interests';
+import Loading from '../../Loading/Loading';
 
 function CityInterests({ id, name, slug }) {
   const dispatch = useDispatch();
+  const interestsLoading = useSelector((state) => state.interests.loading);
 
   useEffect(() => {
     axios
@@ -23,9 +25,9 @@ function CityInterests({ id, name, slug }) {
   const interestsList = useSelector((state) => state.interests.list);
   console.log(interestsList);
 
-  // if (interestsList.length === 0) {
-  //   return <Navigate to="/error" replace />;
-  // }
+  if (interestsLoading) {
+    return <Loading />;
+  }
 
   return (
     <div className="CityInterests">
