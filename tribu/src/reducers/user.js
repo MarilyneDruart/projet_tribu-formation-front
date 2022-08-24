@@ -2,7 +2,6 @@ import {
   CLOSE_LOGIN_FORM,
   TOGGLE_LOGIN_FORM,
   OPEN_LOGIN_FORM,
-  LOGIN,
   LOGOUT,
   SET_USER,
 } from '../actions/loginForm';
@@ -36,12 +35,6 @@ function user(state = initialState, action = {}) {
       return {
         ...state,
         loginFormIsDisplayed: false,
-      };
-
-    case LOGIN:
-      return {
-        ...state,
-        logged: true,
       };
 
     case SET_USER:

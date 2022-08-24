@@ -10,7 +10,6 @@ import axios from 'axios';
 import '../../styles/styles.scss';
 import {
   closeLoginForm,
-  login,
   // LOGOUT,
   setUser,
 } from '../../actions/loginForm';
@@ -28,7 +27,7 @@ const validationSchema = yup.object({
 }).required();
 
 function LoginForm() {
-  // const { username, password } = useSelector((state) => state.user.loginForm);
+  // const logged = useSelector((state) => state.user.logged);
   const dispatch = useDispatch();
 
   const {
@@ -46,7 +45,10 @@ function LoginForm() {
   });
 
   const onSubmit = (data) => {
-    dispatch(login());
+    // { logged
+    //   ? dispatch(closeLoginForm())
+    //   : 'email ou mot de passe inconnu'
+    // };
 
     axios
       .post('http://svitlana-burlak-kuzoski.vpnuser.lan:8000/api/login_check', data, {
