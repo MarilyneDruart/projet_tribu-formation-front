@@ -146,7 +146,7 @@ function NewAccountForm() {
         />
         <p className="new-account_error-message">{errors.passwordConfirm?.message}</p>
 
-        <input
+        {/* <input
           {...register('avatar')}
           className="new-account_avatar"
           name="avatar"
@@ -154,7 +154,7 @@ function NewAccountForm() {
           placeholder="Avatar"
           accept="image/png, image/jpeg"
         />
-        <p className="new-account_error-message">{errors.avatar?.message}</p>
+        <p className="new-account_error-message">{errors.avatar?.message}</p> */}
 
         <input className="new-account_submit" type="submit" />
       </form>
