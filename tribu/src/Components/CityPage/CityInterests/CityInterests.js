@@ -1,5 +1,5 @@
 import { React, useEffect } from 'react';
-import { Link, Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import '../../../styles/styles.scss';
@@ -11,7 +11,7 @@ function CityInterests({ id, name, slug }) {
 
   useEffect(() => {
     axios
-      .get(`http://pierre-henri-kocan-server.eddi.cloud/projet-reseau-social-back/public/api/cities/${id}`)
+      .get(`http://lola-costa.vpnuser.lan:8000/api/cities/${id}`)
       .then((response) => {
         dispatch(setInterestsList(response.data.posts));
       })
@@ -23,9 +23,9 @@ function CityInterests({ id, name, slug }) {
   const interestsList = useSelector((state) => state.interests.list);
   console.log(interestsList);
 
-  if (interestsList.length === 0) {
-    return <Navigate to="/error" replace />;
-  }
+  // if (interestsList.length === 0) {
+  //   return <Navigate to="/error" replace />;
+  // }
 
   return (
     <div className="CityInterests">

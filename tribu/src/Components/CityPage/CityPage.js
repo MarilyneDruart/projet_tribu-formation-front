@@ -10,14 +10,18 @@ function CityPage() {
 
   const findCity = (citiesList, searchedSlug) => {
     const city = citiesList.find((testedCity) => testedCity.slug === searchedSlug);
+    if (slug !== searchedSlug) {
+      <Navigate to="/NotFound" replace />;
+    }
+
     return city;
   };
 
   const currentCity = useSelector((state) => findCity(state.cities.list, slug));
   console.log(currentCity);
 
-  if (!findCity) {
-    return <Navigate to="/NotFound" replace />;
+  if (!currentCity) {
+    return <Navigate to="/PageIntrouvable" replace />;
   }
 
   return (
