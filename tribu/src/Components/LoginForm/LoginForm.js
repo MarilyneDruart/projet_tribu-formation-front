@@ -60,10 +60,6 @@ function LoginForm() {
         localStorage.setItem('user', JSON.stringify(token));
 
         dispatch(setUser(pseudo, token));
-
-        // localStorage.setItem('user', JSON.stringify({
-        //   pseudo,
-        //   token,
       })
       .catch((error) => {
         console.log(error);
