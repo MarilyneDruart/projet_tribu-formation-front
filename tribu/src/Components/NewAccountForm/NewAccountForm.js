@@ -9,7 +9,7 @@ import axios from 'axios';
 // Imports locaux
 import '../../styles/styles.scss';
 import { closeInscriptionForm } from '../../actions/inscriptionForm';
-import { openLoginForm, setUser } from '../../actions/loginForm';
+import { openLoginForm } from '../../actions/loginForm';
 
 // Validation pattern of the user datas
 const validationSchema = yup.object({
@@ -72,6 +72,7 @@ function NewAccountForm() {
 
   const onSubmit = (data) => {
     console.log(data);
+
     axios
       .post('http://svitlana-burlak-kuzoski.vpnuser.lan:8000/api/users', data, {
         headers: {
@@ -80,12 +81,7 @@ function NewAccountForm() {
       })
       .then((response) => {
         console.log(response);
-        const { token } = response.data;
-
-        localStorage.setItem('user', JSON.stringify({
-          token,
-        }));
-        dispatch(setUser(token));
+        console.log('Votre compte a été créé');
         dispatch(closeInscriptionForm());
       })
       .catch((error) => {
