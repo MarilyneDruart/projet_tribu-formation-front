@@ -10,7 +10,6 @@ import axios from 'axios';
 import '../../styles/styles.scss';
 import {
   closeLoginForm,
-  // LOGOUT,
   setUser,
 } from '../../actions/loginForm';
 import { openInscriptionForm } from '../../actions/inscriptionForm';
@@ -88,7 +87,7 @@ function LoginForm() {
           type="email"
           placeholder="Ton email"
         />
-        <p className="Login_error-message">{errors.email?.message}</p>
+        <p className="Login_error-message">{errors.username?.message}</p>
 
         <input
           {...register('password')}

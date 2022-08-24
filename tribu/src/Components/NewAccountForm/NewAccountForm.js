@@ -4,21 +4,22 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useDispatch } from 'react-redux';
+import axios from 'axios';
 
 // Imports locaux
 import '../../styles/styles.scss';
 import { closeInscriptionForm } from '../../actions/inscriptionForm';
-import { openLoginForm } from '../../actions/loginForm';
+import { openLoginForm, setUser } from '../../actions/loginForm';
 
 // Validation pattern of the user datas
 const validationSchema = yup.object({
-  firstName: yup
+  firstname: yup
     .string()
     .trim()
     .min(3, 'Trop court !')
     .max(30, 'Trop long !')
     .required('Le prénom est obligatoire'),
-  lastName: yup
+  lastname: yup
     .string()
     .trim()
     .min(3, 'Trop court !')
@@ -32,8 +33,8 @@ const validationSchema = yup.object({
     .string()
     .email('L\'email est invalide')
     .required('L\'email est obligatoire'),
-  avatar: yup.string(),
-  description: yup.string(),
+  // avatar: yup.string(),
+  presentation: yup.string(),
   password: yup
     .string()
     .required('Le mot de passe est obligatoire')
@@ -47,6 +48,8 @@ const validationSchema = yup.object({
 }).required();
 
 function NewAccountForm() {
+  const dispatch = useDispatch();
+
   const {
     register,
     handleSubmit,
@@ -56,12 +59,12 @@ function NewAccountForm() {
     resolver: yupResolver(validationSchema),
     mode: 'onBlur',
     defaultValues: {
-      firstName: '',
-      lastName: '',
+      firstname: '',
+      lastname: '',
       city: '',
       email: '',
-      avatar: '',
-      description: '',
+      // avatar: '',
+      presentation: '',
       password: '',
       passwordConfirm: '',
     },
@@ -69,10 +72,27 @@ function NewAccountForm() {
 
   const onSubmit = (data) => {
     console.log(data);
+    axios
+      .post('http://svitlana-burlak-kuzoski.vpnuser.lan:8000/api/users', data, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+      .then((response) => {
+        console.log(response);
+        const { token } = response.data;
+
+        localStorage.setItem('user', JSON.stringify({
+          token,
+        }));
+        dispatch(setUser(token));
+        dispatch(closeInscriptionForm());
+      })
+      .catch((error) => {
+        console.log(error);
+      });
     reset();
   };
-
-  const dispatch = useDispatch();
 
   return (
     <div className="new-account">
@@ -91,20 +111,20 @@ function NewAccountForm() {
         onSubmit={handleSubmit(onSubmit)}
       >
         <input
-          {...register('firstName')}
+          {...register('firstname')}
           className="new-account_field"
           type="text"
           placeholder="Ton prénom"
         />
-        <p className="new-account_error-message">{errors.firstName?.message}</p>
+        <p className="new-account_error-message">{errors.firstname?.message}</p>
 
         <input
-          {...register('lastName')}
+          {...register('lastname')}
           className="new-account_field"
           type="text"
           placeholder="Ton nom"
         />
-        <p className="new-account_error-message">{errors.lastName?.message}</p>
+        <p className="new-account_error-message">{errors.lastname?.message}</p>
 
         <input
           {...register('city')}
@@ -115,7 +135,7 @@ function NewAccountForm() {
         <p className="new-account_error-message">{errors.city?.message}</p>
 
         <input
-          {...register('username')}
+          {...register('email')}
           className="new-account_field"
           type="email"
           placeholder="Ton email"
@@ -123,12 +143,12 @@ function NewAccountForm() {
         <p className="new-account_error-message">{errors.email?.message}</p>
 
         <textarea
-          {...register('description')}
+          {...register('presentation')}
           className="new-account_field"
           placeholder="Parle-nous de toi"
           rows="3"
         />
-        <p className="new-account_error-message">{errors.description?.message}</p>
+        <p className="new-account_error-message">{errors.presentation?.message}</p>
 
         <input
           {...register('password')}
