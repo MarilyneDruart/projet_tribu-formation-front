@@ -10,8 +10,6 @@ import axios from 'axios';
 import '../../styles/styles.scss';
 import {
   closeLoginForm,
-  login,
-  // LOGOUT,
   setUser,
 } from '../../actions/loginForm';
 import { openInscriptionForm } from '../../actions/inscriptionForm';
@@ -28,7 +26,7 @@ const validationSchema = yup.object({
 }).required();
 
 function LoginForm() {
-  // const { username, password } = useSelector((state) => state.user.loginForm);
+  // const logged = useSelector((state) => state.user.logged);
   const dispatch = useDispatch();
 
   const {
@@ -46,23 +44,20 @@ function LoginForm() {
   });
 
   const onSubmit = (data) => {
-    dispatch(login());
-
     axios
-      .post('http://svitlana-burlak-kuzoski.vpnuser.lan:8000/api/login_check', data, {
+      .post('http://lola-costa.vpnuser.lan:8000/api/login_check', data, {
         headers: {
           'Content-Type': 'application/json',
         },
       })
       .then((response) => {
-        const { pseudo, token } = response.data;
-        console.log(response);
+        const { token } = response.data;
 
-        dispatch(setUser(pseudo, token));
-
-        // localStorage.setItem('user', JSON.stringify({
-        //   pseudo,
-        //   token,
+        localStorage.setItem('user', JSON.stringify({
+          token,
+        }));
+        dispatch(setUser(token));
+        dispatch(closeLoginForm());
       })
       .catch((error) => {
         console.log(error);
@@ -92,7 +87,7 @@ function LoginForm() {
           type="email"
           placeholder="Ton email"
         />
-        <p className="Login_error-message">{errors.email?.message}</p>
+        <p className="Login_error-message">{errors.username?.message}</p>
 
         <input
           {...register('password')}
