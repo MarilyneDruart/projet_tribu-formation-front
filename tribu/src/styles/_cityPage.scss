@@ -1,22 +1,19 @@
 @use 'vars';
 
 .CityPage {
-  position: relative;
   color: #fff;
   max-width: 100%;
  
 
-  &_img{
-    display: block;
-    max-width: 100%;
-    margin: auto;
-    clip-path: polygon(0 25%, 100% 25%, 100% 60%, 0 60%);
-  }
+  // &_img{
+  //   display: block;
+  //   max-width: 100%;
+  //   margin: auto;
+  //   clip-path: polygon(0 25%, 100% 25%, 100% 60%, 0 60%);
+  // }
 
   &_content {
-    position: absolute;
     width: 100%;
-    bottom: 45%;
     padding: 0.2rem;
     text-align: center;
     background: rgba(0,0,0,0.5);

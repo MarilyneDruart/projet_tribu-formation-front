@@ -74,7 +74,7 @@ function NewAccountForm() {
     console.log(data);
 
     axios
-      .post('http://svitlana-burlak-kuzoski.vpnuser.lan:8000/api/users', data, {
+      .post('http://lola-costa.vpnuser.lan:8000/api/users', data, {
         headers: {
           'Content-Type': 'application/json',
         },

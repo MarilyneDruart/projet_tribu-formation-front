@@ -45,7 +45,7 @@ function LoginForm() {
 
   const onSubmit = (data) => {
     axios
-      .post('http://svitlana-burlak-kuzoski.vpnuser.lan:8000/api/login_check', data, {
+      .post('http://lola-costa.vpnuser.lan:8000/api/login_check', data, {
         headers: {
           'Content-Type': 'application/json',
         },
