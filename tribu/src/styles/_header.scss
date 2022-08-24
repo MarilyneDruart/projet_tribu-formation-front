@@ -13,11 +13,23 @@
     height: vars.$size8;
   }
 
+  &_buttons {
+    display: flex;
+    flex-direction: column;
+    
+  }
+
   &_inscription-button {
+    all: unset;
+    text-decoration: underline;
+    padding: vars.$size1;
+  }
+
+  &_connexion-button {
     border: 1px solid vars.$color5;
     border-radius: vars.$size4;
-    background-color: vars.$color5;
-    color: vars.$color1;
+    background-color: vars.$colorpink;
+    color: white;
     font-weight: bold;
     padding: vars.$size1;
   }

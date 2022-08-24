@@ -23,21 +23,22 @@ function Header() {
         <img src={logo} className="header_logo" alt="Logo Tribu" />
       </Link>
       <h1 className="header_title">Meet, Visit, Share it, Repeat</h1>
-      <button
-        type="button"
-        className="header_connexion-button"
-        onClick={() => dispatch(toggleLoginForm())}
-      >
-        Connexion
-      </button>
-      <button
-        type="button"
-        className="header_inscription-button"
-        onClick={() => dispatch(toggleInscriptionForm())}
-      >
-        Inscription
-      </button>
-
+      <div className="header_buttons">
+        <button
+          type="button"
+          className="header_connexion-button"
+          onClick={() => dispatch(toggleLoginForm())}
+        >
+          Connexion
+        </button>
+        <button
+          type="button"
+          className="header_inscription-button"
+          onClick={() => dispatch(toggleInscriptionForm())}
+        >
+          Inscription
+        </button>
+      </div>
       {inscriptionFormIsDisplayed && <NewAccountForm />}
       {loginFormIsDisplayed && <LoginForm />}
 
