@@ -22,6 +22,16 @@ function Carousel() {
 
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  const prev = () => {
+    const index = currentSlide > 0 ? currentSlide - 1 : slides.length - 1;
+    setCurrentSlide(index);
+  };
+
+  const next = () => {
+    const index = currentSlide < slides.length - 1 ? currentSlide + 1 : 0;
+    setCurrentSlide(index);
+  };
+
   useEffect(() => {
     const slideInterval = setInterval(() => {
       // eslint-disable-next-line no-confusing-arrow
@@ -43,7 +53,7 @@ function Carousel() {
             <CarouselItem slide={slide} key={slide} />
           ))}
         </div>
-        <CarouselControls />
+        <CarouselControls prev={prev} next={next} />
       </div>
     </div>
   );

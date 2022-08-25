@@ -19,6 +19,7 @@
   margin: 0 auto;
   overflow: hidden;
   max-width: 900px;
+  position: relative;
 
   &_inner {
     white-space: nowrap;
@@ -38,4 +39,24 @@
     // background-size: cover;
     // background-repeat: no-repeat;
   }
+
+  &_control {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    display: inline-block;
+    position: absolute;
+    height: 50px;
+    width: 30px;
+    top: calc(50% - 120px);
+    color: #f3f3f3;
+    cursor: pointer;
+  }
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
 }
