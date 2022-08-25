@@ -1,3 +1,5 @@
+@use 'vars';
+
 *,
 ::before,
 ::after {
@@ -11,4 +13,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  & img {
+    width: 100%;
+    height: 300px;
+    background-color: vars.$color7;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 }
