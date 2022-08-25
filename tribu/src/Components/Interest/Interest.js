@@ -1,19 +1,20 @@
 import { React } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import '../../styles/styles.scss';
 
 function Interest() {
-  const { slug } = useParams();
+  const { id } = useParams();
+  const interestsList = useSelector((state) => state.interests.list);
 
-  const findInterest = (interestsList, searchedSlug) => {
-    const interest = interestsList.find((testedInterest) => testedInterest.slug === searchedSlug);
-    return interest;
-  };
+  const currentInterest = interestsList.find((interest) => interest.id === Number(id));
 
-  const currentInterest = useSelector((state) => findInterest(state.interests.list, slug));
   console.log(currentInterest);
+
+  if (!currentInterest) {
+    return <Navigate to="/PageIntrouvable" replace />;
+  }
 
   return (
     <div className="Interest">
