@@ -8,6 +8,7 @@ import img4 from '../../../assets/images/carousel/4.jpg';
 import img5 from '../../../assets/images/carousel/5.jpg';
 import img6 from '../../../assets/images/carousel/6.jpg';
 import CarouselItem from './CarouselItem/CarouselItem';
+import CarouselControls from './CarouselControls/CarouselControls';
 
 function Carousel() {
   const slides = [
@@ -42,6 +43,7 @@ function Carousel() {
             <CarouselItem slide={slide} key={slide} />
           ))}
         </div>
+        <CarouselControls />
       </div>
     </div>
   );
