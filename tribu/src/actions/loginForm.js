@@ -13,21 +13,15 @@ export const openLoginForm = () => ({
   type: OPEN_LOGIN_FORM,
 });
 
-export const LOGIN = 'LOGIN';
-export const login = () => ({
-  type: LOGIN,
-});
-
 export const LOGOUT = 'LOGOUT';
 export const logout = () => ({
   type: LOGOUT,
 });
 
 export const SET_USER = 'SET_USER';
-export const setUser = (pseudo, token) => ({
+export const setUser = (token) => ({
   type: SET_USER,
   payload: {
-    pseudo,
     token,
   },
 });

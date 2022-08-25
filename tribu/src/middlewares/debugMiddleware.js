@@ -4,7 +4,6 @@ import { TOGGLE_INSCRIPTION_FORM } from '../actions/inscriptionForm';
 const debugMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case TOGGLE_INSCRIPTION_FORM: {
-      console.log('On a cliqué sur connexion');
       next(action);
       break;
     }
