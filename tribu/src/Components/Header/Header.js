@@ -4,11 +4,14 @@ import { Link } from 'react-router-dom';
 
 import { toggleInscriptionForm, closeInscriptionForm } from '../../actions/inscriptionForm';
 import { toggleLoginForm, closeLoginForm, logout } from '../../actions/loginForm';
+import { toggleInterestForm } from '../../actions/interests';
 import NewAccountForm from '../NewAccountForm/NewAccountForm';
 import LoginForm from '../LoginForm/LoginForm';
+import NewInterestForm from '../NewInterestForm/NewInterestForm';
 
 import '../../styles/styles.scss';
 import logo from '../../assets/images/logo.png';
+import slogan from '../../assets/images/slogan.png';
 
 function Header() {
   const dispatch = useDispatch();
@@ -16,6 +19,7 @@ function Header() {
     (state) => state.inscriptionForm.inscriptionFormIsDisplayed,
   );
   const loginFormIsDisplayed = useSelector((state) => state.user.loginFormIsDisplayed);
+  const interestFormIsDisplayed = useSelector((state) => state.interests.interestFormIsDisplayed);
   const logged = useSelector((state) => state.user.logged);
 
   return (
@@ -24,20 +28,39 @@ function Header() {
       <Link to="/">
         <img src={logo} className="header_logo" alt="Logo Tribu" />
       </Link>
-      <h1 className="header_title">Meet, Visit, Share it, Repeat</h1>
+      <img src={slogan} className="header_title" alt="Slogan Tribu" />
       <div className="header_buttons">
         {logged && (
-          <button
-            type="button"
-            className="header_connexion-button"
-            onClick={() => {
-              localStorage.removeItem('user');
-              dispatch(logout());
-            }}
-          >
-            Déconnexion
-          </button>
+          <>
+            <Link to="/profil/5">
+              <button
+                type="button"
+                className="header_profile-button"
+                onClick={() => { }}
+              >
+                Mon profil
+              </button>
+            </Link>
 
+            <button
+              type="button"
+              className="header_add-button"
+              onClick={() => { dispatch(toggleInterestForm()); }}
+            >
+              Partage une astuce
+            </button>
+
+            <button
+              type="button"
+              className="header_disconnect-button"
+              onClick={() => {
+                localStorage.removeItem('user');
+                dispatch(logout());
+              }}
+            >
+              Déconnexion
+            </button>
+          </>
         )}
         {!logged && (
           <>
@@ -67,6 +90,7 @@ function Header() {
       </div>
       {inscriptionFormIsDisplayed && <NewAccountForm />}
       {loginFormIsDisplayed && <LoginForm />}
+      {interestFormIsDisplayed && <NewInterestForm />}
 
     </div>
   );

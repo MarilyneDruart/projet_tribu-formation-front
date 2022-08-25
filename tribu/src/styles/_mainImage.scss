@@ -7,9 +7,8 @@
   background-image: url('../assets/images/main-image1.jpg');
   background-size: cover;
   background-repeat:no-repeat;
-  background-position: 50%;
- 
- 
+  background-position: 50% 60%;
+  
   &_content {
     position: relative;
     width: 100%;
@@ -26,3 +25,15 @@
     font-weight: bold;
     }
   }
+
+
+//*===========================================*//
+//*               Media Queries               *//
+//*===========================================*//
+
+/* width 700px --> 3000px*/
+@media screen and (min-width: 700px) and (max-width: 3000px) {
+  .MainImage {
+    height: 600px;
+  }
+}
