@@ -21,9 +21,9 @@ function Carousel() {
   return (
     <div className="container">
       <div className="Carousel">
-        <div className="Carousel-inner">
+        <div className="Carousel_inner">
           {slides.map((slide) => (
-            <div className="Carousel-item" key={slide}>
+            <div className="Carousel_item" key={slide}>
               <img src={slide} alt="" />
             </div>
           ))}

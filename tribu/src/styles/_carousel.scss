@@ -9,16 +9,29 @@
 }
 
 .Carousel {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  // min-height: 100vh;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+
+  margin: 0 auto;
+  overflow: hidden;
+  max-width: 900px;
+
+  &_inner {
+    white-space: nowrap;
+  }
+s
+  &_item {
+    display: inline-block;
+    width: 100%;
+  }
 
   & img {
     width: 100%;
     height: 300px;
-    background-color: vars.$color7;
-    background-size: cover;
-    background-repeat: no-repeat;
+    // background-color: vars.$color7;
+    // background-size: cover;
+    // background-repeat: no-repeat;
   }
 }
