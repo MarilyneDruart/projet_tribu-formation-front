@@ -10,7 +10,7 @@ import axios from 'axios';
 import '../../styles/styles.scss';
 import {
   closeLoginForm,
-  setUser,
+  setToken,
 } from '../../actions/loginForm';
 import { openInscriptionForm } from '../../actions/inscriptionForm';
 
@@ -56,7 +56,7 @@ function LoginForm() {
         localStorage.setItem('user', JSON.stringify({
           token,
         }));
-        dispatch(setUser(token));
+        dispatch(setToken(token));
         dispatch(closeLoginForm());
       })
       .catch((error) => {

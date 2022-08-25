@@ -3,7 +3,7 @@ import {
   TOGGLE_LOGIN_FORM,
   OPEN_LOGIN_FORM,
   LOGOUT,
-  SET_USER,
+  SET_TOKEN,
 } from '../actions/loginForm';
 
 export const initialState = {
@@ -37,7 +37,7 @@ function user(state = initialState, action = {}) {
         loginFormIsDisplayed: false,
       };
 
-    case SET_USER:
+    case SET_TOKEN:
       return {
         ...state,
         logged: true,
