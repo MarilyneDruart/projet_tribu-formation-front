@@ -1,4 +1,9 @@
-import { React, useState, useEffect } from 'react';
+import {
+  React,
+  useState,
+  useEffect,
+  useRef,
+} from 'react';
 
 import '../../../styles/styles.scss';
 import img1 from '../../../assets/images/carousel/1.jpg';
@@ -21,25 +26,39 @@ function Carousel() {
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
+  const slideInterval = useRef();
+
+  const stopSlideTimer = () => {
+    if (slideInterval.current) {
+      clearInterval(slideInterval.current);
+    }
+  };
+
+  const startSlideTimer = () => {
+    stopSlideTimer();
+    slideInterval.current = setInterval(() => {
+      // eslint-disable-next-line no-confusing-arrow
+      setCurrentSlide((slide) => slide < slides.length - 1 ? slide + 1 : 0);
+      console.log('interval');
+    }, 3000);
+  };
 
   const prev = () => {
+    startSlideTimer();
     const index = currentSlide > 0 ? currentSlide - 1 : slides.length - 1;
     setCurrentSlide(index);
   };
 
   const next = () => {
+    startSlideTimer();
     const index = currentSlide < slides.length - 1 ? currentSlide + 1 : 0;
     setCurrentSlide(index);
   };
 
   useEffect(() => {
-    const slideInterval = setInterval(() => {
-      // eslint-disable-next-line no-confusing-arrow
-      setCurrentSlide((slide) => slide < slides.length - 1 ? slide + 1 : 0);
-      console.log('interval');
-    }, 3000);
+    startSlideTimer();
 
-    return () => clearInterval(slideInterval);
+    return () => stopSlideTimer();
   }, []);
 
   return (
@@ -50,7 +69,12 @@ function Carousel() {
           style={{ transform: `translateX(${-currentSlide * 100}%)` }}
         >
           {slides.map((slide) => (
-            <CarouselItem slide={slide} key={slide} />
+            <CarouselItem
+              slide={slide}
+              key={slide}
+              stopSlide={stopSlideTimer}
+              startSlide={startSlideTimer}
+            />
           ))}
         </div>
         <CarouselControls prev={prev} next={next} />
