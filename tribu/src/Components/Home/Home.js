@@ -4,12 +4,14 @@ import { Link } from 'react-router-dom';
 
 import '../../styles/styles.scss';
 import MainImage from '../MainImage/MainImage';
+import Carousel from './Carousel/Carousel';
 
 function Home() {
   const citiesList = useSelector((state) => state.cities.list);
 
   return (
     <div className="Home">
+      <Carousel />
       <MainImage />
       <h2 className="Home_title">Choisis ta ville </h2>
       <div className="Home_cards-list">
