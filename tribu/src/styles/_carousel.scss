@@ -9,10 +9,10 @@
 }
 
 .Carousel {
-  // min-height: 100vh;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   margin: 0 auto;
   overflow: hidden;
@@ -20,6 +20,7 @@
 
   &_inner {
     white-space: nowrap;
+    transition: ease 1s;
   }
 s
   &_item {
