@@ -8,17 +8,17 @@
   box-sizing: border-box;
 }
 
-.container {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+// .container {
+//   min-height: 100vh;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
 
 .Carousel {
   margin: 0 auto;
   overflow: hidden;
-  max-width: 900px;
+  // max-width: 900px;
   position: relative;
 
   &_inner {

@@ -68,25 +68,25 @@ function Carousel() {
   }, []);
 
   return (
-    <div className="container">
-      <div className="Carousel">
-        <div
-          className="Carousel_inner"
-          style={{ transform: `translateX(${-currentSlide * 100}%)` }}
-        >
-          {slides.map((slide) => (
-            <CarouselItem
-              slide={slide}
-              key={slide}
-              stopSlide={stopSlideTimer}
-              startSlide={startSlideTimer}
-            />
-          ))}
-        </div>
-        <CarouselIndicators slides={slides} currentIndex={currentSlide} switchIndex={switchIndex} />
-        <CarouselControls prev={prev} next={next} />
+    // <div className="container">
+    <div className="Carousel">
+      <div
+        className="Carousel_inner"
+        style={{ transform: `translateX(${-currentSlide * 100}%)` }}
+      >
+        {slides.map((slide) => (
+          <CarouselItem
+            slide={slide}
+            key={slide}
+            stopSlide={stopSlideTimer}
+            startSlide={startSlideTimer}
+          />
+        ))}
       </div>
+      <CarouselIndicators slides={slides} currentIndex={currentSlide} switchIndex={switchIndex} />
+      <CarouselControls prev={prev} next={next} />
     </div>
+    // </div>
   );
 }
 
