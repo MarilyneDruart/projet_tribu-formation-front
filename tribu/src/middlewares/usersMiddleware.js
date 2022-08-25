@@ -1,7 +1,8 @@
 import axios from 'axios';
 import {
   FETCH_USER,
-} from '../actions/cities';
+  setUser,
+} from '../actions/user';
 
 const usersMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
