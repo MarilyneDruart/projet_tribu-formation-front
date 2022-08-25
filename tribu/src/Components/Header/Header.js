@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom';
 
 import { toggleInscriptionForm, closeInscriptionForm } from '../../actions/inscriptionForm';
 import { toggleLoginForm, closeLoginForm, logout } from '../../actions/loginForm';
+import { toggleInterestForm } from '../../actions/interests';
 import NewAccountForm from '../NewAccountForm/NewAccountForm';
 import LoginForm from '../LoginForm/LoginForm';
+import NewInterestForm from '../NewInterestForm/NewInterestForm';
 
 import '../../styles/styles.scss';
 import logo from '../../assets/images/logo.png';
@@ -17,6 +19,7 @@ function Header() {
     (state) => state.inscriptionForm.inscriptionFormIsDisplayed,
   );
   const loginFormIsDisplayed = useSelector((state) => state.user.loginFormIsDisplayed);
+  const interestFormIsDisplayed = useSelector((state) => state.interests.interestFormIsDisplayed);
   const logged = useSelector((state) => state.user.logged);
 
   return (
@@ -38,6 +41,14 @@ function Header() {
                 Mon profil
               </button>
             </Link>
+
+            <button
+              type="button"
+              className="header_add-button"
+              onClick={() => { dispatch(toggleInterestForm()); }}
+            >
+              Partage une astuce
+            </button>
 
             <button
               type="button"
@@ -79,6 +90,7 @@ function Header() {
       </div>
       {inscriptionFormIsDisplayed && <NewAccountForm />}
       {loginFormIsDisplayed && <LoginForm />}
+      {interestFormIsDisplayed && <NewInterestForm />}
 
     </div>
   );
