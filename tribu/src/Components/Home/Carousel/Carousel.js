@@ -14,6 +14,7 @@ import img5 from '../../../assets/images/carousel/5.jpg';
 import img6 from '../../../assets/images/carousel/6.jpg';
 import CarouselItem from './CarouselItem/CarouselItem';
 import CarouselControls from './CarouselControls/CarouselControls';
+import CarouselIndicators from './CarouselIndicators/CarouselIndicators';
 
 function Carousel() {
   const slides = [
@@ -55,6 +56,11 @@ function Carousel() {
     setCurrentSlide(index);
   };
 
+  const switchIndex = (index) => {
+    startSlideTimer();
+    setCurrentSlide(index);
+  };
+
   useEffect(() => {
     startSlideTimer();
 
@@ -77,6 +83,7 @@ function Carousel() {
             />
           ))}
         </div>
+        <CarouselIndicators slides={slides} currentIndex={currentSlide} switchIndex={switchIndex} />
         <CarouselControls prev={prev} next={next} />
       </div>
     </div>
