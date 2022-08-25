@@ -29,18 +29,15 @@ function Header() {
       <div className="header_buttons">
         {logged && (
           <>
-            {/* <Link to={`/profil/${profil.slug}`}> */}
-            <button
-              type="button"
-              className="header_profile-button"
-              onClick={() => {
-                localStorage.removeItem('user');
-                dispatch(logout());
-              }}
-            >
-              Mon profil
-            </button>
-            {/* </Link> */}
+            <Link to="/profil/5">
+              <button
+                type="button"
+                className="header_profile-button"
+                onClick={() => { }}
+              >
+                Mon profil
+              </button>
+            </Link>
 
             <button
               type="button"
