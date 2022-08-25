@@ -8,12 +8,14 @@
   box-sizing: border-box;
 }
 
-.Carousel {
+.container {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+}
 
+.Carousel {
   margin: 0 auto;
   overflow: hidden;
   max-width: 900px;
@@ -22,10 +24,11 @@
     white-space: nowrap;
     transition: ease 1s;
   }
-s
+
   &_item {
     display: inline-block;
     width: 100%;
+    height: 500px;
   }
 
   & img {

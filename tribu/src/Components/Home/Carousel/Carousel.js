@@ -1,4 +1,4 @@
-import { React, useEffect, useState } from 'react';
+import { React, useState, useEffect } from 'react';
 
 import '../../../styles/styles.scss';
 import img1 from '../../../assets/images/carousel/1.jpg';
@@ -32,14 +32,16 @@ function Carousel() {
   }, []);
 
   return (
-    <div className="Carousel">
-      <div
-        className="Carousel_inner"
-        style={{ transform: `translateX(${-currentSlide * 100}%)` }}
-      >
-        {slides.map((slide) => (
-          <CarouselItem slide={slide} key={slide} />
-        ))}
+    <div className="container">
+      <div className="Carousel">
+        <div
+          className="Carousel_inner"
+          style={{ transform: `translateX(${-currentSlide * 100}%)` }}
+        >
+          {slides.map((slide) => (
+            <CarouselItem slide={slide} key={slide} />
+          ))}
+        </div>
       </div>
     </div>
   );
