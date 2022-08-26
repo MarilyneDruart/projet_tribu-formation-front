@@ -6,9 +6,10 @@ import '../../../styles/styles.scss';
 function CityImage({ image, name }) {
   return (
     <div className="CityImage">
-      <div style={{ backgroundImage: `url(${image})` }} />
-      <div className="CityImage_content">
-        <h2 className="CityImage_title">{name}</h2>
+      <div className="CityImage_img" style={{ backgroundImage: `url(${image})` }}>
+        <div className="CityImage_content">
+          <h2 className="CityImage_title">{name}</h2>
+        </div>
       </div>
     </div>
   );
