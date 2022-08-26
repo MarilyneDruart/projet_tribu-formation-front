@@ -10,7 +10,6 @@ const citiesMiddleware = (store) => (next) => (action) => {
       axios
         .get('https://pierre-henri-kocan-server.eddi.cloud/projet-reseau-social-back/public/api/cities')
         .then((response) => {
-          console.log(response.data);
           store.dispatch(setCitiesList(response.data));
         })
         .catch((error) => {
