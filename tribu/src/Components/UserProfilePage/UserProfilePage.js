@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
-import { React, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import axios from 'axios';
-import { setUser } from '../../actions/user';
+import { React } from 'react';
+// import { useDispatch, useSelector } from 'react-redux';
+// import axios from 'axios';
+// import { setUser } from '../../actions/user';
 
 import MainImageProfile from './MainImageProfile';
 
@@ -10,22 +10,22 @@ import MainImageProfile from './MainImageProfile';
 import '../../styles/styles.scss';
 
 function UserProfilePage() {
-  const dispatch = useDispatch();
-  const token = useSelector((state) => state.user.token);
-  console.log(token);
+  // const dispatch = useDispatch();
+  // const token = useSelector((state) => state.user.token);
+  // console.log(token);
 
-  useEffect(() => {
-    axios.defaults.headers.common.Authorization = `bearer ${token}`;
-    axios
-      .get('https://pierre-henri-kocan-server.eddi.cloud/projet-reseau-social-back/public/api/users')
-      .then((response) => {
-        console.log(response);
-        dispatch(setUser(response.data));
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios.defaults.headers.common.Authorization = `bearer ${token}`;
+  //   axios
+  //     .get('https://pierre-henri-kocan-server.eddi.cloud/projet-reseau-social-back/public/api/users')
+  //     .then((response) => {
+  //       console.log(response);
+  //       dispatch(setUser(response.data));
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //     });
+  // }, []);
 
   return (
     <div className="Home">

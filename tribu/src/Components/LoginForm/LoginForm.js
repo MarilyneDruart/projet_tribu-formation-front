@@ -13,6 +13,7 @@ import {
   setToken,
 } from '../../actions/loginForm';
 import { openInscriptionForm } from '../../actions/inscriptionForm';
+import { fetchUser } from '../../actions/user';
 
 // Validation pattern of the user datas
 const validationSchema = yup.object({
@@ -56,8 +57,9 @@ function LoginForm() {
         localStorage.setItem('user', JSON.stringify({
           token,
         }));
-        dispatch(setToken(token));
         dispatch(closeLoginForm());
+        dispatch(setToken(token));
+        dispatch(fetchUser());
       })
       .catch((error) => {
         console.log(error);
