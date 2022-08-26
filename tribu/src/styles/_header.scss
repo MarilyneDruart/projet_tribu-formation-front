@@ -44,8 +44,8 @@
 
   &_profile-button {
     border: 1px solid vars.$colorpink;
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
     border-radius: 100%;
     background-color: vars.$colorpink;
     color: vars.$colorwhite;
@@ -59,86 +59,86 @@
     padding-top: 0.5rem;
   }
 
-.header_icon-button {
-  width: 50px;
-  height: 50px;
-  border: 1px solid vars.$colorpink;
-  background: vars.$colorwhite;
-  border-radius: 25px;
-  overflow: hidden;
-  position: relative;
-  transition: width 0.2s ease-in-out;
-}
-.header_add-button:hover {
-  width: 160px;
-}
-.header_add-button::before,
-.header_add-button::after {
-  transition: width 0.2s ease-in-out, border-radius 0.2s ease-in-out;
-  content: "";
-  position: absolute;
-  height: 4px;
-  width: 10px;
-  top: calc(50% - 2px);
-  background: vars.$colorpink;
-}
-.header_add-button::after {
-  right: 14px;
-  overflow: hidden;
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px;
-}
-.header_add-button::before {
-  left: 14px;
-  border-top-left-radius: 2px;
-  border-bottom-left-radius: 2px;
-}
-.header_icon-button:focus {
-  outline: none;
-}
-.header_button-text {
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-.header_add-button:hover::before,
-.header_add-button:hover::after {
-  width: 4px;
-  border-radius: 2px;
-}
-.header_add-button:hover .header_button-text {
-  opacity: 1;
-}
-.header_add-icon::after,
-.header_add-icon::before {
-  transition: all 0.2s ease-in-out;
-  content: "";
-  position: absolute;
-  height: 20px;
-  width: 2px;
-  top: calc(50% - 10px);
-  background: vars.$colorpink;
-  overflow: hidden;
-}
-.header_add-icon::before {
-  left: 22px;
-  border-top-left-radius: 2px;
-  border-bottom-left-radius: 2px;
-}
-.header_add-icon::after {
-  right: 22px;
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px;
-}
-.header_add-button:hover .header_add-icon::before {
-  left: 15px;
-  height: 4px;
-  top: calc(50% - 2px);
-}
-.header_add-button:hover .header_add-icon::after {
-  right: 15px;
-  height: 4px;
-  top: calc(50% - 2px);
-}
+  &_icon-button {
+    width: 50px;
+    height: 50px;
+    border: 1px solid vars.$colorpink;
+    background: vars.$colorwhite;
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+    transition: width 0.2s ease-in-out;
+  }
+  &_add-button:hover {
+    width: 160px;
+  }
+  &_add-button::before,
+  &_add-button::after {
+    transition: width 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 10px;
+    top: calc(50% - 2px);
+    background: vars.$colorpink;
+  }
+  &_add-button::after {
+    right: 14px;
+    overflow: hidden;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+  }
+  &_add-button::before {
+    left: 14px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+  }
+  &_icon-button:focus {
+    outline: none;
+  }
+  &_button-text {
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  &_add-button:hover::before,
+  &_add-button:hover::after {
+    width: 4px;
+    border-radius: 2px;
+  }
+  &_add-button:hover &_button-text {
+    opacity: 1;
+  }
+  &_add-icon::after,
+  &_add-icon::before {
+    transition: all 0.2s ease-in-out;
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 2px;
+    top: calc(50% - 10px);
+    background: vars.$colorpink;
+    overflow: hidden;
+  }
+  &_add-icon::before {
+    left: 22px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+  }
+  &_add-icon::after {
+    right: 22px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+  }
+  &_add-button:hover &_add-icon::before {
+    left: 15px;
+    height: 4px;
+    top: calc(50% - 2px);
+  }
+  &_add-button:hover &_add-icon::after {
+    right: 15px;
+    height: 4px;
+    top: calc(50% - 2px);
+  }
 
 }
 
