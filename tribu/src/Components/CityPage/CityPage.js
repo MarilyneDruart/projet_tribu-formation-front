@@ -28,10 +28,6 @@ function CityPage() {
   return (
     <div className="CityPage">
       <CityImage image={currentCity.image} name={currentCity.name} />
-      {/* <img src={currentCity.image} className="CityPage_img" alt={currentCity.name} /> */}
-      <div className="CityPage_content">
-        <h2 className="CityPage_title">{currentCity.name}</h2>
-      </div>
       <p className="CityPage_description">{currentCity.description}</p>
 
       <CityInterests name={currentCity.name} id={currentCity.id} slug={slug} />

@@ -1,2 +1,23 @@
 @use 'vars';
 
+.Home {
+  &_name {
+
+  }
+  &_interests {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: vars.$color7;
+    color: #10182f;
+
+    &_container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      background-color: vars.$color7;
+    }
+  }
+}

@@ -3,7 +3,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 
 // Imports locaux
@@ -27,7 +27,6 @@ const validationSchema = yup.object({
     .required('Le nom est obligatoire'),
   city: yup
     .string()
-    .trim()
     .required('La ville est requise'),
   email: yup
     .string()
@@ -49,6 +48,7 @@ const validationSchema = yup.object({
 
 function NewAccountForm() {
   const dispatch = useDispatch();
+  const citiesList = useSelector((state) => state.cities.list);
 
   const {
     register,
@@ -122,12 +122,14 @@ function NewAccountForm() {
         />
         <p className="new-account_error-message">{errors.lastname?.message}</p>
 
-        <input
+        <select
           {...register('city')}
           className="new-account_field"
-          type="text"
-          placeholder="Ta ville"
-        />
+        >
+          <option value="">Choisis ta ville</option>
+          {citiesList.map((city) => (
+            <option key={city.id} value={`${city.id}`}>{city.name}</option>))}
+        </select>
         <p className="new-account_error-message">{errors.city?.message}</p>
 
         <input

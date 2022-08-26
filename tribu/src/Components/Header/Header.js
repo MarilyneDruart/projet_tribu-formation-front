@@ -20,7 +20,9 @@ function Header() {
   );
   const loginFormIsDisplayed = useSelector((state) => state.user.loginFormIsDisplayed);
   const interestFormIsDisplayed = useSelector((state) => state.interests.interestFormIsDisplayed);
-  const logged = useSelector((state) => state.user.logged);
+  const { lastname, firstname, logged } = useSelector((state) => state.user);
+  const firstnameURL = firstname.toLowerCase();
+  const lastnameURL = lastname.toLowerCase();
 
   return (
 
@@ -28,11 +30,13 @@ function Header() {
       <Link to="/">
         <img src={logo} className="header_logo" alt="Logo Tribu" />
       </Link>
-      <img src={slogan} className="header_title" alt="Slogan Tribu" />
+      <Link to="/">
+        <img src={slogan} className="header_title" alt="Slogan Tribu" />
+      </Link>
       <div className="header_buttons">
         {logged && (
           <>
-            <Link to="/profil/5">
+            <Link to={`/profil/${firstnameURL}-${lastnameURL}`}>
               <button
                 type="button"
                 className="header_profile-button"
@@ -44,10 +48,11 @@ function Header() {
 
             <button
               type="button"
-              className="header_add-button"
+              className="header_icon-button header_add-button"
               onClick={() => { dispatch(toggleInterestForm()); }}
             >
-              Partage une astuce
+              <div className="header_add-icon" />
+              <div className="header_button-text">Partage ton intérêt</div>
             </button>
 
             <button

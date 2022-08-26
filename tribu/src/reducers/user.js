@@ -6,10 +6,22 @@ import {
   SET_TOKEN,
 } from '../actions/loginForm';
 
+import { SET_USER } from '../actions/user';
+
 export const initialState = {
   loginFormisDisplayed: false,
+
   logged: false,
   token: '',
+  id: '',
+  email: '',
+  firstname: '',
+  lastname: '',
+  cityId: '',
+  cityName: '',
+  presentation: '',
+  post: '',
+  image: '',
 
   loginForm: {
     username: '',
@@ -42,6 +54,20 @@ function user(state = initialState, action = {}) {
         ...state,
         logged: true,
         token: action.payload.token,
+      };
+
+    case SET_USER:
+      return {
+        ...state,
+        id: action.payload.id,
+        email: action.payload.email,
+        firstname: action.payload.firstname,
+        lastname: action.payload.lastname,
+        cityId: action.payload.cityId,
+        cityName: action.payload.cityName,
+        presentation: action.payload.presentation,
+        post: action.payload.post,
+        image: action.payload.image,
       };
 
     case LOGOUT:

@@ -6,7 +6,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin:  vars.$size4 vars.$size4 vars.$size4 vars.$size4;
+  margin: vars.$size4 vars.$size4 vars.$size4 vars.$size4;
   color: vars.$color1;
 
   &_logo {
@@ -16,7 +16,7 @@
   &_buttons {
     display: flex;
     flex-direction: column;
-    
+
   }
 
   &_inscription-button {
@@ -37,25 +37,107 @@
     border: 1px solid vars.$colorpink;
     border-radius: vars.$size4;
     background-color: vars.$colorpink;
-    color: white;
+    color: vars.$colorwhite;
     font-weight: bold;
     padding: vars.$size1;
   }
 
   &_profile-button {
     border: 1px solid vars.$colorpink;
-    width: 80px;
-    height: 80px;
-    border-radius: 100%;
+    border-radius: vars.$size4;
     background-color: vars.$colorpink;
-    color: white;
+    color: vars.$colorwhite;
     font-weight: bold;
     padding: vars.$size1;
   }
 
   &_title {
     font-size: vars.$size4;
-    max-width: 35%;
-    padding-top: 0.5rem;
+    align-items: center;
   }
+
+  &_icon-button {
+    width: 50px;
+    height: 50px;
+    border: 3px solid vars.$colorwhite;
+    background: vars.$colorpink;
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+    transition: width 0.2s ease-in-out;
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+  }
+  &_add-button:hover {
+    width: 200px;
+    position: fixed;
+  }
+  &_add-button::before,
+  &_add-button::after {
+    transition: width 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 10px;
+    top: calc(50% - 2px);
+    background: vars.$colorwhite;
+  }
+  &_add-button::after {
+    right: 14px;
+  }
+  &_add-button::before {
+    left: 14px;
+
+  }
+  &_icon-button:focus {
+    outline: none;
+  }
+  &_button-text {
+    opacity: 0;
+    transition: opacity 0.2s;
+    color: vars.$colorwhite;
+  }
+  &_add-button:hover::before,
+  &_add-button:hover::after {
+    width: 4px;
+    border-radius: 2px;
+  }
+  &_add-button:hover &_button-text {
+    opacity: 1;
+  }
+  &_add-icon::after,
+  &_add-icon::before {
+    transition: all 0.2s ease-in-out;
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 2px;
+    top: calc(50% - 10px);
+    background: vars.$colorwhite;
+    overflow: hidden;
+  }
+  &_add-icon::before {
+    left: 22px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+  }
+  &_add-icon::after {
+    right: 22px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+  }
+  &_add-button:hover &_add-icon::before {
+    left: 15px;
+    height: 4px;
+    top: calc(50% - 2px);
+  }
+  &_add-button:hover &_add-icon::after {
+    right: 15px;
+    height: 4px;
+    top: calc(50% - 2px);
+  }
+
 }
+
+
