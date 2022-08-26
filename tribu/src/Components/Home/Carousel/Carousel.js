@@ -40,7 +40,6 @@ function Carousel() {
     slideInterval.current = setInterval(() => {
       // eslint-disable-next-line no-confusing-arrow
       setCurrentSlide((slide) => slide < slides.length - 1 ? slide + 1 : 0);
-      console.log('interval');
     }, 3000);
   };
 
