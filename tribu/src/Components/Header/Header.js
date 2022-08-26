@@ -21,6 +21,7 @@ function Header() {
   const loginFormIsDisplayed = useSelector((state) => state.user.loginFormIsDisplayed);
   const interestFormIsDisplayed = useSelector((state) => state.interests.interestFormIsDisplayed);
   const logged = useSelector((state) => state.user.logged);
+  const { lastname, firstname } = useSelector((state) => state.user);
 
   return (
 
@@ -28,11 +29,13 @@ function Header() {
       <Link to="/">
         <img src={logo} className="header_logo" alt="Logo Tribu" />
       </Link>
-      <img src={slogan} className="header_title" alt="Slogan Tribu" />
+      <Link to="/">
+        <img src={slogan} className="header_title" alt="Slogan Tribu" />
+      </Link>
       <div className="header_buttons">
         {logged && (
           <>
-            <Link to="/profil/5">
+            <Link to={`/profil/${firstname}-${lastname}`}>
               <button
                 type="button"
                 className="header_profile-button"

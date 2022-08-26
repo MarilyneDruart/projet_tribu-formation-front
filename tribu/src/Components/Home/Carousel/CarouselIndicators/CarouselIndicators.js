@@ -14,6 +14,8 @@ function CarouselIndicators({ slides, currentIndex, switchIndex }) {
           }`}
           onClick={() => switchIndex(index)}
           aria-label="image suivante"
+          // eslint-disable-next-line
+          key={index}
         />
       ))}
     </div>

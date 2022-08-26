@@ -15,7 +15,6 @@ import NotFound from '../NotFound/NotFound';
 import Interest from '../Interest/Interest';
 import Loading from '../Loading/Loading';
 import UserProfilePage from '../UserProfilePage/UserProfilePage';
-// import AddPOIForm from '../AddPOIForm/AddPOIForm';
 
 import '../../styles/styles.scss';
 
@@ -53,8 +52,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/ville/:slug" element={<CityPage />} />
         <Route path="/ville/:slug/:id" element={<Interest />} />
-        {logged && <Route path="/profil/:id" element={<UserProfilePage />} />}
-        {/* <Route path="/ville/:slug/ajouter" element={<AddPOIForm />} /> */}
+        {logged && <Route path="/profil/:slug" element={<UserProfilePage />} />}
         <Route path="/contact" element={<Contacts />} />
         <Route path="/mentions-legales" element={<LegalNotice />} />
         <Route path="/a-propos" element={<AboutUs />} />

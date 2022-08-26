@@ -6,7 +6,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin:  vars.$size4 vars.$size4 vars.$size4 vars.$size4;
+  margin: vars.$size4 vars.$size4 vars.$size4 vars.$size4;
   color: vars.$color1;
 
   &_logo {
@@ -16,7 +16,7 @@
   &_buttons {
     display: flex;
     flex-direction: column;
-    
+
   }
 
   &_inscription-button {
@@ -53,8 +53,7 @@
 
   &_title {
     font-size: vars.$size4;
-    max-width: 35%;
-    padding-top: 0.5rem;
+    align-items: center;
   }
 
   &_icon-button {

@@ -4,9 +4,25 @@ export const fetchUser = () => ({
 });
 
 export const SET_USER = 'SET_USER';
-export const setUser = () => ({
+export const setUser = (
+  id,
+  email,
+  firstname,
+  lastname,
+  cityId,
+  post,
+  presentation = null,
+  image = null,
+) => ({
   type: SET_USER,
   payload: {
-
+    id,
+    email,
+    firstname,
+    lastname,
+    cityId,
+    presentation,
+    post,
+    image,
   },
 });
