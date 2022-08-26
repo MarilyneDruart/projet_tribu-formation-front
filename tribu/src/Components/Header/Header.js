@@ -44,10 +44,11 @@ function Header() {
 
             <button
               type="button"
-              className="header_add-button"
+              className="header_icon-button header_add-button"
               onClick={() => { dispatch(toggleInterestForm()); }}
             >
-              Partage une astuce
+              <div className="header_add-icon" />
+              <div className="header_button-text">Partage ton intérêt</div>
             </button>
 
             <button

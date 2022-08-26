@@ -37,7 +37,7 @@
     border: 1px solid vars.$colorpink;
     border-radius: vars.$size4;
     background-color: vars.$colorpink;
-    color: white;
+    color: vars.$colorwhite;
     font-weight: bold;
     padding: vars.$size1;
   }
@@ -48,7 +48,7 @@
     height: 80px;
     border-radius: 100%;
     background-color: vars.$colorpink;
-    color: white;
+    color: vars.$colorwhite;
     font-weight: bold;
     padding: vars.$size1;
   }
@@ -58,4 +58,88 @@
     max-width: 35%;
     padding-top: 0.5rem;
   }
+
+.header_icon-button {
+  width: 50px;
+  height: 50px;
+  border: 1px solid vars.$colorpink;
+  background: vars.$colorwhite;
+  border-radius: 25px;
+  overflow: hidden;
+  position: relative;
+  transition: width 0.2s ease-in-out;
 }
+.header_add-button:hover {
+  width: 160px;
+}
+.header_add-button::before,
+.header_add-button::after {
+  transition: width 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 10px;
+  top: calc(50% - 2px);
+  background: vars.$colorpink;
+}
+.header_add-button::after {
+  right: 14px;
+  overflow: hidden;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+.header_add-button::before {
+  left: 14px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+.header_icon-button:focus {
+  outline: none;
+}
+.header_button-text {
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.header_add-button:hover::before,
+.header_add-button:hover::after {
+  width: 4px;
+  border-radius: 2px;
+}
+.header_add-button:hover .header_button-text {
+  opacity: 1;
+}
+.header_add-icon::after,
+.header_add-icon::before {
+  transition: all 0.2s ease-in-out;
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 2px;
+  top: calc(50% - 10px);
+  background: vars.$colorpink;
+  overflow: hidden;
+}
+.header_add-icon::before {
+  left: 22px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+.header_add-icon::after {
+  right: 22px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+.header_add-button:hover .header_add-icon::before {
+  left: 15px;
+  height: 4px;
+  top: calc(50% - 2px);
+}
+.header_add-button:hover .header_add-icon::after {
+  right: 15px;
+  height: 4px;
+  top: calc(50% - 2px);
+}
+
+}
+
+
