@@ -20,8 +20,9 @@ function Header() {
   );
   const loginFormIsDisplayed = useSelector((state) => state.user.loginFormIsDisplayed);
   const interestFormIsDisplayed = useSelector((state) => state.interests.interestFormIsDisplayed);
-  const logged = useSelector((state) => state.user.logged);
-  const { lastname, firstname } = useSelector((state) => state.user);
+  const { lastname, firstname, logged } = useSelector((state) => state.user);
+  const firstnameURL = firstname.toLowerCase();
+  const lastnameURL = lastname.toLowerCase();
 
   return (
 
@@ -35,7 +36,7 @@ function Header() {
       <div className="header_buttons">
         {logged && (
           <>
-            <Link to={`/profil/${firstname}-${lastname}`}>
+            <Link to={`/profil/${firstnameURL}-${lastnameURL}`}>
               <button
                 type="button"
                 className="header_profile-button"
