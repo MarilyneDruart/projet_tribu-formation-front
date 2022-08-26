@@ -6,6 +6,8 @@ import {
   SET_TOKEN,
 } from '../actions/loginForm';
 
+import { SET_USER } from '../actions/user';
+
 export const initialState = {
   loginFormisDisplayed: false,
   logged: false,
@@ -42,6 +44,11 @@ function user(state = initialState, action = {}) {
         ...state,
         logged: true,
         token: action.payload.token,
+      };
+
+    case SET_USER:
+      return {
+        ...state,
       };
 
     case LOGOUT:

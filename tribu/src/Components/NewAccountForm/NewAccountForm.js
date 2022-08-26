@@ -128,7 +128,7 @@ function NewAccountForm() {
         >
           <option value="">Choisis ta ville</option>
           {citiesList.map((city) => (
-            <option key={city.id} value={`${city.name}`}>{city.name}</option>))}
+            <option key={city.id} value={`${city.id}`}>{city.name}</option>))}
         </select>
         <p className="new-account_error-message">{errors.city?.message}</p>
 
