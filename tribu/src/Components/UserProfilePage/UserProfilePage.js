@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import { React } from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import MainImageProfile from './MainImageProfile';
 
@@ -8,7 +9,17 @@ import MainImageProfile from './MainImageProfile';
 import '../../styles/styles.scss';
 
 function UserProfilePage() {
-  const { firstname, lastname, presentation } = useSelector((state) => state.user);
+  const {
+    firstname,
+    lastname,
+    presentation,
+    post,
+    cityName,
+  } = useSelector((state) => state.user);
+
+  const citySlug = cityName.toLowerCase();
+  console.log(post);
+
   return (
     <div className="Home">
       <MainImageProfile />
@@ -17,14 +28,23 @@ function UserProfilePage() {
         {' '}
         {lastname}
       </h2>
+      <h3>{cityName}</h3>
       <p>{presentation}</p>
-      <h3>Mes intérêts</h3>
-      {/* if (post.length > 0) {
-
-      }
-      {post.map((post) => (
-        <article></article>
-      ))} */}
+      <h4 className="Home_interests">Mes intérêts</h4>
+      <div className="Home_interests_container">
+        {post.length > 0 && post.map((interests) => (
+          <article className="CityInterests_card" key={interests.id}>
+            <Link to={`/ville/${citySlug}/${interests.id}`}>
+              <div className="CityInterests_header">
+                <img src={interests.image} alt={interests.title} />
+              </div>
+              <div className="CityInterests_content">
+                <h4 className="CityInterests_title">{interests.title}</h4>
+              </div>
+            </Link>
+          </article>
+        ))}
+      </div>
     </div>
   );
 }

@@ -23,6 +23,7 @@ function CityInterests({ id, name, slug }) {
   }, []);
 
   const interestsList = useSelector((state) => state.interests.list);
+  console.log(interestsList);
 
   if (interestsLoading) {
     return <Loading />;
