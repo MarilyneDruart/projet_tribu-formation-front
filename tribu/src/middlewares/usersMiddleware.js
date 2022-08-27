@@ -11,7 +11,7 @@ const usersMiddleware = (store) => (next) => (action) => {
     case FETCH_USER:
       axios.defaults.headers.common.Authorization = `bearer ${token}`;
       axios
-        .get('http://lola-costa.vpnuser.lan:8000/api/users')
+        .get('https://pierre-henri-kocan-server.eddi.cloud/projet-reseau-social-back/public/api/users')
         .then((response) => {
           console.log(response.data);
           store.dispatch(setUser(
