@@ -18,22 +18,33 @@ function Interest() {
 
   return (
     <div className="Interest">
-      <img src={currentInterest.image} className="Interest_img" alt={currentInterest.name} />
-      <p>{currentInterest.category.name}</p>
-      <div className="Interest_content">
-        <h2 className="Interest_title">{currentInterest.name}</h2>
-      </div>
-      <p className="Interest_description">{currentInterest.content}</p>
-      <p>
-        créé par
-        {currentInterest.user.firstname}
-      </p>
-      <p>
-        le
-        {currentInterest.createdAt}
-      </p>
-    </div>
 
+      <div className="Interest_description">
+        <div className="Interest_description_category">
+          <div className="Interest_description_category_item">
+            <span className="">{currentInterest.category.name}</span>
+          </div>
+        </div>
+
+        <h1 className="Interest_description_title">{currentInterest.name}</h1>
+        <p className="Interest_description_content">{currentInterest.content}</p>
+        <p>
+          créé par
+          {' '}
+          {currentInterest.user.firstname}
+        </p>
+        <p>
+          le
+          {' '}
+          {currentInterest.createdAt}
+        </p>
+      </div>
+
+      <div className="Interest_image">
+        <img src={currentInterest.image} alt={currentInterest.name} />
+      </div>
+
+    </div>
   );
 }
 

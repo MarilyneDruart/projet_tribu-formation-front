@@ -1,1 +1,51 @@
 @use 'vars';
+
+.Interest {
+  box-shadow: 0 15px 30px 1px grey;
+	background: rgba(255, 255, 255, 0.90);
+	text-align: center;
+	border-radius: 5px;
+	overflow: hidden;
+	margin: 5em auto;
+	height: 350px;
+	width: 700px;
+
+  &_description {
+    position: relative;
+    text-align: left;
+    overflow: hidden;
+    padding: 30px;
+    height: 100%;
+    float: left;
+    width: 40%;
+
+    &_title {
+      display: inline-block;
+      position: relative;
+      font-size: 30px;
+      color: #344055;
+      margin: 0;
+    }
+
+    &_content {
+      font-size: 18px;
+      color: #7d7d7d;
+    }
+  }
+
+  &_image {
+    // display: inline-block;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    float: right;
+    width: 45%;
+
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  
+}
