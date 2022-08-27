@@ -21,9 +21,9 @@ function Interest() {
 
       <div className="Interest_description">
         <div className="Interest_description_category">
-          <div className="Interest_description_category_item">
-            <span className="">{currentInterest.category.name}</span>
-          </div>
+          {currentInterest.category.map((category) => (
+            <span className="Interest_description_category_item">{category.name}</span>
+          ))}
         </div>
 
         <h1 className="Interest_description_title">{currentInterest.title}</h1>

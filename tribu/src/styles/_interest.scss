@@ -44,5 +44,15 @@
     &_date {
       color: vars.$color4;
     }
+    
+    &_category {
+      align-self: flex-end;
+      margin-bottom: vars.$size2;
+
+      &_item {
+        display: inline-block;
+        margin-right: vars.$size1;
+      }
+    }
   }
 }
