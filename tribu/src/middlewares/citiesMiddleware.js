@@ -8,7 +8,7 @@ const citiesMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_CITIES:
       axios
-        .get('https://pierre-henri-kocan-server.eddi.cloud/projet-reseau-social-back/public/api/cities')
+        .get('http://lola-costa.vpnuser.lan:8000/api/cities')
         .then((response) => {
           store.dispatch(setCitiesList(response.data));
         })
