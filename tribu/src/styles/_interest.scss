@@ -58,7 +58,6 @@
       display: flex;
       align-items: center;
       margin-bottom: vars.$size2;
-      justify-content: center;
       font-style: italic;
 
       &_icon {
@@ -87,6 +86,10 @@
 
       &_author {
         margin-top: vars.$size4;
+      }
+
+      &_date {
+        justify-content: center;
       }
     }
   }
