@@ -44,11 +44,20 @@ function CityInterests({ id, name, slug }) {
                 <img src={interests.image} alt={interests.title} />
               </div>
               <div className="CityInterests_content">
-                <span className={`CityInterests_tag CityInterests_tag--${interests.category.name}`}>{interests.category.map((category) => category.name)}</span>
+                <div className="CityInterests_category">
+                  {interests.category.map((category) => (
+                    <span
+                      className={`CityInterests_category_tag ${category.name}`}
+                      key={category.id}
+                    >
+                      {category.name}
+                    </span>
+                  ))}
+                </div>
                 <h4 className="CityInterests_title">{interests.title}</h4>
-                <p className="CityInterests_content">{interests.content}</p>
+                <p className="CityInterests_description">{interests.content}</p>
                 <div className="CityInterests_user">
-                  <img className="CityInterests_user-img" src="#" alt="auteur du post" />
+                  {/* <img className="CityInterests_user-img" src="#" alt="auteur du post" /> */}
                   <div className="CityInterests_user-info">
                     <h5>
                       {interests.user.firstname}
