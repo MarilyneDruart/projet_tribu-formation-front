@@ -66,12 +66,21 @@
 
   &_description {
     font-size: vars.$size2;
-    margin-bottom: vars.$size3;
+    margin-bottom: vars.$size1;
+    height: vars.$size6;
+    overflow: hidden;
+    text-overflow: clip;
+  }
+
+  &_readmore {
+    align-self: center;
+    text-decoration: underline;
+    font-style: italic;
   }
 
   &_user {
     display: flex;
-    margin-top: auto;
+    margin-top: vars.$size3;
   }
 
   &_user-img {
