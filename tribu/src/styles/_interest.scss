@@ -1,51 +1,48 @@
 @use 'vars';
 
 .Interest {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
   box-shadow: 0 15px 30px 1px grey;
-	background: rgba(255, 255, 255, 0.90);
-	text-align: center;
-	border-radius: 5px;
-	overflow: hidden;
-	margin: 5em auto;
-	height: 350px;
-	width: 700px;
-
-  &_description {
-    position: relative;
-    text-align: left;
-    overflow: hidden;
-    padding: 30px;
-    height: 100%;
-    float: left;
-    width: 40%;
-
-    &_title {
-      display: inline-block;
-      position: relative;
-      font-size: 30px;
-      color: #344055;
-      margin: 0;
-    }
-
-    &_content {
-      font-size: 18px;
-      color: #7d7d7d;
-    }
-  }
+  margin: 5em auto;
+  border-radius: 10px;
+  overflow: hidden;
 
   &_image {
-    // display: inline-block;
-    position: relative;
-    overflow: hidden;
-    height: 100%;
-    float: right;
-    width: 45%;
+    height: 400px;
+    padding: 0;
 
     & img {
       width: 100%;
-      height: 100%;
+      height: 400px;
     }
   }
 
-  
+  &_description {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    padding: vars.$size3;
+
+    &_title {
+      font-size: vars.$size3;
+      font-weight: bold;
+      margin-bottom: vars.$size2;
+    }
+
+    &_content {
+      line-height: vars.$size2;
+      margin-bottom: vars.$size2;
+    }
+
+    &_author {
+      color: vars.$color2;
+    }
+
+    &_date {
+      color: vars.$color4;
+    }
+  }
 }

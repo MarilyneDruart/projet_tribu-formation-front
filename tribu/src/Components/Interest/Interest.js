@@ -26,14 +26,16 @@ function Interest() {
           </div>
         </div>
 
-        <h1 className="Interest_description_title">{currentInterest.name}</h1>
+        <h1 className="Interest_description_title">{currentInterest.title}</h1>
         <p className="Interest_description_content">{currentInterest.content}</p>
-        <p>
+        <p className="Interest_description_author">
           créé par
           {' '}
           {currentInterest.user.firstname}
+          {' '}
+          {currentInterest.user.lastname}
         </p>
-        <p>
+        <p className="Interest_description_date">
           le
           {' '}
           {currentInterest.createdAt}
