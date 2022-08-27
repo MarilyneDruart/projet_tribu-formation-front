@@ -60,7 +60,7 @@ function NewInterestForm() {
     console.log(data);
 
     axios
-      .post('https://pierre-henri-kocan-server.eddi.cloud/projet-reseau-social-back/public/api/users', data, {
+      .post('http://lola-costa.vpnuser.lan:8000/api/users', data, {
         headers: {
           'Content-Type': 'application/json',
         },

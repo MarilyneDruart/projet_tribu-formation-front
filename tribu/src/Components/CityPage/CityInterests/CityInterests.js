@@ -13,7 +13,7 @@ function CityInterests({ id, name, slug }) {
 
   useEffect(() => {
     axios
-      .get(`https://pierre-henri-kocan-server.eddi.cloud/projet-reseau-social-back/public/api/cities/${id}`)
+      .get(`http://lola-costa.vpnuser.lan:8000/api/cities/${id}`)
       .then((response) => {
         dispatch(setInterestsList(response.data.posts));
       })
