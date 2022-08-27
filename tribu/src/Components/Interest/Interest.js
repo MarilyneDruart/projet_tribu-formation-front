@@ -35,7 +35,12 @@ function Interest() {
       <div className="Interest_description">
         <div className="Interest_description_category">
           {currentInterest.category.map((category) => (
-            <span className="Interest_description_category_item" key={category.id}>{category.name}</span>
+            <span
+              className={`Interest_description_category_item ${category.name}`}
+              key={category.id}
+            >
+              {category.name}
+            </span>
           ))}
         </div>
 
@@ -55,7 +60,7 @@ function Interest() {
           {' '}
           {currentInterest.user.lastname}
         </p>
-        <p className="Interest_description_publishingdate">
+        <p className="Interest_description_publishdate">
           {dateInFrench(currentInterest.createdAt)}
         </p>
       </div>
