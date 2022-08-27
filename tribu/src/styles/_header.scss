@@ -68,6 +68,7 @@
     position: fixed;
     bottom: 5px;
     right: 5px;
+    z-index: 7;
   }
   &_add-button:hover {
     width: 200px;
@@ -97,6 +98,8 @@
     opacity: 0;
     transition: opacity 0.2s;
     color: vars.$colorwhite;
+    font-weight: bold;
+    font-size: vars.$size2;
   }
   &_add-button:hover::before,
   &_add-button:hover::after {
