@@ -30,18 +30,20 @@
       font-size: vars.$size3;
       font-weight: bold;
       margin-bottom: vars.$size2;
+      color: vars.$color1;
     }
 
     &_content {
       line-height: vars.$size2;
       margin-bottom: vars.$size2;
+      color: vars.$color2;
     }
 
     &_author {
       color: vars.$color2;
     }
 
-    &_publishDate {
+    &_publishdate {
       color: vars.$color4;
     }
     
@@ -55,6 +57,8 @@
         border-radius: .5em;
         color: white;
         font-weight: bold;
+        font-size: vars.$size2;
+        text-transform: uppercase;
       }
     }
 
