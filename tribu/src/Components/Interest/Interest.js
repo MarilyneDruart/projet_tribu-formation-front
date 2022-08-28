@@ -1,21 +1,27 @@
-import { React } from 'react';
+import { React, useEffect } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import calendar from '../../assets/images/timetable.png';
 
 import '../../styles/styles.scss';
-import Loading from '../Loading/Loading';
+import { fetchInterests } from '../../actions/interests';
+// import Loading from '../Loading/Loading';
 
 function Interest() {
   const { id } = useParams();
+  const dispatch = useDispatch();
 
   // eslint-disable-next-line
   const interestsList = useSelector((state) => state.interests.list);
   const currentCity = interestsList.find((testedCity) => testedCity.id === Number(id));
-  const loading = useSelector((state) => state.interests.loading);
+  // const loading = useSelector((state) => state.interests.loading);
 
   console.log(interestsList);
   console.log(currentCity);
+
+  useEffect(() => {
+    dispatch(fetchInterests());
+  }, []);
 
   // Converting YYYY-MM-DD into french format
   const dateInFrench = (dateToChange) => {
@@ -34,9 +40,9 @@ function Interest() {
     return <Navigate to="/PageIntrouvable" replace />;
   }
 
-  if (!loading) {
-    return <Loading />;
-  }
+  // if (!loading) {
+  //   return <Loading />;
+  // }
 
   return (
     <div className="container">

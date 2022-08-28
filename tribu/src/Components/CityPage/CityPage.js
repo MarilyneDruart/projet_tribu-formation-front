@@ -33,7 +33,7 @@ function CityPage() {
       <CityImage image={currentCity.image} name={currentCity.name} />
       <p className="CityPage_description">{currentCity.description}</p>
 
-      <CityInterests name={currentCity.name} id={currentCity.id} slug={slug} />
+      <CityInterests />
     </div>
 
   );

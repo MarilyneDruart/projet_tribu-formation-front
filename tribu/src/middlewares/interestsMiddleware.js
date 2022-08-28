@@ -4,11 +4,15 @@ import {
   setInterestsList,
 } from '../actions/interests';
 
-const citiesMiddleware = (store) => (next) => (action) => {
+const interestsMiddleware = (store) => (next) => (action) => {
+  // we need the city id to get its interests
+  const { id } = store.getState().cities.city;
+  // console.log(id);
+
   switch (action.type) {
     case FETCH_INTERESTS:
       axios
-        .get('http://lola-costa.vpnuser.lan:8000/api/cities/52')
+        .get(`http://lola-costa.vpnuser.lan:8000/api/cities/${id}`)
         .then((response) => {
           store.dispatch(setInterestsList(response.data.posts));
         })
@@ -22,4 +26,4 @@ const citiesMiddleware = (store) => (next) => (action) => {
   }
 };
 
-export default citiesMiddleware;
+export default interestsMiddleware;

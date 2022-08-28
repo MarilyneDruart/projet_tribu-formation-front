@@ -1,25 +1,18 @@
 import { React, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
 import '../../../styles/styles.scss';
-import axios from 'axios';
-import { setInterestsList } from '../../../actions/interests';
+
+import { fetchInterests } from '../../../actions/interests';
 import Loading from '../../Loading/Loading';
 
-function CityInterests({ id, name, slug }) {
+function CityInterests() {
   const dispatch = useDispatch();
   const interestsLoading = useSelector((state) => state.interests.loading);
+  const { name, slug } = useSelector((state) => state.cities.city);
 
   useEffect(() => {
-    axios
-      .get(`http://lola-costa.vpnuser.lan:8000/api/cities/${id}`)
-      .then((response) => {
-        dispatch(setInterestsList(response.data.posts));
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    dispatch(fetchInterests());
   }, []);
 
   const interestsList = useSelector((state) => state.interests.list);
@@ -78,11 +71,5 @@ function CityInterests({ id, name, slug }) {
     </div>
   );
 }
-
-CityInterests.propTypes = {
-  id: PropTypes.number.isRequired,
-  name: PropTypes.string.isRequired,
-  slug: PropTypes.string.isRequired,
-};
 
 export default CityInterests;
