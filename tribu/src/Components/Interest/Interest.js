@@ -1,15 +1,12 @@
-import { React, useEffect } from 'react';
-import { useParams, Navigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import calendar from '../../assets/images/timetable.png';
+import { React } from 'react';
+import { useParams, Navigate, Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import '../../styles/styles.scss';
-import { fetchInterests } from '../../actions/interests';
-// import Loading from '../Loading/Loading';
+import calendar from '../../assets/images/timetable.png';
 
 function Interest() {
-  const { id } = useParams();
-  const dispatch = useDispatch();
+  const { id, slug } = useParams();
 
   // eslint-disable-next-line
   const interestsList = useSelector((state) => state.interests.list);
@@ -18,10 +15,6 @@ function Interest() {
 
   console.log(interestsList);
   console.log(currentCity);
-
-  useEffect(() => {
-    dispatch(fetchInterests());
-  }, []);
 
   // Converting YYYY-MM-DD into french format
   const dateInFrench = (dateToChange) => {
@@ -87,8 +80,16 @@ function Interest() {
 
       </div>
       <div className="navbuttons">
-        <button className="navbuttons_item" type="button">Retour à la liste</button>
-        <button className="navbuttons_item" type="button">Retour à l&apos;accueil</button>
+        <Link to={`/ville/${slug}/`}>
+          <button className="navbuttons_item" type="button">
+            Retour à la ville
+          </button>
+        </Link>
+        <Link to="/">
+          <button className="navbuttons_item" type="button">
+            Accueil
+          </button>
+        </Link>
       </div>
     </div>
   );
