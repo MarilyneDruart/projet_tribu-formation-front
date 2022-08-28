@@ -5,13 +5,14 @@ import {
 import reducer from '../reducers';
 import debugMiddleware from '../middlewares/debugMiddleware';
 import citiesMiddleware from '../middlewares/citiesMiddleware';
+import interestsMiddleware from '../middlewares/interestsMiddleware';
 import usersMiddleware from '../middlewares/usersMiddleware';
 
 // eslint-disable-next-line no-unused-vars
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const myMiddleWares = composeEnhancers(
-  applyMiddleware(debugMiddleware, citiesMiddleware, usersMiddleware),
+  applyMiddleware(debugMiddleware, citiesMiddleware, interestsMiddleware, usersMiddleware),
 );
 
 const store = createStore(
