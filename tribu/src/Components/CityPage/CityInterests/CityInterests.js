@@ -24,7 +24,7 @@ function CityInterests() {
 
   return (
     <div className="CityInterests">
-      <h2>
+      <h2 className="CityInterests_header">
         Intérêts partagés par la communauté pour
         {' '}
         {name}
