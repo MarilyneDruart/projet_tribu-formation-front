@@ -1,8 +1,9 @@
-import { SET_CITIES_LIST } from '../actions/cities';
+import { SET_CITIES_LIST, SET_CITY } from '../actions/cities';
 
 export const initialState = {
   list: [],
   loading: true,
+  city: '',
 };
 
 function cities(state = initialState, action = {}) {
@@ -12,6 +13,12 @@ function cities(state = initialState, action = {}) {
         ...state,
         list: action.payload.cities,
         loading: false,
+      };
+
+    case SET_CITY:
+      return {
+        ...state,
+        city: action.payload.city,
       };
 
     default:

@@ -8,7 +8,7 @@ const citiesMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_INTERESTS:
       axios
-        .get(`http://lola-costa.vpnuser.lan:8000/api/cities/${id}`)
+        .get('http://lola-costa.vpnuser.lan:8000/api/cities/52')
         .then((response) => {
           store.dispatch(setInterestsList(response.data.posts));
         })
@@ -17,8 +17,8 @@ const citiesMiddleware = (store) => (next) => (action) => {
         });
       break;
 
-  default:
-    next(action);
+    default:
+      next(action);
   }
 };
 

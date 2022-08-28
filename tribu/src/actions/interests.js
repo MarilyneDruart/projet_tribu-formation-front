@@ -18,4 +18,3 @@ export const CLOSE_INTEREST_FORM = 'CLOSE_INTEREST_FORM';
 export const closeInterestForm = () => ({
   type: CLOSE_INTEREST_FORM,
 });
-
