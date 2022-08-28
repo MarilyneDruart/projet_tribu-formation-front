@@ -17,10 +17,12 @@
 .CityInterests {
   // width: 1040px;
 
-  &_header {
+  &_bigtitle {
     color:vars.$color1;
     font-size: vars.$size3;
     text-align: center;
+    font-weight: bold;
+    margin: vars.$size3;
   }
 
   &_card {

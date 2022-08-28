@@ -27,16 +27,22 @@
     padding: vars.$size3;
 
     &_title {
-      font-size: vars.$size3;
+      font-size: vars.$size4;
       font-weight: bold;
       margin: vars.$size2;
       color: vars.$color1;
     }
 
     &_content {
-      line-height: vars.$size2;
+      line-height: vars.$size3;
       margin-bottom: vars.$size2;
       color: vars.$color2;
+      font-size: vars.$size3;
+    }
+
+    &_address {
+      margin-top: vars.$size2;
+      color: vars.$color3;
     }
 
     &_author {
