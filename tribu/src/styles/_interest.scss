@@ -5,7 +5,7 @@
   flex-direction: column;
   align-content: space-between;
   box-shadow: 0 15px 30px 1px grey;
-  margin: 5em 1em;
+  margin: 5em 1em 2em;
   border-radius: 10px;
   overflow: hidden;
 
@@ -29,7 +29,7 @@
     &_title {
       font-size: vars.$size3;
       font-weight: bold;
-      margin-bottom: vars.$size2;
+      margin: vars.$size2;
       color: vars.$color1;
     }
 
@@ -64,13 +64,28 @@
     &_date {
       display: flex;
       align-items: center;
-      margin-bottom: vars.$size2;
+      margin: vars.$size2 auto;
       font-style: italic;
 
       &_icon {
         margin-right: vars.$size1;
       }
     }
+  }
+}
+
+.navbuttons {
+  display: flex;
+  justify-content: center;
+
+  &_item {
+    border: 1px solid vars.$colorpink;
+    border-radius: vars.$size4;
+    background-color: vars.$colorpink;
+    color: vars.$colorwhite;
+    font-weight: bold;
+    padding: vars.$size1;
+    margin: 0 vars.$size4;
   }
 }
 
@@ -107,7 +122,7 @@
 @media (min-width: 760px) {
   .Interest {
     flex-direction: row;
-    // width: 60%;
+    // max-width: 70%;
 
     &_image {
       width: 50%;

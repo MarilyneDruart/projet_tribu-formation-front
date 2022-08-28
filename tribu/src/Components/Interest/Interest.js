@@ -4,13 +4,18 @@ import { useSelector } from 'react-redux';
 import calendar from '../../assets/images/timetable.png';
 
 import '../../styles/styles.scss';
+import Loading from '../Loading/Loading';
 
 function Interest() {
   const { id } = useParams();
-  const interestsList = useSelector((state) => state.interests.list);
-  const currentInterest = interestsList.find((interest) => interest.id === Number(id));
 
-  console.log(currentInterest);
+  // eslint-disable-next-line
+  const interestsList = useSelector((state) => state.interests.list);
+  const currentCity = interestsList.find((testedCity) => testedCity.id === Number(id));
+  const loading = useSelector((state) => state.interests.loading);
+
+  console.log(interestsList);
+  console.log(currentCity);
 
   // Converting YYYY-MM-DD into french format
   const dateInFrench = (dateToChange) => {
@@ -25,50 +30,60 @@ function Interest() {
     return `le ${day} ${month} ${year}`;
   };
 
-  if (!currentInterest) {
+  if (!currentCity) {
     return <Navigate to="/PageIntrouvable" replace />;
   }
 
-  return (
-    <div className="Interest">
+  if (!loading) {
+    return <Loading />;
+  }
 
-      <div className="Interest_description">
-        <div className="Interest_description_category">
-          {currentInterest.category.map((category) => (
-            <span
-              className={`Interest_description_category_item ${category.name}`}
-              key={category.id}
-            >
-              {category.name}
-            </span>
-          ))}
+  return (
+    <div className="container">
+      <div className="Interest">
+
+        <div className="Interest_description">
+          <div className="Interest_description_category">
+            {currentCity.category.map((category) => (
+              <span
+                className={`Interest_description_category_item ${category.name}`}
+                key={category.id}
+              >
+                {category.name}
+              </span>
+            ))}
+          </div>
+
+          {currentCity.date && (
+            <div className="Interest_description_date">
+              <img className="Interest_description_date_icon" src={calendar} alt="icone calendrier" />
+              {dateInFrench(currentCity.date)}
+            </div>
+          )}
+
+          <h1 className="Interest_description_title">{currentCity.title}</h1>
+          <p className="Interest_description_content">{currentCity.content}</p>
+          <p className="Interest_description_author">
+            publié par
+            {' '}
+            {currentCity.user.firstname}
+            {' '}
+            {currentCity.user.lastname}
+          </p>
+          <p className="Interest_description_publishdate">
+            {dateInFrench(currentCity.createdAt)}
+          </p>
         </div>
 
-        {currentInterest.date && (
-          <div className="Interest_description_date">
-            <img className="Interest_description_date_icon" src={calendar} alt="icone calendrier" />
-            {dateInFrench(currentInterest.date)}
-          </div>
-        )}
+        <div className="Interest_image">
+          <img src={currentCity.image} alt={currentCity.name} />
+        </div>
 
-        <h1 className="Interest_description_title">{currentInterest.title}</h1>
-        <p className="Interest_description_content">{currentInterest.content}</p>
-        <p className="Interest_description_author">
-          publié par
-          {' '}
-          {currentInterest.user.firstname}
-          {' '}
-          {currentInterest.user.lastname}
-        </p>
-        <p className="Interest_description_publishdate">
-          {dateInFrench(currentInterest.createdAt)}
-        </p>
       </div>
-
-      <div className="Interest_image">
-        <img src={currentInterest.image} alt={currentInterest.name} />
+      <div className="navbuttons">
+        <button className="navbuttons_item" type="button">Retour à la liste</button>
+        <button className="navbuttons_item" type="button">Retour à l&apos;accueil</button>
       </div>
-
     </div>
   );
 }

@@ -44,11 +44,13 @@
   }
 
   &_category {
-    margin-bottom: vars.$size3;
+    margin-bottom: vars.$size1;
+    display: flex;
+    flex-wrap: wrap;
 
     &_tag {
     margin-right: vars.$size1;
-    margin-bottom: vars.$size2;
+    margin-bottom: vars.$size1;
     padding: 0.5em vars.$size1;
     border-radius: .5em;
     color: white;

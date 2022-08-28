@@ -57,7 +57,7 @@ function CityInterests({ id, name, slug }) {
                 <h4 className="CityInterests_title">{interests.title}</h4>
                 <p className="CityInterests_description">{interests.content}</p>
                 <Link to={`/ville/${slug}/${interests.id}`} className="CityInterests_readmore">
-                  Voir le post en entier
+                  Voir plus
                 </Link>
                 <div className="CityInterests_user">
                   {/* <img className="CityInterests_user-img" src="#" alt="auteur du post" /> */}

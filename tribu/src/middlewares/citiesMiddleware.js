@@ -11,6 +11,7 @@ const citiesMiddleware = (store) => (next) => (action) => {
         .get('http://lola-costa.vpnuser.lan:8000/api/cities')
         .then((response) => {
           store.dispatch(setCitiesList(response.data));
+          console.log(response.data);
         })
         .catch((error) => {
           console.error(error);
