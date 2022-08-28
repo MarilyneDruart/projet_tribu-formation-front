@@ -62,7 +62,7 @@ function Interest() {
 
           <h1 className="Interest_description_title">{currentCity.title}</h1>
           <p className="Interest_description_content">{currentCity.content}</p>
-          <p className="Interest_description_address">{currentCity.address}</p>
+          <p className="Interest_description_adress">{currentCity.adress}</p>
           <p className="Interest_description_author">
             publié par
             {' '}

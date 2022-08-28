@@ -64,6 +64,10 @@
         font-weight: bold;
         font-size: vars.$size2;
         text-transform: uppercase;
+
+        &_participate {
+          color: blue;
+        }
       }
     }
 
