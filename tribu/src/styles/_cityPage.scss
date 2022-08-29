@@ -5,7 +5,11 @@
   max-width: 100%;
  
   &_description {
+    width: 50%;
     color: vars.$color1;
+    font-size: vars.$size3;
+    margin: vars.$size3 auto;
+    text-align: center;
   }
   }
 

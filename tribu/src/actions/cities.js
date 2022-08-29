@@ -8,3 +8,9 @@ export const setCitiesList = (cities) => ({
   type: SET_CITIES_LIST,
   payload: { cities },
 });
+
+export const SET_CITY = 'SET_CITY';
+export const setCity = (city) => ({
+  type: SET_CITY,
+  payload: { city },
+});

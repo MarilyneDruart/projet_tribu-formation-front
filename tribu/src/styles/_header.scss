@@ -33,16 +33,7 @@
     text-underline-offset: 3px;
   }
 
-  &_connexion-button {
-    border: 1px solid vars.$colorpink;
-    border-radius: vars.$size4;
-    background-color: vars.$colorpink;
-    color: vars.$colorwhite;
-    font-weight: bold;
-    padding: vars.$size1;
-  }
-
-  &_profile-button {
+  &_connexion-button, &_profile-button {
     border: 1px solid vars.$colorpink;
     border-radius: vars.$size4;
     background-color: vars.$colorpink;

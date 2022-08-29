@@ -1,25 +1,18 @@
 import { React, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
 import '../../../styles/styles.scss';
-import axios from 'axios';
-import { setInterestsList } from '../../../actions/interests';
+
+import { fetchInterests } from '../../../actions/interests';
 import Loading from '../../Loading/Loading';
 
-function CityInterests({ id, name, slug }) {
+function CityInterests() {
   const dispatch = useDispatch();
   const interestsLoading = useSelector((state) => state.interests.loading);
+  const { name, slug } = useSelector((state) => state.cities.city);
 
   useEffect(() => {
-    axios
-      .get(`https://pierre-henri-kocan-server.eddi.cloud/projet-reseau-social-back/public/api/cities/${id}`)
-      .then((response) => {
-        dispatch(setInterestsList(response.data.posts));
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    dispatch(fetchInterests());
   }, []);
 
   const interestsList = useSelector((state) => state.interests.list);
@@ -31,7 +24,7 @@ function CityInterests({ id, name, slug }) {
 
   return (
     <div className="CityInterests">
-      <h2>
+      <h2 className="CityInterests_bigtitle">
         Intérêts partagés par la communauté pour
         {' '}
         {name}
@@ -44,11 +37,23 @@ function CityInterests({ id, name, slug }) {
                 <img src={interests.image} alt={interests.title} />
               </div>
               <div className="CityInterests_content">
-                <span className={`CityInterests_tag CityInterests_tag--${interests.category.name}`}>{interests.category.map((category) => category.name)}</span>
+                <div className="CityInterests_category">
+                  {interests.category.map((category) => (
+                    <span
+                      className={`CityInterests_category_tag ${category.name}`}
+                      key={category.id}
+                    >
+                      {category.name}
+                    </span>
+                  ))}
+                </div>
                 <h4 className="CityInterests_title">{interests.title}</h4>
-                <p className="CityInterests_content">{interests.content}</p>
+                <p className="CityInterests_description">{interests.content}</p>
+                <Link to={`/ville/${slug}/${interests.id}`} className="CityInterests_readmore">
+                  Voir plus
+                </Link>
                 <div className="CityInterests_user">
-                  <img className="CityInterests_user-img" src="#" alt="auteur du post" />
+                  {/* <img className="CityInterests_user-img" src="#" alt="auteur du post" /> */}
                   <div className="CityInterests_user-info">
                     <h5>
                       {interests.user.firstname}
@@ -66,11 +71,5 @@ function CityInterests({ id, name, slug }) {
     </div>
   );
 }
-
-CityInterests.propTypes = {
-  id: PropTypes.number.isRequired,
-  name: PropTypes.string.isRequired,
-  slug: PropTypes.string.isRequired,
-};
 
 export default CityInterests;

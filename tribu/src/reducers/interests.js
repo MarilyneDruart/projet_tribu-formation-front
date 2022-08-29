@@ -1,4 +1,9 @@
-import { SET_INTERESTS_LIST, CLOSE_INTEREST_FORM, TOGGLE_INTEREST_FORM } from '../actions/interests';
+import {
+  SET_INTERESTS_LIST,
+  CLOSE_INTEREST_FORM,
+  TOGGLE_INTEREST_FORM,
+  // GET_CITY,
+} from '../actions/interests';
 
 export const initialState = {
   interestFormIsDisplayed: false,

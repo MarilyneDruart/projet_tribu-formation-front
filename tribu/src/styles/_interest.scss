@@ -1,1 +1,158 @@
 @use 'vars';
+
+.Interest {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  box-shadow: 0 15px 30px 1px grey;
+  margin: 5em 1em 2em;
+  border-radius: 10px;
+  overflow: hidden;
+
+  &_image {
+    height: 400px;
+    padding: 0;
+
+    & img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+  }
+
+  &_description {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    padding: vars.$size3;
+
+    &_title {
+      font-size: vars.$size4;
+      font-weight: bold;
+      margin: vars.$size2;
+      color: vars.$color1;
+    }
+
+    &_content {
+      line-height: vars.$size3;
+      margin-bottom: vars.$size2;
+      color: vars.$color2;
+      font-size: vars.$size3;
+    }
+
+    &_address {
+      margin-top: vars.$size2;
+      color: vars.$color3;
+    }
+
+    &_author {
+      color: vars.$color2;
+    }
+
+    &_publishdate {
+      color: vars.$color4;
+    }
+    
+    &_category {
+      margin-bottom: vars.$size2;
+
+      &_item {
+        margin-right: vars.$size1;
+        padding: 0.5em vars.$size1;
+        border-radius: .5em;
+        color: white;
+        font-weight: bold;
+        font-size: vars.$size2;
+        text-transform: uppercase;
+
+        &_participate {
+          color: blue;
+        }
+      }
+    }
+
+    &_date {
+      display: flex;
+      align-items: center;
+      margin: vars.$size2 auto;
+      font-style: italic;
+
+      &_icon {
+        margin-right: vars.$size1;
+      }
+    }
+  }
+}
+
+.navbuttons {
+  display: flex;
+  justify-content: center;
+
+  &_item {
+    border: 1px solid vars.$colorpink;
+    border-radius: vars.$size4;
+    background-color: vars.$colorpink;
+    color: vars.$colorwhite;
+    font-weight: bold;
+    padding: vars.$size1;
+    margin: 0 vars.$size4;
+  }
+}
+
+.Gastronomie {
+  border: 1px solid #FFA64C;
+  background-color: #FFA64C;
+}
+
+.Culture {
+  border: 1px solid #73FBD3;
+  background-color: #73FBD3;
+}
+
+.Sorties {
+  border: 1px solid #FDCFF3;
+  background-color: #FDCFF3;
+}
+
+.Activités {
+  border: 1px solid #9F86C0;
+  background-color: #9F86C0;
+}
+
+.Evénements {
+  border: 1px solid #5C7AFF;
+  background-color: #5C7AFF;
+}
+
+.Co-Working {
+  border: 1px solid #00BBFF;
+  background-color: #00BBFF;
+}
+
+@media (min-width: 760px) {
+  .Interest {
+    flex-direction: row;
+    // max-width: 70%;
+
+    &_image {
+      width: 50%;
+    }
+
+    &_description {
+      width: 50%;
+
+      &_title {
+        text-align: center;
+        margin-bottom: vars.$size5;
+      }
+
+      &_author {
+        margin-top: vars.$size4;
+      }
+
+      &_date {
+        justify-content: center;
+      }
+    }
+  }
+}
