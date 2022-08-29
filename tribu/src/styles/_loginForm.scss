@@ -5,10 +5,11 @@
   height: auto;
   margin: vars.$size5 auto vars.$size7 auto;
   max-width: 80%;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: calc(100%/10);
   right: calc(100%/10);
+  top: calc(100%/5);
   padding: vars.$size3;
   border: 1px solid vars.$color4;
   border-radius: 10px;

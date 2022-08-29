@@ -45,14 +45,12 @@ function NewInterestForm() {
     resolver: yupResolver(validationSchema),
     mode: 'onBlur',
     defaultValues: {
-      firstname: '',
-      lastname: '',
-      city: '',
-      email: '',
-      // avatar: '',
-      presentation: '',
-      password: '',
-      passwordConfirm: '',
+      title: '',
+      image: '',
+      content: '',
+      date: '',
+      category: '',
+      address: '',
     },
   });
 
@@ -60,14 +58,14 @@ function NewInterestForm() {
     console.log(data);
 
     axios
-      .post('https://pierre-henri-kocan-server.eddi.cloud/projet-reseau-social-back/public/api/users', data, {
+      .post('https://pierre-henri-kocan-server.eddi.cloud/projet-reseau-social-back/public/api/posts', data, {
         headers: {
           'Content-Type': 'application/json',
         },
       })
       .then((response) => {
         console.log(response);
-        console.log('Votre compte a été créé');
+        console.log('intérêt ajouté avec succès !');
         dispatch(closeInterestForm());
       })
       .catch((error) => {
@@ -98,55 +96,48 @@ function NewInterestForm() {
           type="text"
           placeholder="Donne un titre à ton astuce"
         />
-        <p className="new-interest_error-message">{errors.firstname?.message}</p>
+        <p className="new-interest_error-message">{errors.title?.message}</p>
 
-        <input
-          {...register('lastname')}
+        {/* <input
+          {...register('image')}
           className="new-interest_field"
           type="text"
-          placeholder="Ton nom"
+          placeholder="Une image représentative"
         />
-        <p className="new-interest_error-message">{errors.lastname?.message}</p>
-
-        <input
-          {...register('city')}
-          className="new-interest_field"
-          type="text"
-          placeholder="Ta ville"
-        />
-        <p className="new-interest_error-message">{errors.city?.message}</p>
-
-        <input
-          {...register('email')}
-          className="new-interest_field"
-          type="email"
-          placeholder="Ton email"
-        />
-        <p className="new-interest_error-message">{errors.email?.message}</p>
+        <p className="new-interest_error-message">{errors.image?.message}</p> */}
 
         <textarea
-          {...register('presentation')}
+          {...register('content')}
           className="new-interest_field"
-          placeholder="Parle-nous de toi"
+          placeholder="Donne-nous ton avis"
           rows="3"
         />
-        <p className="new-interest_error-message">{errors.presentation?.message}</p>
+        <p className="new-interest_error-message">{errors.content?.message}</p>
 
         <input
-          {...register('password')}
+          {...register('date')}
           className="new-interest_field"
-          type="password"
-          placeholder="Ton mot de passe"
+          type="date"
+        />
+        <p className="new-interest_error-message">{errors.date?.message}</p>
+
+        {/* <select
+          {...register('category')}
+          className="new-account_field"
+        >
+          <option value="">Choisis la/les catégorie(s)</option>
+          {categoriesList.map((category) => (
+            <option key={category.id} value={`${category.id}`}>{category.name}</option>))}
+        </select>
+        <p className="new-account_error-message">{errors.city?.message}</p> */}
+
+        <input
+          {...register('address')}
+          className="new-interest_field"
+          type="text"
+          placeholder="l'adresse de ton intérêt"
         />
         <p className="new-interest_error-message">{errors.password?.message}</p>
-
-        <input
-          {...register('passwordConfirm')}
-          className="new-interest_field"
-          type="password"
-          placeholder="Confirme ton mot de passe"
-        />
-        <p className="new-interest_error-message">{errors.passwordConfirm?.message}</p>
 
         {/* <input
           {...register('avatar')}
