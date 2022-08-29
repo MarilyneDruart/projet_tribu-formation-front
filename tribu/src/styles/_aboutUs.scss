@@ -2,4 +2,19 @@
 
 .AboutUs {
   text-align: center;
+
+  &_title {
+    font-size: vars.$size4;
+    margin: vars.$size2 0 vars.$size5;
+  }
+
+  &_content {
+    width: 50%;
+    margin: 0 auto;
+
+    & p {
+      font-size: vars.$size3;
+      margin: vars.$size4;
+    }
+  }
 }
