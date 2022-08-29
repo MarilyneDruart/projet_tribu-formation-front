@@ -4,15 +4,20 @@ import { useSelector } from 'react-redux';
 
 import '../../styles/styles.scss';
 import calendar from '../../assets/images/timetable.png';
+import Loading from '../Loading/Loading';
 
 function Interest() {
-  const { id, slug } = useParams();
+  const { slug, id } = useParams();
+
+  const interestsLoading = useSelector((state) => state.interests.loading);
 
   // eslint-disable-next-line
   const interestsList = useSelector((state) => state.interests.list);
-  const currentCity = interestsList.find((testedCity) => testedCity.id === Number(id));
-  // const loading = useSelector((state) => state.interests.loading);
 
+  const currentCity = interestsList.find((testedInterest) => (
+    testedInterest.id === Number(id)));
+
+  console.log(id);
   console.log(interestsList);
   console.log(currentCity);
 
@@ -29,13 +34,13 @@ function Interest() {
     return `le ${day} ${month} ${year}`;
   };
 
+  if (interestsLoading) {
+    return <Loading />;
+  }
+
   if (!currentCity) {
     return <Navigate to="/PageIntrouvable" replace />;
   }
-
-  // if (!loading) {
-  //   return <Loading />;
-  // }
 
   return (
     <div className="container">
