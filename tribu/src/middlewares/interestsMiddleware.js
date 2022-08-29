@@ -12,7 +12,7 @@ const interestsMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_INTERESTS:
       axios
-        .get(`http://lola-costa.vpnuser.lan:8000/api/cities/${id}`)
+        .get(`https://pierre-henri-kocan-server.eddi.cloud/projet-reseau-social-back/public/api/cities/${id}`)
         .then((response) => {
           store.dispatch(setInterestsList(response.data.posts));
         })
