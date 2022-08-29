@@ -1,39 +1,30 @@
 @use 'vars';
 
 .MainImage {
-  width: 100%;
-  height: 300px;
-  background-color: bisque;
-  background-image: url('../assets/images/main-image1.jpg');
-  background-size: cover;
-  background-repeat:no-repeat;
-  background-position: 50% 60%;
+
+  &_img {
+    width: 100%;
+    height: 500px;
+    background-color: vars.$color7;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+  }
   
   &_content {
+    top: 60%;
     position: relative;
     width: 100%;
-    top: 60%;
-    padding: 0.2rem;
+    padding: 1rem;
     text-align: center;
     background: rgba(0,0,0,0.5);
   }
 
   &_title {
-    color: white;
-    font-size: vars.$size3;
+    font-size: vars.$size4;
     font-style: italic;
     font-weight: bold;
-    }
-  }
-
-
-//*===========================================*//
-//*               Media Queries               *//
-//*===========================================*//
-
-/* width 700px --> 3000px*/
-@media screen and (min-width: 700px) and (max-width: 3000px) {
-  .MainImage {
-    height: 600px;
-  }
+    text-transform: uppercase;
+    color: white;
+}
 }
