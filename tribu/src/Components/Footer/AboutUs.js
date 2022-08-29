@@ -1,12 +1,14 @@
 /* eslint-disable max-len */
-
 import React from 'react';
+import MainImage from '../MainImage/MainImage';
+import image from '../../assets/images/aboutus.jpg';
 
 import '../../styles/styles.scss';
 
 function AboutUS() {
   return (
     <div className="AboutUs">
+      <MainImage title="A propos" image={image} />
       <h1 className="AboutUs_title">TRIBU ! Mais… qu’est-ce que c’est ???</h1>
 
       <div className="AboutUs_content">
