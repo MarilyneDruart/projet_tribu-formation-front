@@ -3,6 +3,7 @@ import { useParams, Navigate, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import '../../styles/styles.scss';
+import location from '../../assets/images/location.png';
 import calendar from '../../assets/images/timetable.png';
 import Loading from '../Loading/Loading';
 
@@ -16,6 +17,8 @@ function Interest() {
 
   const currentCity = interestsList.find((testedInterest) => (
     testedInterest.id === Number(id)));
+
+  console.log(currentCity);
 
   // Converting YYYY-MM-DD into french format
   const dateInFrench = (dateToChange) => {
@@ -63,7 +66,12 @@ function Interest() {
 
           <h1 className="Interest_description_title">{currentCity.title}</h1>
           <p className="Interest_description_content">{currentCity.content}</p>
-          <p className="Interest_description_adress">{currentCity.adress}</p>
+          {currentCity.address && (
+            <div className="Interest_description_address">
+              <img className="Interest_description_address_icon" src={location} alt="icone de localisation" />
+              {currentCity.address}
+            </div>
+          )}
           <p className="Interest_description_author">
             publié par
             {' '}
@@ -77,7 +85,7 @@ function Interest() {
         </div>
 
         <div className="Interest_image">
-          <img src={currentCity.image} alt={currentCity.name} />
+          <img className="Interest_img" src={currentCity.image} alt={currentCity.name} />
         </div>
 
       </div>

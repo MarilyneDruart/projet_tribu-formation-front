@@ -11,13 +11,13 @@
   width: 90%;
 
   &_image {
-    padding: 0;
+    padding: 0
+  }
 
-    & img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+  &_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   &_description {
@@ -35,18 +35,29 @@
 
     &_content {
       line-height: vars.$size3;
-      margin-bottom: vars.$size2;
+      margin: vars.$size2 0;
       color: vars.$color2;
       font-size: vars.$size3;
     }
 
     &_address {
-      margin-top: vars.$size2;
-      color: vars.$color3;
+      display: flex;
+      // justify-content: flex-end;
+      align-items: baseline;
+      align-content: space-between;
+      margin: vars.$size2 0;
+      color: vars.$color2;
+      font-size: vars.$size2;
+      font-style: italic;
+
+      &_icon {
+        margin-right: vars.$size1;
+      }
     }
 
     &_author {
       color: vars.$color2;
+      margin: vars.$size2 0 0;
     }
 
     &_publishdate {
@@ -54,7 +65,7 @@
     }
     
     &_category {
-      margin-bottom: vars.$size2;
+      margin: vars.$size2 0;
 
       &_item {
         margin-right: vars.$size1;
@@ -76,7 +87,7 @@
       align-items: center;
       margin: vars.$size2 auto;
       font-style: italic;
-
+      font-size: vars.$size3;
       &_icon {
         margin-right: vars.$size1;
       }
@@ -143,11 +154,11 @@
 
       &_title {
         text-align: center;
-        margin-bottom: vars.$size5;
+        margin: vars.$size4 0;
       }
 
       &_author {
-        margin-top: vars.$size4;
+        margin: vars.$size4 0 0;
       }
 
       &_date {
