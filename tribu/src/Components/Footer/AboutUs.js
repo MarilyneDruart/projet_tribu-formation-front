@@ -9,19 +9,25 @@ function AboutUS() {
   return (
     <div className="AboutUs">
       <MainImage title="A propos" image={image} />
-      <h1 className="AboutUs_title">TRIBU ! Mais… qu’est-ce que c’est ???</h1>
+      <h1 className="AboutUs_title">
+        <span className="AboutUs_tribu">TRIBU !</span>
+        {' '}
+        Mais… qu’est-ce que c’est ???
+      </h1>
 
       <div className="AboutUs_content">
         <p>
-          Partir vivre à l’étranger c’est un rêve qui peut se compliquer lorsqu’on ne connaît pas bien les bons plans du coin ou que l’on se sent seul.
+          Partir vivre à l’étranger, c’est un rêve qui peut se compliquer lorsqu’on ne connaît pas bien les bons plans du coin ou que l’on se sent seul.
         </p>
 
         <p>
-          TRIBU est LE réseau social pour les français expatriés.
+          <span className="AboutUs_tribu">TRIBU</span>
+          {' '}
+          est LE réseau social pour les français expatriés.
         </p>
 
         <p>
-          Avec cette appli, pas de prise de tête ! Tu pourras trouver ou partager des lieux d’intérêts, échanger des conseils et rencontrer d’autres français expatriés dans ta nouvelle ville.
+          Avec cette appli, pas de prise de tête ! Tu pourras trouver où partager des lieux d’intérêts, échanger des conseils et rencontrer d’autres français expatriés dans ta nouvelle ville.
         </p>
 
         <p>
@@ -30,6 +36,12 @@ function AboutUS() {
 
         <p>
           Démarre ta nouvelle vie !
+        </p>
+
+        <p>
+          Rejoins la
+          {' '}
+          <span className="AboutUs_tribu">TRIBU</span>
         </p>
       </div>
     </div>
