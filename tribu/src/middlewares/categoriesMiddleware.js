@@ -10,6 +10,7 @@ const categoriesMiddleware = (store) => (next) => (action) => {
       axios
         .get('https://pierre-henri-kocan-server.eddi.cloud/projet-reseau-social-back/public/api/categories')
         .then((response) => {
+          console.log(response.data);
           store.dispatch(setCategoriesList(response.data));
         })
         .catch((error) => {

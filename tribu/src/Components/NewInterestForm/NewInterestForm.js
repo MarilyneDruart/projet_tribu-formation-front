@@ -3,7 +3,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 
 // Imports locaux
@@ -27,7 +27,7 @@ const validationSchema = yup.object({
   date: yup
     .date(),
   category: yup
-    .string()
+    .array()
     .required('Sélectionne au moins une catégorie'),
   address: yup
     .string(),
@@ -35,6 +35,9 @@ const validationSchema = yup.object({
 
 function NewInterestForm() {
   const dispatch = useDispatch();
+  const categoriesList = useSelector((state) => state.categories.list);
+  const { cityId, id } = useSelector((state) => state.user);
+  console.log(cityId, id);
 
   const {
     register,
@@ -49,13 +52,16 @@ function NewInterestForm() {
       image: '',
       content: '',
       date: '',
-      category: '',
+      category: [],
       address: '',
     },
   });
 
   const onSubmit = (data) => {
     console.log(data);
+
+    // const dataToSend = { ...data, cityId, id };
+    // console.log(dataToSend);
 
     axios
       .post('https://pierre-henri-kocan-server.eddi.cloud/projet-reseau-social-back/public/api/posts', data, {
@@ -94,7 +100,7 @@ function NewInterestForm() {
           {...register('title')}
           className="new-interest_field"
           type="text"
-          placeholder="Donne un titre à ton astuce"
+          placeholder="Donne un titre à ton intérêt"
         />
         <p className="new-interest_error-message">{errors.title?.message}</p>
 
@@ -114,22 +120,32 @@ function NewInterestForm() {
         />
         <p className="new-interest_error-message">{errors.content?.message}</p>
 
-        <input
-          {...register('date')}
-          className="new-interest_field"
-          type="date"
-        />
-        <p className="new-interest_error-message">{errors.date?.message}</p>
-
-        {/* <select
-          {...register('category')}
-          className="new-account_field"
-        >
-          <option value="">Choisis la/les catégorie(s)</option>
+        <fieldset>
+          <legend>Choisis une ou plusieurs catégories</legend>
           {categoriesList.map((category) => (
-            <option key={category.id} value={`${category.id}`}>{category.name}</option>))}
-        </select>
-        <p className="new-account_error-message">{errors.city?.message}</p> */}
+            <div key={category.id} className="new-interest_checkbox">
+              <input
+                {...register('category')}
+                type="checkbox"
+                className="new-interest_checkboxfield"
+                value={category.name}
+              />
+              <span>{category.name}</span>
+            </div>
+          ))}
+        </fieldset>
+
+        <p className="new-interest_error-message">{errors.category?.message}</p>
+
+        <label htmlFor="date">
+          Si c&apos;est un événement, indique-nous la date
+          <input
+            {...register('date')}
+            className="new-interest_field"
+            type="date"
+          />
+          <p className="new-interest_error-message">{errors.date?.message}</p>
+        </label>
 
         <input
           {...register('address')}
@@ -137,7 +153,7 @@ function NewInterestForm() {
           type="text"
           placeholder="l'adresse de ton intérêt"
         />
-        <p className="new-interest_error-message">{errors.password?.message}</p>
+        <p className="new-interest_error-message">{errors.address?.message}</p>
 
         {/* <input
           {...register('avatar')}

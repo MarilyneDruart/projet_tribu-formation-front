@@ -17,10 +17,6 @@ function Interest() {
   const currentCity = interestsList.find((testedInterest) => (
     testedInterest.id === Number(id)));
 
-  console.log(id);
-  console.log(interestsList);
-  console.log(currentCity);
-
   // Converting YYYY-MM-DD into french format
   const dateInFrench = (dateToChange) => {
     const day = (dateToChange.slice(8, 10));

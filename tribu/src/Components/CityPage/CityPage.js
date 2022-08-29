@@ -21,7 +21,6 @@ function CityPage() {
   };
 
   const currentCity = useSelector((state) => findCity(state.cities.list, slug));
-  console.log(currentCity);
   dispatch(setCity(currentCity));
 
   if (!currentCity) {

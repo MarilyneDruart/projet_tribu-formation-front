@@ -11,11 +11,9 @@ function CityInterests() {
 
   // first get the interests list of all cities
   const interestsList = useSelector((state) => state.interests.list);
-  console.log(interestsList);
 
   // then filter the interests list to get only the interests list of one city with the id
   const cityInterestsList = interestsList.filter((interests) => interests.city.id === id);
-  console.log(cityInterestsList);
 
   if (interestsLoading) {
     return <Loading />;

@@ -14,7 +14,6 @@ const interestsMiddleware = (store) => (next) => (action) => {
       axios
         .get('https://pierre-henri-kocan-server.eddi.cloud/projet-reseau-social-back/public/api/posts')
         .then((response) => {
-          console.log(response.data);
           store.dispatch(setInterestsList(response.data));
         })
         .catch((error) => {
