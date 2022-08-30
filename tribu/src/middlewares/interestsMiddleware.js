@@ -5,10 +5,6 @@ import {
 } from '../actions/interests';
 
 const interestsMiddleware = (store) => (next) => (action) => {
-  // we need the city id to get its interests
-  // const { id } = store.getState().cities.city;
-  // console.log(id);
-
   switch (action.type) {
     case FETCH_INTERESTS:
       axios

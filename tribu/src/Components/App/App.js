@@ -19,6 +19,7 @@ import UserProfilePage from '../UserProfilePage/UserProfilePage';
 import '../../styles/styles.scss';
 import { fetchInterests } from '../../actions/interests';
 import { fetchCategories } from '../../actions/categories';
+import { fetchUser } from '../../actions/user';
 
 function App() {
   const location = useLocation();
@@ -28,13 +29,17 @@ function App() {
   const logged = useSelector((state) => state.user.logged);
 
   useEffect(() => {
-    if (logged) {
-      const loggedUser = JSON.parse(localStorage.getItem('user'));
-      console.log(loggedUser);
-      if (loggedUser) {
-        dispatch(setToken(loggedUser.username, loggedUser.token));
-      }
+    const loggedUser = JSON.parse(localStorage.getItem('user'));
+    console.log(loggedUser);
+
+    if (loggedUser) {
+      dispatch(setToken(loggedUser.token));
     }
+
+    if (logged) {
+      dispatch((fetchUser()));
+    }
+
     dispatch(fetchCities());
     dispatch((fetchInterests()));
     dispatch((fetchCategories()));

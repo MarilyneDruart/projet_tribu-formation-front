@@ -45,7 +45,6 @@ function LoginForm() {
   });
 
   const onSubmit = (data) => {
-    console.log(data);
     axios
       .post('https://pierre-henri-kocan-server.eddi.cloud/projet-reseau-social-back/public/api/login_check', data, {
         headers: {
