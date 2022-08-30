@@ -38,7 +38,9 @@ function NewInterestForm() {
   const dispatch = useDispatch();
   const categoriesList = useSelector((state) => state.categories.list);
   const { cityId, id } = useSelector((state) => state.user);
-  console.log(cityId, id);
+
+  const user = id;
+  const city = cityId;
 
   const {
     register,
@@ -59,10 +61,18 @@ function NewInterestForm() {
   });
 
   const onSubmit = (data) => {
-    console.log(data);
+    // converting string categories into integers id categories
+    const category = data.category.map((categoryToSend) => Number(categoryToSend));
+
+    const dataToSend = {
+      ...data,
+      category,
+      city,
+      user,
+    };
 
     axios
-      .post('https://pierre-henri-kocan-server.eddi.cloud/projet-reseau-social-back/public/api/posts', data, {
+      .post('https://pierre-henri-kocan-server.eddi.cloud/projet-reseau-social-back/public/api/posts', dataToSend, {
         headers: {
           'Content-Type': 'application/json',
         },
@@ -126,7 +136,7 @@ function NewInterestForm() {
                 {...register('category')}
                 type="checkbox"
                 className="new-interest_checkboxfield"
-                value={category.name}
+                value={category.id}
               />
               <span>{category.name}</span>
             </div>
