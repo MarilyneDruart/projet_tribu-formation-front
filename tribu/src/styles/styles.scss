@@ -26,3 +26,10 @@ body {
   height: 100vh;
   background-color: #f7f8fc;
 }
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
