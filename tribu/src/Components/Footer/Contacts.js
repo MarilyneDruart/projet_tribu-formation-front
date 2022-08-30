@@ -14,7 +14,7 @@ function Contacts() {
       <h1 className="Contacts_title">Contacts</h1>
       <div className="box">
 
-        <a href="https://www.linkedin.com/in/lolacosta1/">
+        <a href="https://www.linkedin.com/in/lolacosta1/" target="_blank" rel="noopener noreferrer">
           <div className="card">
             <div className="imgBx">
               <img src={lola} alt="Lola Costa" />
@@ -30,7 +30,7 @@ function Contacts() {
           </div>
         </a>
 
-        <a href="https://www.linkedin.com/in/marilyne-druart/">
+        <a href="https://www.linkedin.com/in/marilyne-druart/" target="_blank" rel="noopener noreferrer">
           <div className="card">
             <div className="imgBx">
               <img src={marilyne} alt="Marilyne Druart" />
@@ -46,7 +46,7 @@ function Contacts() {
           </div>
         </a>
 
-        <a href="https://www.linkedin.com/in/svitlana-burlak/">
+        <a href="https://www.linkedin.com/in/svitlana-burlak/" target="_blank" rel="noopener noreferrer">
           <div className="card">
             <div className="imgBx">
               <img src={svitlana} alt="Svitlana Burlak" />
@@ -62,7 +62,7 @@ function Contacts() {
           </div>
         </a>
 
-        <a href="https://www.linkedin.com/in/pierre-henri-kocan/">
+        <a href="https://www.linkedin.com/in/pierre-henri-kocan/" target="_blank" rel="noopener noreferrer">
           <div className="card">
             <div className="imgBx">
               <img src={pierrehenri} alt="Pierre-Henri Kocan" />
@@ -78,7 +78,7 @@ function Contacts() {
           </div>
         </a>
 
-        <a href="https://www.linkedin.com/in/laurentarcos/">
+        <a href="https://www.linkedin.com/in/laurentarcos/" target="_blank" rel="noopener noreferrer">
           <div className="card">
             <div className="imgBx">
               <img src={laurent} alt="Laurent Arcos" />

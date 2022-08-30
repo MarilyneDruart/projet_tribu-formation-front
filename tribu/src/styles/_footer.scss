@@ -9,7 +9,7 @@
   justify-content: center;
   align-items: center;
   margin-top: 1rem;
-  background-color: vars.$colorgreen;
+  background: linear-gradient(180deg, vars.$colorbackground 0%, vars.$colorgreen 100%);
   color: vars.$color2;
 
 
