@@ -17,6 +17,14 @@
 .CityInterests {
   // width: 1040px;
 
+  &_bigtitle {
+    color:vars.$color1;
+    font-size: vars.$size3;
+    text-align: center;
+    font-weight: bold;
+    margin: vars.$size3;
+  }
+
   &_card {
     margin: 10px;
     margin-bottom: 0;
@@ -40,36 +48,49 @@
     justify-content: center;
     align-items: flex-start;
     padding: 20px;
-    // min-height: 250px;
+    min-height: 250px;
   }
 
-  &__tag {
-    background: #cccccc;
-    border-radius: 50px;
-    font-size: 12px;
-    margin: 0;
-    color: #fff;
-    padding: 2px 10px;
+  &_category {
+    margin-bottom: vars.$size1;
+    display: flex;
+    flex-wrap: wrap;
+
+    &_tag {
+    margin-right: vars.$size1;
+    margin-bottom: vars.$size1;
+    padding: 0.5em vars.$size1;
+    border-radius: .5em;
+    color: white;
+    font-weight: bold;
+    font-size: vars.$size1;
     text-transform: uppercase;
-    letter-spacing: 0.3em;
-    cursor: pointer;
+  }
   }
 
-  &__tag--Gastronomie {
-    background-color: #47bcd4;
+  &_title {
+    font-size: vars.$size2;
+    font-weight: bold;
+    margin-bottom: vars.$size3;
   }
 
-  &__title {
-    font-size: 1rem;
+  &_description {
+    font-size: vars.$size2;
+    margin-bottom: vars.$size1;
+    height: vars.$size6;
+    overflow: hidden;
+    text-overflow: clip;
   }
 
-  &_content {
-    font-size: 0.75rem;
+  &_readmore {
+    align-self: center;
+    text-decoration: underline;
+    font-style: italic;
   }
 
   &_user {
     display: flex;
-    margin-top: auto;
+    margin-top: vars.$size3;
   }
 
   &_user-img {
@@ -86,4 +107,34 @@
   &_user-info small {
     color: #545d7a;;
   }
+}
+
+.Gastronomie {
+  border: 1px solid #FFA64C;
+  background-color: #FFA64C;
+}
+
+.Culture {
+  border: 1px solid #73FBD3;
+  background-color: #73FBD3;
+}
+
+.Sorties {
+  border: 1px solid #FDCFF3;
+  background-color: #FDCFF3;
+}
+
+.Activités {
+  border: 1px solid #9F86C0;
+  background-color: #9F86C0;
+}
+
+.Evénements {
+  border: 1px solid #5C7AFF;
+  background-color: #5C7AFF;
+}
+
+.Co-Working {
+  border: 1px solid #00BBFF;
+  background-color: #00BBFF;
 }

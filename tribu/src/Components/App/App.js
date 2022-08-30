@@ -17,6 +17,8 @@ import Loading from '../Loading/Loading';
 import UserProfilePage from '../UserProfilePage/UserProfilePage';
 
 import '../../styles/styles.scss';
+import { fetchInterests } from '../../actions/interests';
+import { fetchCategories } from '../../actions/categories';
 
 function App() {
   const location = useLocation();
@@ -34,6 +36,8 @@ function App() {
       }
     }
     dispatch(fetchCities());
+    dispatch((fetchInterests()));
+    dispatch((fetchCategories()));
   }, []);
 
   useEffect(() => {

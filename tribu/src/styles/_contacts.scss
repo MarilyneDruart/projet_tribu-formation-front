@@ -3,22 +3,23 @@
 .Contacts_title {
   font-size: 1.8rem;
   text-align: center;
-  margin: 2rem;
+  margin: auto;
 }
 
 .box{
-  width: 1200px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  grid-gap: 15px;
-  margin: 0 auto;
+  max-width: 100%;
+  display: flex;
+  margin: 1rem auto 3rem auto;
+  flex-wrap: wrap;
+  justify-content: center;
+
 }
 .card{
   position: relative;
-  width: 300px;
-  height: 350px;
+  width: 250px;
+  height: 300px;
   background: #fff;
-  margin: 0 auto;
+  margin: 2rem;
   border-radius: 4px;
   box-shadow:0 2px 10px rgba(0,0,0,.2);
 }

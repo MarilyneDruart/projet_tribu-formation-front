@@ -1,29 +1,19 @@
-import { React, useEffect } from 'react';
+import { React } from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import '../../../styles/styles.scss';
-import axios from 'axios';
-import { setInterestsList } from '../../../actions/interests';
+
 import Loading from '../../Loading/Loading';
 
-function CityInterests({ id, name, slug }) {
-  const dispatch = useDispatch();
+function CityInterests() {
   const interestsLoading = useSelector((state) => state.interests.loading);
+  const { name, slug, id } = useSelector((state) => state.cities.city);
 
-  useEffect(() => {
-    axios
-      .get(`https://pierre-henri-kocan-server.eddi.cloud/projet-reseau-social-back/public/api/cities/${id}`)
-      .then((response) => {
-        dispatch(setInterestsList(response.data.posts));
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
-
+  // first get the interests list of all cities
   const interestsList = useSelector((state) => state.interests.list);
-  console.log(interestsList);
+
+  // then filter the interests list to get only the interests list of one city with the id
+  const cityInterestsList = interestsList.filter((interests) => interests.city.id === id);
 
   if (interestsLoading) {
     return <Loading />;
@@ -31,24 +21,36 @@ function CityInterests({ id, name, slug }) {
 
   return (
     <div className="CityInterests">
-      <h2>
+      <h2 className="CityInterests_bigtitle">
         Intérêts partagés par la communauté pour
         {' '}
         {name}
       </h2>
       <div className="container">
-        {interestsList.map((interests) => (
+        {cityInterestsList.map((interests) => (
           <article className="CityInterests_card" key={interests.id}>
             <Link to={`/ville/${slug}/${interests.id}`}>
               <div className="CityInterests_header">
                 <img src={interests.image} alt={interests.title} />
               </div>
               <div className="CityInterests_content">
-                <span className={`CityInterests_tag CityInterests_tag--${interests.category.name}`}>{interests.category.map((category) => category.name)}</span>
+                <div className="CityInterests_category">
+                  {interests.category.map((category) => (
+                    <span
+                      className={`CityInterests_category_tag ${category.name}`}
+                      key={category.id}
+                    >
+                      {category.name}
+                    </span>
+                  ))}
+                </div>
                 <h4 className="CityInterests_title">{interests.title}</h4>
-                <p className="CityInterests_content">{interests.content}</p>
+                <p className="CityInterests_description">{interests.content}</p>
+                <p className="CityInterests_readmore">
+                  Voir plus
+                </p>
                 <div className="CityInterests_user">
-                  <img className="CityInterests_user-img" src="#" alt="auteur du post" />
+                  {/* <img className="CityInterests_user-img" src="#" alt="auteur du post" /> */}
                   <div className="CityInterests_user-info">
                     <h5>
                       {interests.user.firstname}
@@ -66,11 +68,5 @@ function CityInterests({ id, name, slug }) {
     </div>
   );
 }
-
-CityInterests.propTypes = {
-  id: PropTypes.number.isRequired,
-  name: PropTypes.string.isRequired,
-  slug: PropTypes.string.isRequired,
-};
 
 export default CityInterests;

@@ -52,7 +52,7 @@ function Header() {
               onClick={() => { dispatch(toggleInterestForm()); }}
             >
               <div className="header_add-icon" />
-              <div className="header_button-text">Partage ton intérêt</div>
+              <div className="header_button-text">Partage un intérêt</div>
             </button>
 
             <button

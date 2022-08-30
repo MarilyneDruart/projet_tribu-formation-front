@@ -1,39 +1,107 @@
 import { React } from 'react';
-import { useParams, Navigate } from 'react-router-dom';
+import { useParams, Navigate, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import '../../styles/styles.scss';
+import location from '../../assets/images/location.png';
+import calendar from '../../assets/images/timetable.png';
+import Loading from '../Loading/Loading';
 
 function Interest() {
-  const { id } = useParams();
+  const { slug, id } = useParams();
+
+  const interestsLoading = useSelector((state) => state.interests.loading);
+
+  // eslint-disable-next-line
   const interestsList = useSelector((state) => state.interests.list);
 
-  const currentInterest = interestsList.find((interest) => interest.id === Number(id));
+  const currentCity = interestsList.find((testedInterest) => (
+    testedInterest.id === Number(id)));
 
-  console.log(currentInterest);
+  console.log(currentCity);
 
-  if (!currentInterest) {
+  // Converting YYYY-MM-DD into french format
+  const dateInFrench = (dateToChange) => {
+    const day = (dateToChange.slice(8, 10));
+    let month = (dateToChange.slice(5, 7));
+    const year = (dateToChange.slice(0, 4));
+
+    // Turning month number into name
+    // eslint-disable-next-line
+    month === '01' ? month = 'janvier' : month === '02' ? month = 'février' : month === '03' ? month = 'mars' : month === '04' ? month = 'avril' : month === '05' ? month = 'mai' : month === '06' ? month = 'juin' : month === '07' ? month = 'juillet' : month === '08' ? month = 'août' : month === '09' ? month = 'septembre' : month === '10' ? month = 'octobre' : month === '11' ? month = 'novembre' : month === '12' ? month = 'décembre' : ''
+
+    return `le ${day} ${month} ${year}`;
+  };
+
+  if (interestsLoading) {
+    return <Loading />;
+  }
+
+  if (!currentCity) {
     return <Navigate to="/PageIntrouvable" replace />;
   }
 
   return (
-    <div className="Interest">
-      <img src={currentInterest.image} className="Interest_img" alt={currentInterest.name} />
-      <p>{currentInterest.category.name}</p>
-      <div className="Interest_content">
-        <h2 className="Interest_title">{currentInterest.name}</h2>
-      </div>
-      <p className="Interest_description">{currentInterest.content}</p>
-      <p>
-        créé par
-        {currentInterest.user.firstname}
-      </p>
-      <p>
-        le
-        {currentInterest.createdAt}
-      </p>
-    </div>
+    <div className="container">
+      <div className="Interest">
 
+        <div className="Interest_description">
+          <div className="Interest_description_category">
+            {currentCity.category.map((category) => (
+              <span
+                className={`Interest_description_category_item ${category.name}`}
+                key={category.id}
+              >
+                {category.name}
+              </span>
+            ))}
+          </div>
+
+          {currentCity.date && (
+            <div className="Interest_description_date">
+              <img className="Interest_description_date_icon" src={calendar} alt="icone calendrier" />
+              {dateInFrench(currentCity.date)}
+            </div>
+          )}
+
+          <h1 className="Interest_description_title">{currentCity.title}</h1>
+          <p className="Interest_description_content">{currentCity.content}</p>
+          {currentCity.address && (
+            <div className="Interest_description_address">
+              <img className="Interest_description_address_icon" src={location} alt="icone de localisation" />
+              {currentCity.address}
+            </div>
+          )}
+          <p className="Interest_description_author">
+            publié par
+            {' '}
+            {currentCity.user.firstname}
+            {' '}
+            {currentCity.user.lastname}
+          </p>
+          <p className="Interest_description_publishdate">
+            {dateInFrench(currentCity.createdAt)}
+          </p>
+        </div>
+
+        <div className="Interest_image">
+          <img className="Interest_img" src={currentCity.image} alt={currentCity.name} />
+        </div>
+
+      </div>
+      <div className="navbuttons">
+        <Link to={`/ville/${slug}/`}>
+          <button className="navbuttons_item" type="button">
+            Retour à la ville
+          </button>
+        </Link>
+        <Link to="/">
+          <button className="navbuttons_item" type="button">
+            Accueil
+          </button>
+        </Link>
+      </div>
+    </div>
   );
 }
 
