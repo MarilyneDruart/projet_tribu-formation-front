@@ -30,8 +30,6 @@ function App() {
 
   useEffect(() => {
     const loggedUser = JSON.parse(localStorage.getItem('user'));
-    console.log(loggedUser);
-
     if (loggedUser) {
       dispatch(setToken(loggedUser.token));
     }
