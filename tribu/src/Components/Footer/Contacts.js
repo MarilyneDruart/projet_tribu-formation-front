@@ -2,6 +2,10 @@ import React from 'react';
 
 // Imports locaux
 import '../../styles/styles.scss';
+import lola from '../../assets/images/lola.png';
+import marilyne from '../../assets/images/marilyne.png';
+import svitlana from '../../assets/images/svitlana.png';
+import pierrehenri from '../../assets/images/pierrehenri.png';
 import laurent from '../../assets/images/laurent.png';
 
 function Contacts() {
@@ -13,7 +17,7 @@ function Contacts() {
         <a href="https://www.linkedin.com/in/lolacosta1/">
           <div className="card">
             <div className="imgBx">
-              <img src="" alt="Lola Costa" />
+              <img src={lola} alt="Lola Costa" />
             </div>
             <div className="details">
               <h2>
@@ -29,7 +33,7 @@ function Contacts() {
         <a href="https://www.linkedin.com/in/marilyne-druart/">
           <div className="card">
             <div className="imgBx">
-              <img src="" alt="Marilyne Druart" />
+              <img src={marilyne} alt="Marilyne Druart" />
             </div>
             <div className="details">
               <h2>
@@ -45,7 +49,7 @@ function Contacts() {
         <a href="https://www.linkedin.com/in/svitlana-burlak/">
           <div className="card">
             <div className="imgBx">
-              <img src="" alt="Svitlana Burlak" />
+              <img src={svitlana} alt="Svitlana Burlak" />
             </div>
             <div className="details">
               <h2>
@@ -61,7 +65,7 @@ function Contacts() {
         <a href="https://www.linkedin.com/in/pierre-henri-kocan/">
           <div className="card">
             <div className="imgBx">
-              <img src="" alt="Pierre-Henri Kocan" />
+              <img src={pierrehenri} alt="Pierre-Henri Kocan" />
             </div>
             <div className="details">
               <h2>
