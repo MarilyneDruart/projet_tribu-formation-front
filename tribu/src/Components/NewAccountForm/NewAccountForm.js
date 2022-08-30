@@ -81,6 +81,7 @@ function NewAccountForm() {
         console.log(response);
         console.log('Votre compte a été créé');
         dispatch(closeInscriptionForm());
+        dispatch(openLoginForm());
       })
       .catch((error) => {
         console.log(error);
@@ -172,7 +173,7 @@ function NewAccountForm() {
         />
         <p className="new-account_error-message">{errors.avatar?.message}</p> */}
 
-        <input className="new-account_submit" type="submit" />
+        <input className="new-account_submit" value="Envoyer" type="submit" />
       </form>
 
       <p className="login">

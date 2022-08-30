@@ -3,8 +3,6 @@ import { React } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import MainImageProfile from './MainImageProfile';
-
 // Imports locaux
 import '../../styles/styles.scss';
 
@@ -15,6 +13,7 @@ function UserProfilePage() {
     presentation,
     post,
     cityName,
+    image,
   } = useSelector((state) => state.user);
 
   const citySlug = cityName.toLowerCase();
@@ -22,7 +21,7 @@ function UserProfilePage() {
 
   return (
     <div className="Home">
-      <MainImageProfile />
+      <img src={image} alt="avatar" />
       <h2 className="Home_name">
         {firstname}
         {' '}

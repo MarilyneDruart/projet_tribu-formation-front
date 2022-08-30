@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
@@ -29,6 +30,7 @@ const validationSchema = yup.object({
 function LoginForm() {
   // const logged = useSelector((state) => state.user.logged);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const {
     register,
@@ -45,7 +47,6 @@ function LoginForm() {
   });
 
   const onSubmit = (data) => {
-    console.log(data);
     axios
       .post('https://pierre-henri-kocan-server.eddi.cloud/projet-reseau-social-back/public/api/login_check', data, {
         headers: {
@@ -64,6 +65,9 @@ function LoginForm() {
       })
       .catch((error) => {
         console.log(error);
+      })
+      .finally(() => {
+        navigate('/');
       });
     reset();
   };
@@ -100,7 +104,7 @@ function LoginForm() {
         />
         <p className="Login_error-message">{errors.password?.message}</p>
 
-        <input className="Login_submit" type="submit" />
+        <input className="Login_submit" value="Envoyer" type="submit" />
       </form>
 
       <p className="inscription">

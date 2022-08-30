@@ -22,7 +22,7 @@ const usersMiddleware = (store) => (next) => (action) => {
             response.data.city.id,
             response.data.city.name,
             response.data.post,
-            response.data.prensentation,
+            response.data.presentation,
             response.data.image,
           ));
         })
