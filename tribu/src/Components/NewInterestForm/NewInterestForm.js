@@ -60,8 +60,8 @@ function NewInterestForm() {
   const onSubmit = (data) => {
     console.log(data);
 
-    // const dataToSend = { ...data, cityId, id };
-    // console.log(dataToSend);
+    const dataToSend = { ...data, cityId, id };
+    console.log(dataToSend);
 
     axios
       .post('https://pierre-henri-kocan-server.eddi.cloud/projet-reseau-social-back/public/api/posts', data, {
