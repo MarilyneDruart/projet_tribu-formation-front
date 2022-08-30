@@ -81,6 +81,7 @@ function NewAccountForm() {
         console.log(response);
         console.log('Votre compte a été créé');
         dispatch(closeInscriptionForm());
+        dispatch(openLoginForm());
       })
       .catch((error) => {
         console.log(error);
