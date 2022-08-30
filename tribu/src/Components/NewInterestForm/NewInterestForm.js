@@ -24,8 +24,9 @@ const validationSchema = yup.object({
     .string()
     .trim()
     .required('Donne-nous ton avis !'),
-  date: yup
-    .date(),
+  // date: yup
+  //   .string()
+  //   .nullable(),
   category: yup
     .array()
     .required('Sélectionne au moins une catégorie'),
@@ -51,7 +52,7 @@ function NewInterestForm() {
       title: '',
       image: '',
       content: '',
-      date: '',
+      // date: '',
       category: [],
       address: '',
     },
@@ -59,9 +60,6 @@ function NewInterestForm() {
 
   const onSubmit = (data) => {
     console.log(data);
-
-    const dataToSend = { ...data, cityId, id };
-    console.log(dataToSend);
 
     axios
       .post('https://pierre-henri-kocan-server.eddi.cloud/projet-reseau-social-back/public/api/posts', data, {
@@ -137,7 +135,7 @@ function NewInterestForm() {
 
         <p className="new-interest_error-message">{errors.category?.message}</p>
 
-        <label htmlFor="date">
+        {/* <label htmlFor="date">
           Si c&apos;est un événement, indique-nous la date
           <input
             {...register('date')}
@@ -145,7 +143,7 @@ function NewInterestForm() {
             type="date"
           />
           <p className="new-interest_error-message">{errors.date?.message}</p>
-        </label>
+        </label> */}
 
         <input
           {...register('address')}
