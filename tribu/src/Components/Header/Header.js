@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { toggleInscriptionForm, closeInscriptionForm } from '../../actions/inscriptionForm';
 import { toggleLoginForm, closeLoginForm, logout } from '../../actions/loginForm';
@@ -23,6 +23,8 @@ function Header() {
   const { lastname, firstname, logged } = useSelector((state) => state.user);
   const firstnameURL = firstname.toLowerCase();
   const lastnameURL = lastname.toLowerCase();
+
+  const navigate = useNavigate();
 
   return (
 
@@ -61,6 +63,7 @@ function Header() {
               onClick={() => {
                 localStorage.removeItem('user');
                 dispatch(logout());
+                navigate('/');
               }}
             >
               Déconnexion

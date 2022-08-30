@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
@@ -29,6 +30,7 @@ const validationSchema = yup.object({
 function LoginForm() {
   // const logged = useSelector((state) => state.user.logged);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const {
     register,
@@ -63,6 +65,9 @@ function LoginForm() {
       })
       .catch((error) => {
         console.log(error);
+      })
+      .finally(() => {
+        navigate('/');
       });
     reset();
   };
