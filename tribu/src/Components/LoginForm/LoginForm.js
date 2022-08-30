@@ -100,7 +100,7 @@ function LoginForm() {
         />
         <p className="Login_error-message">{errors.password?.message}</p>
 
-        <input className="Login_submit" type="submit" />
+        <input className="Login_submit" value="Envoyer" type="submit" />
       </form>
 
       <p className="inscription">

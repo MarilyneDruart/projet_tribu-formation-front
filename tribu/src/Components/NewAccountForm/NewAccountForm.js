@@ -172,7 +172,7 @@ function NewAccountForm() {
         />
         <p className="new-account_error-message">{errors.avatar?.message}</p> */}
 
-        <input className="new-account_submit" type="submit" />
+        <input className="new-account_submit" value="Envoyer" type="submit" />
       </form>
 
       <p className="login">

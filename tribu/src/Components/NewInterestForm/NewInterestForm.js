@@ -173,7 +173,7 @@ function NewInterestForm() {
         />
         <p className="new-interest_error-message">{errors.avatar?.message}</p> */}
 
-        <input className="new-interest_submit" type="submit" />
+        <input className="new-interest_submit" value="Envoyer" type="submit" />
       </form>
 
     </div>
