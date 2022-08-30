@@ -36,10 +36,6 @@ function App() {
       dispatch(setToken(loggedUser.token));
     }
 
-    if (logged) {
-      dispatch((fetchUser()));
-    }
-
     dispatch(fetchCities());
     dispatch((fetchInterests()));
     dispatch((fetchCategories()));
@@ -48,6 +44,10 @@ function App() {
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0 });
   }, [location]);
+
+  if (logged) {
+    dispatch((fetchUser()));
+  }
 
   if (citiesLoading) {
     return <Loading />;
