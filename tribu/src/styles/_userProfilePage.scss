@@ -1,23 +1,62 @@
 @use 'vars';
 
-.Home {
-  &_name {
+.UserProfilePage {
+  &_card {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    background-color:rgb(236, 226, 202);
+    border-radius: 20px;
 
+    &-right{
+      padding: 2rem;
+    }
+
+    &-img {
+      background-color: rgb(101,201,255);
+      border-radius: 100%;
+      margin-left: -8rem;
+     }
+
+    &-name {
+      font-size: vars.$size4;
+      }
+
+    &-presentation{
+      font-size: vars.$size2;
+      }
+
+    &-city {
+      font-size: vars.$size3;
+      color: grey;
+      font-style: italic;
+      margin-bottom: 1rem;
+
+    }
   }
+  
   &_interests {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0;
-    background-color: vars.$color7;
-    color: #10182f;
+    margin: auto;
 
-    &_container {
+    &-title {
+      font-size: vars.$size3;
+      margin: vars.$size3;
+    }
+
+    &-container {
       display: flex;
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
       background-color: vars.$color7;
     }
-  }
+}
 }
