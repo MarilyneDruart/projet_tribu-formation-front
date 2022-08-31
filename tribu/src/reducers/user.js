@@ -10,6 +10,7 @@ import { SET_USER } from '../actions/user';
 
 export const initialState = {
   loginFormisDisplayed: false,
+  loading: true,
 
   logged: false,
   token: '',
@@ -59,6 +60,7 @@ function user(state = initialState, action = {}) {
     case SET_USER:
       return {
         ...state,
+        loading: false,
         id: action.payload.id,
         email: action.payload.email,
         firstname: action.payload.firstname,
