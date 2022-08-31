@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 // Imports locaux
 import '../../styles/styles.scss';
+import Loading from '../Loading/Loading';
 
 function UserProfilePage() {
   const {
@@ -17,7 +18,12 @@ function UserProfilePage() {
   } = useSelector((state) => state.user);
 
   const citySlug = cityName.toLowerCase();
-  console.log(post);
+
+  const userLoading = useSelector((state) => state.user.loading);
+
+  if (userLoading) {
+    return <Loading />;
+  }
 
   return (
     <div className="UserProfilePage">
