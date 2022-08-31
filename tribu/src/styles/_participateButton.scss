@@ -2,9 +2,19 @@
 
 .ParticipateButton {
   align-self: flex-end;
-  background-color: vars.$color5;
 
   &_button {
-    background-color: vars.$color5;
+    background-color: hsla(110, 43%, 45%, 1);
+    border: 1px solid #53a642;
+    color: white;
+    font-weight: bold;
+    padding: vars.$size1;
+    border-radius: 25px;
+    font-size: vars.$size2;
+
+    &:hover {
+      background-color: hsla(110, 43%, 60%, 1);
+      border: 1px solid hsla(110, 43%, 60%, 1);
+    }
   }
 }
