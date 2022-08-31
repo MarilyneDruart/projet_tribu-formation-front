@@ -72,7 +72,9 @@ function Interest() {
           <p className="Interest_description_publishdate">
             {dateInFrench(currentCity.createdAt)}
           </p>
-          <ParticipateButton />
+          {currentCity.category.map((category) => (
+            category.name === 'Evénements' && <ParticipateButton />
+          ))}
         </div>
 
         <div className="Interest_image">
