@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 
+import toast from 'react-hot-toast';
 import { toggleInscriptionForm, closeInscriptionForm } from '../../actions/inscriptionForm';
 import { toggleLoginForm, closeLoginForm, logout } from '../../actions/loginForm';
 import { toggleInterestForm } from '../../actions/interests';
@@ -12,6 +13,7 @@ import NewInterestForm from '../NewInterestForm/NewInterestForm';
 import '../../styles/styles.scss';
 import logo from '../../assets/images/logo.png';
 import slogan from '../../assets/images/slogan.png';
+import profileIcon from '../../assets/images/profil-icon.png';
 
 function Header() {
   const dispatch = useDispatch();
@@ -44,6 +46,7 @@ function Header() {
                 className="header_profile-button"
                 onClick={() => { }}
               >
+                <img className="header_profile-icon" src={profileIcon} alt="icone de profil" />
                 Mon profil
               </button>
             </Link>
@@ -64,6 +67,7 @@ function Header() {
                 localStorage.removeItem('user');
                 dispatch(logout());
                 navigate('/');
+                toast.success('Déconnexion réussie, reviens vite nous voir !');
               }}
             >
               Déconnexion
