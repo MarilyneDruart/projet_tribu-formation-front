@@ -5,6 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
+import toast from 'react-hot-toast';
 
 // Imports locaux
 import '../../styles/styles.scss';
@@ -80,12 +81,13 @@ function NewAccountForm() {
       })
       .then((response) => {
         console.log(response);
-        console.log('Votre compte a été créé');
         dispatch(closeInscriptionForm());
         dispatch(openLoginForm());
+        toast.success('Bravo ! Ton compte est créé !\nConnecte-toi pour rejoindre la tribu !');
       })
       .catch((error) => {
         console.log(error);
+        toast.error('Ton compte n\'a pas pu être créé, essaie à nouveau !');
       });
     reset();
   };

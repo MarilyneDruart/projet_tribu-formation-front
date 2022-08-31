@@ -6,6 +6,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
+import toast from 'react-hot-toast';
 
 // Imports locaux
 import '../../styles/styles.scss';
@@ -62,14 +63,16 @@ function LoginForm() {
         dispatch(closeLoginForm());
         dispatch(setToken(token));
         dispatch(fetchUser());
+        toast.success('Connexion à la Tribu réussie !');
+        reset();
       })
       .catch((error) => {
         console.log(error);
+        toast.error('La Tribu ne reconnaît pas cet identifiant ou ce mot de passe');
       })
       .finally(() => {
         navigate('/');
       });
-    reset();
   };
 
   return (
