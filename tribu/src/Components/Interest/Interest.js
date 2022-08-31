@@ -7,6 +7,7 @@ import location from '../../assets/images/location.png';
 import calendar from '../../assets/images/timetable.png';
 import Loading from '../Loading/Loading';
 import LikeButton from '../Buttons/LikeButton';
+import ParticipateButton from '../Buttons/ParticipateButton';
 
 function Interest() {
   const { slug, id } = useParams();
@@ -83,6 +84,7 @@ function Interest() {
           <p className="Interest_description_publishdate">
             {dateInFrench(currentCity.createdAt)}
           </p>
+          <ParticipateButton />
         </div>
 
         <div className="Interest_image">

@@ -1,0 +1,10 @@
+@use 'vars';
+
+.ParticipateButton {
+  align-self: flex-end;
+  background-color: vars.$color5;
+
+  &_button {
+    background-color: vars.$color5;
+  }
+}
