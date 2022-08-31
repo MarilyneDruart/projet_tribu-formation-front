@@ -5,6 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
+import toast from 'react-hot-toast';
 
 // Imports locaux
 import '../../styles/styles.scss';
@@ -79,11 +80,12 @@ function NewInterestForm() {
       })
       .then((response) => {
         console.log(response);
-        console.log('intérêt ajouté avec succès !');
         dispatch(closeInterestForm());
+        toast.success('Ton intérêt a bien été créé !');
       })
       .catch((error) => {
         console.log(error);
+        toast.error('Ton intérêt n\'a pas pu être créé !');
       });
     reset();
   };

@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 
+import toast from 'react-hot-toast';
 import { toggleInscriptionForm, closeInscriptionForm } from '../../actions/inscriptionForm';
 import { toggleLoginForm, closeLoginForm, logout } from '../../actions/loginForm';
 import { toggleInterestForm } from '../../actions/interests';
@@ -64,6 +65,7 @@ function Header() {
                 localStorage.removeItem('user');
                 dispatch(logout());
                 navigate('/');
+                toast.success('Déconnexion réussie, reviens vite nous voir !');
               }}
             >
               Déconnexion
