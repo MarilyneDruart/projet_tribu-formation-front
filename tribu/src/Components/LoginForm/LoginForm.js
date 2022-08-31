@@ -6,6 +6,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
+import toast from 'react-hot-toast';
 
 // Imports locaux
 import '../../styles/styles.scss';
@@ -62,6 +63,8 @@ function LoginForm() {
         dispatch(closeLoginForm());
         dispatch(setToken(token));
         dispatch(fetchUser());
+        toast('Success');
+        reset();
       })
       .catch((error) => {
         console.log(error);
@@ -69,7 +72,6 @@ function LoginForm() {
       .finally(() => {
         navigate('/');
       });
-    reset();
   };
 
   return (

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { Toaster } from 'react-hot-toast';
 import { fetchCities } from '../../actions/cities';
 import { setToken } from '../../actions/loginForm';
 
@@ -53,6 +54,7 @@ function App() {
 
   return (
     <div className="App">
+      <Toaster />
       <Header />
 
       <Routes>
