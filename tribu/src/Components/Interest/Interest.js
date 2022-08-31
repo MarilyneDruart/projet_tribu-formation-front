@@ -6,6 +6,7 @@ import '../../styles/styles.scss';
 import location from '../../assets/images/location.png';
 import calendar from '../../assets/images/timetable.png';
 import Loading from '../Loading/Loading';
+import LikeButton from '../Buttons/LikeButton';
 
 function Interest() {
   const { slug, id } = useParams();
@@ -55,6 +56,7 @@ function Interest() {
                 {category.name}
               </span>
             ))}
+            <LikeButton />
           </div>
 
           {currentCity.date && (
