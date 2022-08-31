@@ -2,6 +2,7 @@
 
 .ParticipateButton {
   align-self: flex-end;
+  margin-bottom: vars.$size2;
 
   &_button {
     background-color: hsla(110, 43%, 45%, 1);
