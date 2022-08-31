@@ -2,25 +2,26 @@
 
 .UserProfilePage {
   &_card {
-    width: 50%;
+    width: 90%;
     margin: auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-    background-color:rgb(236, 226, 202);
+    margin-bottom: 2rem;
+    background-color: vars.$colorgreen;
     border-radius: 20px;
 
     &-right{
-      padding: 2rem;
+      padding: 1.5rem;
+      text-align: center;
     }
 
     &-img {
       background-color: rgb(101,201,255);
       border-radius: 100%;
-      margin-left: -8rem;
-     }
+      margin-top: 1rem;
+      height: 180px;
+      }
 
     &-name {
       font-size: vars.$size4;
@@ -28,6 +29,7 @@
 
     &-presentation{
       font-size: vars.$size2;
+      line-height: 1.2rem;
       }
 
     &-city {
@@ -35,6 +37,7 @@
       color: grey;
       font-style: italic;
       margin-bottom: 1rem;
+      line-height: 2.5rem;
 
     }
   }
@@ -60,3 +63,76 @@
     }
 }
 }
+
+//*===========================================*//
+//*               Media Queries               *//
+//*===========================================*//
+
+
+
+/* width 600px --> 999px */
+@media screen and (min-width: 600px) and (max-width: 999px){
+  .UserProfilePage {
+    &_card {
+      width: 80%;
+      flex-direction: row;
+
+      &-right{
+        text-align: left;
+      }
+      
+      &-img {
+      background-color: rgb(101,201,255);
+      border-radius: 100%;
+      margin: 1rem;
+      height: 200px;
+      }
+    }
+  }
+}
+
+
+/* width 1000px --> 1599px */
+@media screen and (min-width: 1000px) and (max-width: 1599px){
+  .UserProfilePage {
+    &_card {
+      width: 60%;
+      flex-direction: row;
+      
+      &-right{
+        text-align: left;
+      }
+      
+      &-img {
+      background-color: rgb(101,201,255);
+      border-radius: 100%;
+      margin-left: -6rem;
+      margin-top: 0;
+      height: 100%;
+      }
+    }
+  }
+}
+
+/* width 1600px  */
+@media screen and (min-width: 1600px){
+  .UserProfilePage {
+    &_card {
+      width: 50%;
+      flex-direction: row;
+      
+      &-right{
+        text-align: left;
+      }
+      
+      &-img {
+      background-color: rgb(101,201,255);
+      border-radius: 100%;
+      margin-left: -7rem;
+      margin-top: 0;
+      height: 100%;
+      }
+    }
+  }
+}
+
