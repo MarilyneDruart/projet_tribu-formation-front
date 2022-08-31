@@ -54,7 +54,25 @@ function App() {
 
   return (
     <div className="App">
-      <Toaster />
+      <Toaster
+        position="bottom-left"
+        toastOptions={{
+          duration: 10000,
+          style: {
+            padding: '20px',
+          },
+          success: {
+            style: {
+              background: '#b6f8c4',
+            },
+          },
+          error: {
+            style: {
+              background: '#ffb7b7',
+            },
+          },
+        }}
+      />
       <Header />
 
       <Routes>

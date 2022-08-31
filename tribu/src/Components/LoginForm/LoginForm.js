@@ -63,11 +63,12 @@ function LoginForm() {
         dispatch(closeLoginForm());
         dispatch(setToken(token));
         dispatch(fetchUser());
-        toast('Success');
+        toast.success('Connexion réussie !');
         reset();
       })
       .catch((error) => {
         console.log(error);
+        toast.error('Identifiant ou mot de passe inconnu');
       })
       .finally(() => {
         navigate('/');
