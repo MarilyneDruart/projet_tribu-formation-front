@@ -1,23 +1,138 @@
 @use 'vars';
 
-.Home {
-  &_name {
+.UserProfilePage {
+  &_card {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    background-color: vars.$colorgreen;
+    border-radius: 20px;
 
+    &-right{
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    &-img {
+      background-color: rgb(101,201,255);
+      border-radius: 100%;
+      margin-top: 1rem;
+      height: 180px;
+      }
+
+    &-name {
+      font-size: vars.$size4;
+      }
+
+    &-presentation{
+      font-size: vars.$size2;
+      line-height: 1.2rem;
+      }
+
+    &-city {
+      font-size: vars.$size3;
+      color: grey;
+      font-style: italic;
+      margin-bottom: 1rem;
+      line-height: 2.5rem;
+
+    }
   }
+  
   &_interests {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0;
-    background-color: vars.$color7;
-    color: #10182f;
+    margin: auto;
 
-    &_container {
+    &-title {
+      font-size: vars.$size3;
+      margin: vars.$size3;
+    }
+
+    &-container {
       display: flex;
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
       background-color: vars.$color7;
     }
+}
+}
+
+//*===========================================*//
+//*               Media Queries               *//
+//*===========================================*//
+
+
+
+/* width 600px --> 999px */
+@media screen and (min-width: 600px) and (max-width: 999px){
+  .UserProfilePage {
+    &_card {
+      width: 80%;
+      flex-direction: row;
+
+      &-right{
+        text-align: left;
+      }
+      
+      &-img {
+      background-color: rgb(101,201,255);
+      border-radius: 100%;
+      margin: 1rem;
+      height: 200px;
+      }
+    }
   }
 }
+
+
+/* width 1000px --> 1599px */
+@media screen and (min-width: 1000px) and (max-width: 1599px){
+  .UserProfilePage {
+    &_card {
+      width: 60%;
+      flex-direction: row;
+      
+      &-right{
+        text-align: left;
+      }
+      
+      &-img {
+      background-color: rgb(101,201,255);
+      border-radius: 100%;
+      margin-left: -6rem;
+      margin-top: 0;
+      height: 100%;
+      }
+    }
+  }
+}
+
+/* width 1600px  */
+@media screen and (min-width: 1600px){
+  .UserProfilePage {
+    &_card {
+      width: 50%;
+      flex-direction: row;
+      
+      &-right{
+        text-align: left;
+      }
+      
+      &-img {
+      background-color: rgb(101,201,255);
+      border-radius: 100%;
+      margin-left: -7rem;
+      margin-top: 0;
+      height: 100%;
+      }
+    }
+  }
+}
+
