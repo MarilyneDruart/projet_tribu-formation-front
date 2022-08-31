@@ -38,7 +38,31 @@ function UserProfilePage() {
                 <img src={interests.image} alt={interests.title} />
               </div>
               <div className="CityInterests_content">
+                <div className="CityInterests_category">
+                  {interests.category.map((category) => (
+                    <span
+                      className={`CityInterests_category_tag ${category.name}`}
+                      key={category.id}
+                    >
+                      {category.name}
+                    </span>
+                  ))}
+                </div>
                 <h4 className="CityInterests_title">{interests.title}</h4>
+                <p className="CityInterests_description">{interests.content}</p>
+                <p className="CityInterests_readmore">
+                  Voir plus
+                </p>
+                <div className="CityInterests_user">
+                  {/* <img className="CityInterests_user-img" src="#" alt="auteur du post" /> */}
+                  <div className="CityInterests_user-info">
+                    <small>
+                      publié le
+                      {' '}
+                      {interests.createdAt}
+                    </small>
+                  </div>
+                </div>
               </div>
             </Link>
           </article>

@@ -13,7 +13,7 @@ import NewInterestForm from '../NewInterestForm/NewInterestForm';
 import '../../styles/styles.scss';
 import logo from '../../assets/images/logo.png';
 import slogan from '../../assets/images/slogan.png';
-import profileIcon from '../../assets/images/profil-icon.png';
+import profileIcon from '../../assets/images/profil-icon-white.png';
 
 function Header() {
   const dispatch = useDispatch();
@@ -67,7 +67,7 @@ function Header() {
                 localStorage.removeItem('user');
                 dispatch(logout());
                 navigate('/');
-                toast.success('Déconnexion réussie, reviens vite nous voir !');
+                toast.success('Déconnexion réussie !\nReviens vite nous voir !');
               }}
             >
               Déconnexion
