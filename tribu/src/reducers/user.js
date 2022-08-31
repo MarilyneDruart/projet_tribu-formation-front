@@ -13,6 +13,7 @@ export const initialState = {
 
   logged: false,
   token: '',
+
   id: '',
   email: '',
   firstname: '',

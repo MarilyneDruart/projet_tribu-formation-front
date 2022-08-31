@@ -10,10 +10,9 @@ import LikeButton from '../Buttons/LikeButton';
 
 function Interest() {
   const { slug, id } = useParams();
+  const logged = useSelector((state) => state.user.logged);
 
   const interestsLoading = useSelector((state) => state.interests.loading);
-
-  // eslint-disable-next-line
   const interestsList = useSelector((state) => state.interests.list);
 
   const currentCity = interestsList.find((testedInterest) => (
@@ -56,7 +55,7 @@ function Interest() {
                 {category.name}
               </span>
             ))}
-            <LikeButton />
+            {logged && <LikeButton />}
           </div>
 
           {currentCity.date && (
