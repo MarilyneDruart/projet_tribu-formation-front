@@ -66,6 +66,7 @@
     
     &_category {
       margin: vars.$size2 0;
+      position: relative;
 
       &_item {
         margin-right: vars.$size1;
@@ -108,36 +109,6 @@
     padding: vars.$size1;
     margin: 0 vars.$size4;
   }
-}
-
-.Gastronomie {
-  border: 1px solid #FFA64C;
-  background-color: #FFA64C;
-}
-
-.Culture {
-  border: 1px solid #73FBD3;
-  background-color: #73FBD3;
-}
-
-.Sorties {
-  border: 1px solid #FDCFF3;
-  background-color: #FDCFF3;
-}
-
-.Activités {
-  border: 1px solid #9F86C0;
-  background-color: #9F86C0;
-}
-
-.Evénements {
-  border: 1px solid #5C7AFF;
-  background-color: #5C7AFF;
-}
-
-.Co-Working {
-  border: 1px solid #00BBFF;
-  background-color: #00BBFF;
 }
 
 @media (min-width: 760px) {

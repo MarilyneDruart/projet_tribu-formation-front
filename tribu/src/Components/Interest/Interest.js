@@ -6,14 +6,15 @@ import '../../styles/styles.scss';
 import location from '../../assets/images/location.png';
 import calendar from '../../assets/images/timetable.png';
 import Loading from '../Loading/Loading';
+import LikeButton from '../Buttons/LikeButton';
+import ParticipateButton from '../Buttons/ParticipateButton';
 import dateInFrench from '../../utils/functions';
 
 function Interest() {
   const { slug, id } = useParams();
+  const logged = useSelector((state) => state.user.logged);
 
   const interestsLoading = useSelector((state) => state.interests.loading);
-
-  // eslint-disable-next-line
   const interestsList = useSelector((state) => state.interests.list);
 
   const currentCity = interestsList.find((testedInterest) => (
@@ -43,6 +44,7 @@ function Interest() {
                 {category.name}
               </span>
             ))}
+            {logged && <LikeButton />}
           </div>
 
           {currentCity.date && (
@@ -70,6 +72,9 @@ function Interest() {
           <p className="Interest_description_publishdate">
             {dateInFrench(currentCity.createdAt)}
           </p>
+          {currentCity.category.map((category) => (
+            category.name === 'Evénements' && <ParticipateButton />
+          ))}
         </div>
 
         <div className="Interest_image">
