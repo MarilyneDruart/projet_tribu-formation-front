@@ -71,6 +71,7 @@ function NewAccountForm() {
   });
 
   const onSubmit = (data) => {
+    console.log(data);
     axios
       .post('https://pierre-henri-kocan-server.eddi.cloud/projet-reseau-social-back/public/api/users', data, {
         headers: {
