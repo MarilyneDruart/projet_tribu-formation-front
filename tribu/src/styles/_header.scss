@@ -6,9 +6,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: vars.$size4 vars.$size4 vars.$size4 vars.$size4;
+  padding: vars.$size8 vars.$size5 vars.$size8 vars.$size5;
   color: vars.$color1;
-
+  
   &_logo {
     height: vars.$size8;
   }
@@ -16,7 +16,15 @@
   &_buttons {
     display: flex;
     flex-direction: column;
+  }
 
+  &_profile-button {
+    display: flex;
+    align-items: center;
+  }
+
+  &_profile-icon {
+    margin-right: 0.18rem;
   }
 
   &_inscription-button {
@@ -29,7 +37,7 @@
   &_disconnect-button {
     all: unset;
     text-decoration: underline;
-    margin-top: vars.$size1;
+    margin: vars.$size1;
     text-underline-offset: 3px;
   }
 

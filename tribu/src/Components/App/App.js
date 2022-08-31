@@ -57,7 +57,7 @@ function App() {
       <Toaster
         position="bottom-left"
         toastOptions={{
-          duration: 10000,
+          duration: 5000,
           style: {
             padding: '20px',
           },

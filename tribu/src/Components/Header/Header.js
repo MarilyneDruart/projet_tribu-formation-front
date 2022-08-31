@@ -13,6 +13,7 @@ import NewInterestForm from '../NewInterestForm/NewInterestForm';
 import '../../styles/styles.scss';
 import logo from '../../assets/images/logo.png';
 import slogan from '../../assets/images/slogan.png';
+import profileIcon from '../../assets/images/profil-icon.png';
 
 function Header() {
   const dispatch = useDispatch();
@@ -45,6 +46,7 @@ function Header() {
                 className="header_profile-button"
                 onClick={() => { }}
               >
+                <img className="header_profile-icon" src={profileIcon} alt="icone de profil" />
                 Mon profil
               </button>
             </Link>
