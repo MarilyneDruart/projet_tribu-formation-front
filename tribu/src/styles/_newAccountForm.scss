@@ -26,6 +26,7 @@
     background: vars.$colorpink;
     color: white;
     font-weight: bold;
+    font-family: 'Nunito';
     
   }
 
@@ -44,7 +45,7 @@
     padding: vars.$size1;
     width: 100%;
     background-color: rgb(234, 234, 240);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Nunito';
     resize: none;
   }
 
@@ -70,6 +71,7 @@
     font-weight: bold;
     letter-spacing: 0.05rem;
     font-size: vars.$size2;
+    font-family: 'Nunito';
   }
 
 }
