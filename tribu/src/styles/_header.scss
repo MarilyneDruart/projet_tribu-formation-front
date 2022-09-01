@@ -2,12 +2,17 @@
 
 
 .header {
-  height: 15vh;
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  align-content: center;
   padding: vars.$size8 vars.$size5 vars.$size8 vars.$size5;
   color: vars.$color1;
+
+  &_container {
+    display: flex;
+  }
   
   &_logo {
     height: vars.$size5;

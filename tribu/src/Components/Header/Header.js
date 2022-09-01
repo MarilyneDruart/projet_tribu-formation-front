@@ -30,77 +30,84 @@ function Header() {
   return (
 
     <div className="header">
-      <div className="header_logo-and-title">
-        <Link to="/">
-          <img src={logo} className="header_logo" alt="Logo Tribu" />
-        </Link>
+      <div className="header_container">
+        <div className="header_logo">
+          <Link to="/">
+            <img src={logo} className="header_logo" alt="Logo Tribu" />
+          </Link>
+        </div>
+
+        <div className="header_buttons">
+          {logged && (
+            <>
+              <Link to={`/profil/${firstnameURL}-${lastnameURL}`}>
+                <button
+                  type="button"
+                  className="header_profile-button"
+                  onClick={() => { }}
+                >
+                  <img className="header_profile-icon" src={profileIcon} alt="icone de profil" />
+                  Mon profil
+                </button>
+              </Link>
+
+              <button
+                type="button"
+                className="header_icon-button header_add-button"
+                onClick={() => { dispatch(toggleInterestForm()); }}
+              >
+                <div className="header_add-icon" />
+                <div className="header_button-text">Partage un intérêt</div>
+              </button>
+
+              <button
+                type="button"
+                className="header_disconnect-button"
+                onClick={() => {
+                  localStorage.removeItem('user');
+                  dispatch(logout());
+                  navigate('/');
+                  toast.success('Déconnexion réussie !\nReviens vite nous voir !');
+                }}
+              >
+                Déconnexion
+              </button>
+            </>
+          )}
+          {!logged && (
+            <>
+              <button
+                type="button"
+                className="header_connexion-button"
+                onClick={() => {
+                  dispatch(closeInscriptionForm());
+                  dispatch(toggleLoginForm());
+                }}
+              >
+                Connexion
+              </button>
+
+              <button
+                type="button"
+                className="header_inscription-button"
+                onClick={() => {
+                  dispatch(closeLoginForm());
+                  dispatch(toggleInscriptionForm());
+                }}
+              >
+                Inscription
+              </button>
+            </>
+          )}
+        </div>
+      </div>
+
+      <div className="header_title">
         <Link to="/">
           <h1 className="header_title">Meet, Visit, Share it, Repeat</h1>
         </Link>
       </div>
-      <div className="header_buttons">
-        {logged && (
-          <>
-            <Link to={`/profil/${firstnameURL}-${lastnameURL}`}>
-              <button
-                type="button"
-                className="header_profile-button"
-                onClick={() => { }}
-              >
-                <img className="header_profile-icon" src={profileIcon} alt="icone de profil" />
-                Mon profil
-              </button>
-            </Link>
 
-            <button
-              type="button"
-              className="header_icon-button header_add-button"
-              onClick={() => { dispatch(toggleInterestForm()); }}
-            >
-              <div className="header_add-icon" />
-              <div className="header_button-text">Partage un intérêt</div>
-            </button>
-
-            <button
-              type="button"
-              className="header_disconnect-button"
-              onClick={() => {
-                localStorage.removeItem('user');
-                dispatch(logout());
-                navigate('/');
-                toast.success('Déconnexion réussie !\nReviens vite nous voir !');
-              }}
-            >
-              Déconnexion
-            </button>
-          </>
-        )}
-        {!logged && (
-          <>
-            <button
-              type="button"
-              className="header_connexion-button"
-              onClick={() => {
-                dispatch(closeInscriptionForm());
-                dispatch(toggleLoginForm());
-              }}
-            >
-              Connexion
-            </button>
-
-            <button
-              type="button"
-              className="header_inscription-button"
-              onClick={() => {
-                dispatch(closeLoginForm());
-                dispatch(toggleInscriptionForm());
-              }}
-            >
-              Inscription
-            </button>
-          </>
-        )}
-      </div>
       {inscriptionFormIsDisplayed && <NewAccountForm />}
       {loginFormIsDisplayed && <LoginForm />}
       {interestFormIsDisplayed && <NewInterestForm />}

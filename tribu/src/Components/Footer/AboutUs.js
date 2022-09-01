@@ -1,11 +1,14 @@
 /* eslint-disable max-len */
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { toggleInscriptionForm } from '../../actions/inscriptionForm';
 import MainImage from '../MainImage/MainImage';
 import image from '../../assets/images/aboutus.jpg';
 
 import '../../styles/styles.scss';
 
 function AboutUS() {
+  const dispatch = useDispatch();
   return (
     <div className="AboutUs">
       <MainImage image={image} />
@@ -38,11 +41,18 @@ function AboutUS() {
           Démarre ta nouvelle vie !
         </p>
 
-        <p>
+        <button
+          type="button"
+          className="header_inscription-button"
+          onClick={() => {
+            dispatch(toggleInscriptionForm());
+            window.scrollTo({ top: 0 });
+          }}
+        >
           Rejoins la
           {' '}
           <span className="AboutUs_tribu">TRIBU</span>
-        </p>
+        </button>
       </div>
     </div>
   );
