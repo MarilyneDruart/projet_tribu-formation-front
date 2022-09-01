@@ -9,7 +9,7 @@ import '../../styles/styles.scss';
 function LegalNotice() {
   return (
     <div className="LegalNotice">
-      <MainImage title="Mentions légales" image={image} />
+      <MainImage image={image} />
       <div className="LegalNotice_content">
         <div className="LegalNotice_text">
           <p>Tout comme nos formateurs, nous sommes conscients que cette page sera lue par peu de lecteurs, voir personne.</p>

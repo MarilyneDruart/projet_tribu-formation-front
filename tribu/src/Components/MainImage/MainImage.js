@@ -3,20 +3,15 @@ import PropTypes from 'prop-types';
 
 import '../../styles/styles.scss';
 
-function MainImage({ title, image }) {
+function MainImage({ image }) {
   return (
     <div className="MainImage">
-      <div className="MainImage_img" style={{ backgroundImage: `url(${image})` }}>
-        <div className="MainImage_content">
-          <h2 className="MainImage_title">{title}</h2>
-        </div>
-      </div>
+      <div className="MainImage_img" style={{ backgroundImage: `url(${image})` }} />
     </div>
   );
 }
 
 MainImage.propTypes = {
-  title: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
 };
 

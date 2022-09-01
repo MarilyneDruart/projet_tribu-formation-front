@@ -8,7 +8,7 @@ import '../../styles/styles.scss';
 function AboutUS() {
   return (
     <div className="AboutUs">
-      <MainImage title="A propos" image={image} />
+      <MainImage image={image} />
       <h1 className="AboutUs_title">
         <span className="AboutUs_tribu">TRIBU !</span>
         {' '}

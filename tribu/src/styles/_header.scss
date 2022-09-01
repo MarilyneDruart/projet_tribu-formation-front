@@ -15,14 +15,12 @@
 
   &_title {
     font-family: 'Bilingual';
-    font-size: vars.$size2;
-    font-weight: bold;
+    letter-spacing: 0.1rem;
+    font-size: vars.$size5;
     color: vars.$colorpink;
     max-width: 80%;
     text-align: center;
     margin: auto;
-    letter-spacing: 0.2rem;
-    font-weight: 600;
   }
 
   &_buttons {
