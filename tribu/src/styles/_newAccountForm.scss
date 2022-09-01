@@ -86,3 +86,76 @@
     margin-left: 0.3rem;
   }
 }
+
+
+//*===========================================*//
+//*               Media Queries               *//
+//*===========================================*//
+
+/* width 470px --> 799px*/
+@media screen and (min-width: 470px) and (max-width: 799px) {
+  .new-account {
+    max-width: 80%;
+    padding: vars.$size2;
+    
+    &_title {
+      margin: 1rem;
+    }
+
+    &_button {
+      top: initial;
+      left: initial;
+    }
+  }
+}
+
+/* width 700px --> 999px*/
+@media screen and (min-width: 700px) and (max-width: 999px) {
+  .new-account {
+    max-width: 65%;
+    padding: vars.$size3;
+    
+    &_title {
+      margin: 1rem;
+    }
+
+    &_button {
+      top: initial;
+      left: initial;
+    }
+  }
+}
+
+/* width 1000px --> 1399px*/
+@media screen and (min-width: 1000px) and (max-width: 1399px) {
+  .new-account {
+    max-width: 50%;
+    padding: vars.$size3;
+
+    &_title {
+      margin: 1rem;
+    }
+
+    &_button {
+      top: initial;
+      left: initial;
+    }
+  }
+}
+
+/* width 1400px */
+@media screen and (min-width: 1400px) {
+  .new-account {
+    max-width: 40%;
+    padding: vars.$size4;
+
+    &_title {
+      margin: 1rem;
+    }
+    
+    &_button {
+      top: initial;
+      left: initial;
+    }
+  }
+}

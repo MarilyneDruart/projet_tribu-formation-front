@@ -9,7 +9,7 @@
   top: 0;
   left: calc(100%/10);
   right: calc(100%/10);
-  padding: vars.$size3;
+  padding: vars.$size7 vars.$size2 vars.$size2;
   border: 1px solid vars.$color4;
   border-radius: 10px;
   box-shadow: 0px 0px 50px 2px black;
@@ -19,7 +19,6 @@
   &_button {
     width: 40px;
     height: 40px;
-    position: absolute;
     right: vars.$size3;
     border: 1px solid vars.$colorpink;
     border-radius: 20px;
@@ -27,14 +26,18 @@
     color: white;
     font-weight: bold;
     font-family: 'Nunito';
+    position: absolute;
+    top: 5%;
+    left: 45%;
   }
 
   &_title {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: vars.$size3;
+    font-size: vars.$size4;
     margin-bottom: vars.$size1;
+    text-align: center;
   }
 
   &_field{
@@ -84,4 +87,81 @@
     font-family: 'Nunito';
   }
 
+}
+
+
+//*===========================================*//
+//*               Media Queries               *//
+//*===========================================*//
+
+/* width 550px --> 799px*/
+@media screen and (min-width: 550px) and (max-width: 799px) {
+  .new-interest {
+    max-width: 90%;
+    padding: vars.$size2;
+    
+    &_title {
+      margin: 1rem;
+      font-size: vars.$size3;
+    }
+
+    &_button {
+      top: initial;
+      left: initial;
+    }
+  }
+}
+
+/* width 700px --> 999px*/
+@media screen and (min-width: 700px) and (max-width: 999px) {
+  .new-interest {
+    max-width: 65%;
+    padding: vars.$size3;
+    
+    &_title {
+      margin: 1rem;
+      font-size: vars.$size3;
+    }
+
+    &_button {
+      top: initial;
+      left: initial;
+    }
+  }
+}
+
+/* width 1000px --> 1399px*/
+@media screen and (min-width: 1000px) and (max-width: 1399px) {
+  .new-interest {
+    max-width: 50%;
+    padding: vars.$size3;
+
+    &_title {
+      margin: 1rem;
+      font-size: vars.$size3;
+    }
+
+    &_button {
+      top: initial;
+      left: initial;
+    }
+  }
+}
+
+/* width 1400px */
+@media screen and (min-width: 1400px) {
+  .new-interest {
+    max-width: 40%;
+    padding: vars.$size4;
+
+    &_title {
+      margin: 1rem;
+      font-size: vars.$size3;
+    }
+    
+    &_button {
+      top: initial;
+      left: initial;
+    }
+  }
 }
