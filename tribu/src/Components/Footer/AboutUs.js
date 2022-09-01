@@ -16,7 +16,7 @@ function AboutUS() {
       </h1>
 
       <div className="AboutUs_content">
-        <p>
+        <p className="AboutUs_first-paragraph">
           Partir vivre à l’étranger, c’est un rêve qui peut se compliquer lorsqu’on ne connaît pas bien les bons plans du coin ou que l’on se sent seul.
         </p>
 

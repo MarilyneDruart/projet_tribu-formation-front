@@ -4,18 +4,20 @@
   text-align: center;
 
   &_title {
-    font-size: vars.$size4;
-    margin: vars.$size2 0 vars.$size5;
+    font-size: vars.$size3;
+    margin: vars.$size6 auto vars.$size4;
+  }
+  
+  &_first-paragraph {
+    margin-bottom: 1rem;
   }
 
   &_content {
-    width: 80%;
-    margin: 0 auto;
+    width: 90%;
+    margin: auto;
 
     & p {
-      font-size: vars.$size3;
-      margin: vars.$size4;
-      line-height: vars.$size4;
+      line-height: vars.$size3;
 
       &:nth-child(2) {
         font-weight: bold;
@@ -28,4 +30,25 @@
     font-weight: bold;
   }
 }
-// p:nth-child(2)
+
+//*===========================================*//
+//*               Media Queries               *//
+//*===========================================*//
+
+/* width 800px --> 1199px*/
+@media screen and (min-width: 800px) and (max-width: 1199px) {
+  .AboutUs {
+    &_content {
+      max-width: 80%;
+    }
+}
+}
+
+/* width min 1200px */
+@media screen and (min-width: 1200px) {
+  .AboutUs {
+        &_content {
+      max-width: 70%;
+    }
+}
+}
