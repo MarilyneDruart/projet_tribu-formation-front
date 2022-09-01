@@ -9,23 +9,26 @@
   left: calc(100%/10);
   right: calc(100%/10);
   top: calc(100%/10);
-  padding: vars.$size3;
+  padding: vars.$size7 vars.$size2 vars.$size2;
   border: 1px solid vars.$color4;
   border-radius: 10px;
   box-shadow: 0px 0px 50px 2px black;
   background-color: white;
   z-index: 3;
-
+  
   &_button {
     width: 40px;
     height: 40px;
-    position: absolute;
     right: vars.$size3;
     border: 1px solid vars.$colorpink;
     border-radius: 20px;
     background: vars.$colorpink;
     color: white;
     font-weight: bold;
+    font-family: 'Nunito';
+    position: absolute;
+    top: 5%;
+    left: 45%;
     
   }
 
@@ -35,6 +38,7 @@
     align-items: center;
     font-size: vars.$size3;
     margin-bottom: vars.$size1;
+    text-align: center;
   }
 
   &_field{
@@ -44,7 +48,7 @@
     padding: vars.$size1;
     width: 100%;
     background-color: rgb(234, 234, 240);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Nunito';
     resize: none;
   }
 
@@ -70,6 +74,7 @@
     font-weight: bold;
     letter-spacing: 0.05rem;
     font-size: vars.$size2;
+    font-family: 'Nunito';
   }
 
 }
@@ -82,5 +87,78 @@
     all: unset;
     text-decoration: underline;
     margin-left: 0.3rem;
+  }
+}
+
+
+//*===========================================*//
+//*               Media Queries               *//
+//*===========================================*//
+
+/* width 470px --> 799px*/
+@media screen and (min-width: 470px) and (max-width: 799px) {
+  .new-account {
+    max-width: 80%;
+    padding: vars.$size2;
+    
+    &_title {
+      margin: 1rem;
+    }
+
+    &_button {
+      top: initial;
+      left: initial;
+    }
+  }
+}
+
+/* width 700px --> 999px*/
+@media screen and (min-width: 700px) and (max-width: 999px) {
+  .new-account {
+    max-width: 65%;
+    padding: vars.$size3;
+    
+    &_title {
+      margin: 1rem;
+    }
+
+    &_button {
+      top: initial;
+      left: initial;
+    }
+  }
+}
+
+/* width 1000px --> 1399px*/
+@media screen and (min-width: 1000px) and (max-width: 1399px) {
+  .new-account {
+    max-width: 50%;
+    padding: vars.$size3;
+
+    &_title {
+      margin: 1rem;
+    }
+
+    &_button {
+      top: initial;
+      left: initial;
+    }
+  }
+}
+
+/* width 1400px */
+@media screen and (min-width: 1400px) {
+  .new-account {
+    max-width: 40%;
+    padding: vars.$size4;
+
+    &_title {
+      margin: 1rem;
+    }
+    
+    &_button {
+      top: initial;
+      left: initial;
+    }
   }
 }

@@ -17,6 +17,9 @@ import Interest from '../Interest/Interest';
 import Loading from '../Loading/Loading';
 import UserProfilePage from '../UserProfilePage/UserProfilePage';
 
+import '../../fonts/Nunito.ttf';
+import '../../fonts/BilingualSerifFont.ttf';
+
 import '../../styles/styles.scss';
 import { fetchInterests } from '../../actions/interests';
 import { fetchCategories } from '../../actions/categories';

@@ -1,14 +1,17 @@
 /* eslint-disable max-len */
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { toggleInscriptionForm } from '../../actions/inscriptionForm';
 import MainImage from '../MainImage/MainImage';
 import image from '../../assets/images/aboutus.jpg';
 
 import '../../styles/styles.scss';
 
 function AboutUS() {
+  const dispatch = useDispatch();
   return (
     <div className="AboutUs">
-      <MainImage title="A propos" image={image} />
+      <MainImage image={image} />
       <h1 className="AboutUs_title">
         <span className="AboutUs_tribu">TRIBU !</span>
         {' '}
@@ -16,7 +19,7 @@ function AboutUS() {
       </h1>
 
       <div className="AboutUs_content">
-        <p>
+        <p className="AboutUs_first-paragraph">
           Partir vivre à l’étranger, c’est un rêve qui peut se compliquer lorsqu’on ne connaît pas bien les bons plans du coin ou que l’on se sent seul.
         </p>
 
@@ -38,11 +41,18 @@ function AboutUS() {
           Démarre ta nouvelle vie !
         </p>
 
-        <p>
+        <button
+          type="button"
+          className="header_inscription-button"
+          onClick={() => {
+            dispatch(toggleInscriptionForm());
+            window.scrollTo({ top: 0 });
+          }}
+        >
           Rejoins la
           {' '}
           <span className="AboutUs_tribu">TRIBU</span>
-        </p>
+        </button>
       </div>
     </div>
   );

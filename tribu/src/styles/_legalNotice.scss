@@ -1,13 +1,19 @@
 @use 'vars';
 
 .LegalNotice {
-  margin: 0rem auto vars.$size5;
-  padding: 0rem 2rem;
   text-align: center;
+
+  &_text {
+    margin: vars.$size5 auto vars.$size1;
+  }
+
+  &_content {
+    max-width: 90%;
+    margin: auto;
+  }
 
   &_h2 {
     font-size: vars.$size5;
-    text-align: center;
     margin: vars.$size1 auto vars.$size1;
     border-bottom: 1px solid vars.$color1;
     padding: vars.$size2 0rem vars.$size3;
@@ -15,33 +21,40 @@
 
   &_h3 {
     font-size: vars.$size4;
-    text-align: center;
     margin: vars.$size3 auto vars.$size1;
     border-top: 1px solid vars.$color1;
     padding: vars.$size3 0rem vars.$size1;
+
   }
 
   &_h4 {
     font-size: vars.$size3;
-    text-align: center;
     margin: vars.$size3 auto vars.$size1;
   }
 
 
   &_ul {
-    background-color: vars.$color5;
+    background-color: rgb(213, 244, 253);
     max-width: 90%;
     margin: vars.$size6 auto vars.$size7;
-    padding: 1rem;
+    padding: 2rem;
     border: 1px solid vars.$color1;
     border-radius: 20px;
-    box-shadow: 0px 0px 50px 1px vars.$color3;
+   
   }
   
   &_li {
     text-align: left;
     list-style: disc;
     margin-left: 1em;
+  }
+}
+
+.MainImage {
+
+  &_img {
+    height: 400px;
+    background-position: 50% 50%;
   }
 }
 
@@ -52,12 +65,13 @@
 /* width 800px --> 1199px*/
 @media screen and (min-width: 800px) and (max-width: 1199px) {
   .LegalNotice {
-    max-width: 80%;
-    
+    &_content {
+      max-width: 80%;
+    }
+
     &_h2 {
       margin: vars.$size2 auto vars.$size3;
       padding: vars.$size3 0rem vars.$size4;
-
     }
 }
 }
@@ -65,8 +79,10 @@
 /* width min 1200px */
 @media screen and (min-width: 1200px) {
   .LegalNotice {
-    max-width: 70%;
-    
+        &_content {
+      max-width: 70%;
+    }
+
     &_h2 {
       margin: vars.$size3 auto vars.$size4;
       padding: vars.$size4 0rem vars.$size5;
