@@ -24,7 +24,8 @@
     &--active {
       color: vars.$color1;
       font-weight: bold;
-      border-bottom: 1px solid vars.$color1;
+      text-decoration: underline;
+      text-underline-offset: 0.5rem;
       padding-bottom: 0.4rem;
     }
   }

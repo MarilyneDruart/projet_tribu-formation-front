@@ -38,8 +38,33 @@ function Header() {
         </div>
 
         <div className="header_buttons">
+          {!logged && (
+            <div className="header_buttons-duo">
+              <button
+                type="button"
+                className="header_connexion-button"
+                onClick={() => {
+                  dispatch(closeInscriptionForm());
+                  dispatch(toggleLoginForm());
+                }}
+              >
+                Connexion
+              </button>
+
+              <button
+                type="button"
+                className="header_inscription-button"
+                onClick={() => {
+                  dispatch(closeLoginForm());
+                  dispatch(toggleInscriptionForm());
+                }}
+              >
+                Inscription
+              </button>
+            </div>
+          )}
           {logged && (
-            <>
+            <div className="header_buttons-duo">
               <Link to={`/profil/${firstnameURL}-${lastnameURL}`}>
                 <button
                   type="button"
@@ -72,39 +97,15 @@ function Header() {
               >
                 Déconnexion
               </button>
-            </>
+            </div>
           )}
-          {!logged && (
-            <>
-              <button
-                type="button"
-                className="header_connexion-button"
-                onClick={() => {
-                  dispatch(closeInscriptionForm());
-                  dispatch(toggleLoginForm());
-                }}
-              >
-                Connexion
-              </button>
 
-              <button
-                type="button"
-                className="header_inscription-button"
-                onClick={() => {
-                  dispatch(closeLoginForm());
-                  dispatch(toggleInscriptionForm());
-                }}
-              >
-                Inscription
-              </button>
-            </>
-          )}
         </div>
       </div>
 
       <div className="header_title">
         <Link to="/">
-          <h1 className="header_title">Meet, Visit, Share it, Repeat</h1>
+          <h1>Meet, Visit, Share it, Repeat</h1>
         </Link>
       </div>
 

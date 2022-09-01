@@ -7,31 +7,41 @@
   flex-direction: column;
   align-items: center;
   align-content: center;
-  padding: vars.$size8 vars.$size5 vars.$size8 vars.$size5;
+  margin: 0 vars.$size2;
+  // padding: vars.$size8 vars.$size5 vars.$size8 vars.$size5;
   color: vars.$color1;
 
   &_container {
+    width: 100%;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   
   &_logo {
-    height: vars.$size5;
+    height: vars.$size7;
   }
 
   &_title {
     font-family: 'Bilingual';
     letter-spacing: 0.1rem;
-    font-size: vars.$size5;
+    line-height: vars.$size4;
+    font-size: vars.$size3;
     color: vars.$colorpink;
     max-width: 80%;
     text-align: center;
-    margin: auto;
+    margin: vars.$size2;
   }
 
   &_buttons {
-    display: flex;
-    flex-direction: column;
-    font-size: 0.6rem;
+    padding-top: vars.$size2;
+    margin: vars.$size1 0;
+
+    &-duo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &_profile-button {
@@ -64,7 +74,6 @@
     color: vars.$colorwhite;
     font-weight: bold;
     padding: vars.$size1;
-    font-size: 0.6rem;
     font-family: 'Nunito';
   }
 
