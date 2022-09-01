@@ -9,7 +9,7 @@ function Footer() {
 
   return (
     <div className="Footer">
-      <div>
+      <div className="Footer_links">
         <NavLink to="/a-propos" className={classNames}>A propos</NavLink>
         <NavLink to="/mentions-legales" className={classNames}>Mentions légales</NavLink>
         <NavLink to="/contact" className={classNames}>Nous Contacter</NavLink>

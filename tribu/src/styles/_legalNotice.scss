@@ -5,6 +5,11 @@
   padding: 0rem 2rem;
   text-align: center;
 
+  &_content {
+    width: 50%;
+    margin: 0 auto;
+  }
+
   &_h2 {
     font-size: vars.$size5;
     text-align: center;
@@ -19,6 +24,7 @@
     margin: vars.$size3 auto vars.$size1;
     border-top: 1px solid vars.$color1;
     padding: vars.$size3 0rem vars.$size1;
+
   }
 
   &_h4 {
@@ -29,13 +35,13 @@
 
 
   &_ul {
-    background-color: vars.$color5;
+    background-color: rgb(213, 244, 253);
     max-width: 90%;
     margin: vars.$size6 auto vars.$size7;
-    padding: 1rem;
+    padding: 2rem;
     border: 1px solid vars.$color1;
     border-radius: 20px;
-    box-shadow: 0px 0px 50px 1px vars.$color3;
+   
   }
   
   &_li {

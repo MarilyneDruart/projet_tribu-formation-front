@@ -10,15 +10,15 @@
   color: vars.$color1;
   
   &_logo {
-    height: vars.$size8;
+    height: vars.$size5;
   }
 
   &_title {
     font-family: 'Bilingual';
-    font-size: vars.$size6;
+    font-size: vars.$size2;
     font-weight: bold;
     color: vars.$colorpink;
-    max-width: 60%;
+    max-width: 80%;
     text-align: center;
     margin: auto;
   }
@@ -26,6 +26,7 @@
   &_buttons {
     display: flex;
     flex-direction: column;
+    font-size: 0.6rem;
   }
 
   &_profile-button {
@@ -58,6 +59,8 @@
     color: vars.$colorwhite;
     font-weight: bold;
     padding: vars.$size1;
+    font-size: 0.6rem;
+    font-family: 'Nunito';
   }
 
   &_title {
@@ -153,3 +156,13 @@
 }
 
 
+//*===========================================*//
+//*               Media Queries               *//
+//*===========================================*//
+
+/* width 1200px --> 1499px*/
+@media screen and (min-width: 1200px) and (max-width: 1499px) {
+  .header {
+
+  }
+}

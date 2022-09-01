@@ -5,18 +5,25 @@
   flex-direction: column;
   padding-top: 1rem;
   width: 100%;
-  display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 1rem;
   background: linear-gradient(180deg, vars.$colorbackground 0%, vars.$colorgreen 100%);
   color: vars.$color2;
 
+  &_links {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    text-align: center;
+  }
+
 
   &_NavLink {
-    margin: 0.5rem;
+    margin: 1rem;
     &--active {
       color: vars.$color1;
+      font-weight: bold;
       border-bottom: 1px solid vars.$color1;
       padding-bottom: 0.4rem;
     }
@@ -24,7 +31,7 @@
 
   &_love{
     color: vars.$color3;
-    margin-top: 4rem;
+    margin-top: 1.5rem;
     margin-bottom: 0.5rem;
   }
 }
@@ -39,7 +46,12 @@
     padding-top: 1.5rem;
   
     &_NavLink {
-      margin: 0.5rem;
+    margin: 2rem;
+    }
+    
+    &_links {
+      display: flex;
+      flex-direction: row;
     }
 }
 }
@@ -50,7 +62,12 @@
     padding-top: 1.5rem;
   
     &_NavLink {
-      margin: 2rem;
+      margin: 3rem;
+    }
+
+    &_links {
+      display: flex;
+      flex-direction: row;
     }
 }
 }
@@ -63,6 +80,11 @@
     &_NavLink {
       margin: 5rem;
     }
+
+    &_links {
+      display: flex;
+      flex-direction: row;
+    }
 }
 }
 
@@ -73,6 +95,11 @@
   
     &_NavLink {
       margin: 7rem;
+    }
+
+    &_links {
+      display: flex;
+      flex-direction: row;
     }
 }
 }

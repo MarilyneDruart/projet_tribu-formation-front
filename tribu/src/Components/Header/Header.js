@@ -30,12 +30,14 @@ function Header() {
   return (
 
     <div className="header">
-      <Link to="/">
-        <img src={logo} className="header_logo" alt="Logo Tribu" />
-      </Link>
-      <Link to="/">
-        <h1 className="header_title">Meet, Visit, Share it, Repeat</h1>
-      </Link>
+      <div className="header_logo-and-title">
+        <Link to="/">
+          <img src={logo} className="header_logo" alt="Logo Tribu" />
+        </Link>
+        <Link to="/">
+          <h1 className="header_title">Meet, Visit, Share it, Repeat</h1>
+        </Link>
+      </div>
       <div className="header_buttons">
         {logged && (
           <>
