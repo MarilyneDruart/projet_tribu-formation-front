@@ -8,22 +8,26 @@ import {
 import '../../../styles/styles.scss';
 import img1 from '../../../assets/images/carousel/1.jpg';
 import img2 from '../../../assets/images/carousel/2.jpg';
-import img3 from '../../../assets/images/carousel/3.jpg';
-import img4 from '../../../assets/images/carousel/4.jpg';
+import img12 from '../../../assets/images/carousel/12.jpg';
+import img8 from '../../../assets/images/carousel/8.jpg';
 import img5 from '../../../assets/images/carousel/5.jpg';
-import img6 from '../../../assets/images/carousel/6.jpg';
+import img10 from '../../../assets/images/carousel/10.jpg';
+import img13 from '../../../assets/images/carousel/13.jpg';
+import img16 from '../../../assets/images/carousel/16.jpg';
 import CarouselItem from './CarouselItem/CarouselItem';
 import CarouselControls from './CarouselControls/CarouselControls';
 import CarouselIndicators from './CarouselIndicators/CarouselIndicators';
 
 function Carousel() {
   const slides = [
+    img5,
     img1,
     img2,
-    img3,
-    img4,
-    img5,
-    img6,
+    img12,
+    img8,
+    img10,
+    img13,
+    img16,
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
