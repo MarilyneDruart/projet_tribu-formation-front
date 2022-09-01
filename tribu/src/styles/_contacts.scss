@@ -1,15 +1,16 @@
 @use 'vars';
 
 .Contacts_title {
-  font-size: 1.8rem;
+  font-size: vars.$size5;
   text-align: center;
-  margin: auto;
+  margin: 2rem auto;
+  font-family: 'Bilingual';
 }
 
 .box{
   max-width: 100%;
   display: flex;
-  margin: 1rem auto 3rem auto;
+  margin: auto;
   flex-wrap: wrap;
   justify-content: center;
 

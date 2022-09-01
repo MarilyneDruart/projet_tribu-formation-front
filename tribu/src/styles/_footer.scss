@@ -43,7 +43,6 @@
 /* width 700px --> 999px*/
 @media screen and (min-width: 700px) and (max-width: 999px) {
   .Footer {
-    padding-top: 1.5rem;
   
     &_NavLink {
     margin: 2rem;
@@ -59,7 +58,6 @@
 /* width 1000px --> 1199px*/
 @media screen and (min-width: 1000px) and (max-width: 1199px) {
   .Footer {
-    padding-top: 1.5rem;
   
     &_NavLink {
       margin: 3rem;
@@ -75,10 +73,9 @@
 /* width 1200px --> 1499px*/
 @media screen and (min-width: 1200px) and (max-width: 1499px) {
   .Footer {
-    padding-top: 2rem;
   
     &_NavLink {
-      margin: 5rem;
+      margin: 3rem 5rem;
     }
 
     &_links {
@@ -91,10 +88,9 @@
 /* width min 1500px*/
 @media screen and (min-width: 1500px) {
   .Footer {
-    padding-top: 2.5rem;
   
     &_NavLink {
-      margin: 7rem;
+      margin: 3rem 7rem;
     }
 
     &_links {

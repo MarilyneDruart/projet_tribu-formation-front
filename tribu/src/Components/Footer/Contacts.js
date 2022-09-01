@@ -11,7 +11,7 @@ import laurent from '../../assets/images/laurent.png';
 function Contacts() {
   return (
     <div className="Contacts">
-      <h1 className="Contacts_title">Contacts</h1>
+      <h1 className="Contacts_title">Notre Tribu</h1>
       <div className="box">
 
         <a href="https://www.linkedin.com/in/lolacosta1/" target="_blank" rel="noopener noreferrer">

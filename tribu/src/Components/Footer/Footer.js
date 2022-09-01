@@ -12,7 +12,7 @@ function Footer() {
       <div className="Footer_links">
         <NavLink to="/a-propos" className={classNames}>A propos</NavLink>
         <NavLink to="/mentions-legales" className={classNames}>Mentions légales</NavLink>
-        <NavLink to="/contact" className={classNames}>Nous Contacter</NavLink>
+        <NavLink to="/contact" className={classNames}>Notre Tribu</NavLink>
       </div>
       <p className="Footer_love">Tribu made with ♥</p>
     </div>
