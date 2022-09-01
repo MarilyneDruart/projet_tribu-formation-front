@@ -29,6 +29,11 @@
     }
   }
 
+  &_NavLink:hover {
+    font-weight: bold;
+    color: vars.$colorpink;
+  }
+
   &_love{
     color: vars.$color3;
     margin-top: 1.5rem;
