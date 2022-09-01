@@ -12,7 +12,6 @@ import NewInterestForm from '../NewInterestForm/NewInterestForm';
 
 import '../../styles/styles.scss';
 import logo from '../../assets/images/logo.png';
-import slogan from '../../assets/images/slogan.png';
 import profileIcon from '../../assets/images/profil-icon-white.png';
 
 function Header() {
@@ -35,7 +34,7 @@ function Header() {
         <img src={logo} className="header_logo" alt="Logo Tribu" />
       </Link>
       <Link to="/">
-        <img src={slogan} className="header_title" alt="Slogan Tribu" />
+        <h1 className="header_title">Meet, Visit, Share it, Repeat</h1>
       </Link>
       <div className="header_buttons">
         {logged && (

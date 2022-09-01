@@ -17,7 +17,6 @@
     margin: 0.5rem;
     &--active {
       color: vars.$color1;
-      box-shadow: inset -3px 0 0 vars.$color5;
       border-bottom: 1px solid vars.$color1;
       padding-bottom: 0.4rem;
     }
