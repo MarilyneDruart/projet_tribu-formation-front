@@ -1,18 +1,68 @@
 @use 'vars';
 
 .CityPage {
-  color: #fff;
+  color: vars.$colorbackground;
   max-width: 100%;
  
   &_description {
-    width: 50%;
+    width: 95%;
     color: vars.$color1;
-    font-size: vars.$size3;
-    margin: vars.$size3 auto;
+    font-size: vars.$size2;
+    margin: vars.$size4 auto;
     text-align: center;
   }
+
+  &_buttonContainer {
+    margin: vars.$size5 auto 0;;
+    display: flex;
   }
 
+  &_back-to-top-button{
+    margin: 0 auto;
+    border: 1px solid vars.$colorpink;
+    border-radius: vars.$size4;
+    background-color: vars.$colorpink;
+    color: vars.$colorwhite;
+    font-weight: bold;
+    padding: vars.$size1 vars.$size1 0 ;
+    font-family: 'Nunito';
+    width: 90px;
+    font-size: vars.$size4;
+  }
+}
 
-//* MEDIA QUERIES
-//*TODO Augmenter le padding dans content pour afficher la partie grise en plus gros sur widescreen
+
+
+//*===========================================*//
+//*               Media Queries               *//
+//*===========================================*//
+
+/* width 750px --> 1399px*/
+@media screen and (min-width: 750px) and (max-width: 1399px) {
+  .CityPage {
+
+    &_description {
+      width: 80%;
+      margin: vars.$size5 auto;
+    }
+    &_back-to-top-button{
+      margin: vars.$size2 auto 0;
+    }
+  }
+}
+
+/* width 1400px --> */
+@media screen and (min-width:1400px) {
+  .CityPage {
+
+    &_description {
+      width: 75%;
+      margin: vars.$size7 auto;
+      font-size: vars.$size3;
+    }
+    &_back-to-top-button{
+      margin: vars.$size5 auto 0;
+    }
+  }
+}
+

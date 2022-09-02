@@ -177,6 +177,11 @@
 /* width 1200px --> 1499px*/
 @media screen and (min-width: 481px) and (max-width: 768px) {
   .header {
+    flex-direction: row;
 
+    &_title {
+      align-self: center;
+
+    }
   }
 }

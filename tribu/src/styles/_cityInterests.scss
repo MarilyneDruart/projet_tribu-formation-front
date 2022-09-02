@@ -22,7 +22,11 @@
     font-size: vars.$size3;
     text-align: center;
     font-weight: bold;
-    margin: vars.$size3;
+    margin: vars.$size3 auto vars.$size3;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: vars.$size2;
+    width: 90%;
   }
 
   &_card {
@@ -136,4 +140,20 @@
 .Co-Working {
   border: 1px solid #00BBFF;
   background-color: #00BBFF;
+}
+
+//*===========================================*//
+//*               Media Queries               *//
+//*===========================================*//
+
+/* width 1450px --> */
+@media screen and (min-width: 1450px) {
+  .CityInterests {
+    
+    &_bigtitle {
+      font-size: vars.$size4;
+      margin: vars.$size6 auto vars.$size6;
+      width: 80%;
+    }
+  }
 }

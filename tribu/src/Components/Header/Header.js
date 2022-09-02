@@ -37,6 +37,12 @@ function Header() {
           </Link>
         </div>
 
+        <div className="header_title">
+          <Link to="/">
+            <h1>Meet, Visit, Share it, Repeat</h1>
+          </Link>
+        </div>
+
         <div className="header_buttons">
           {!logged && (
             <div className="header_buttons-duo">
@@ -104,12 +110,6 @@ function Header() {
           )}
 
         </div>
-      </div>
-
-      <div className="header_title">
-        <Link to="/">
-          <h1>Meet, Visit, Share it, Repeat</h1>
-        </Link>
       </div>
 
       {inscriptionFormIsDisplayed && <NewAccountForm />}
