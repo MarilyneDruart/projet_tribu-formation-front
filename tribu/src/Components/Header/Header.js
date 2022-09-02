@@ -79,7 +79,10 @@ function Header() {
               <button
                 type="button"
                 className="header_icon-button header_add-button"
-                onClick={() => { dispatch(toggleInterestForm()); }}
+                onClick={() => {
+                  dispatch(toggleInterestForm());
+                  window.scrollTo({ top: 0 });
+                }}
               >
                 <div className="header_add-icon" />
                 <div className="header_button-text">Partage un intérêt</div>
