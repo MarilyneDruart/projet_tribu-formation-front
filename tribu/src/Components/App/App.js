@@ -3,7 +3,7 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Toaster } from 'react-hot-toast';
 import { fetchCities } from '../../actions/cities';
-import { setToken } from '../../actions/loginForm';
+import { logout, setToken } from '../../actions/loginForm';
 
 import Header from '../Header/Header';
 import Home from '../Home/Home';
@@ -32,9 +32,10 @@ function App() {
   const citiesLoading = useSelector((state) => state.cities.loading);
   const logged = useSelector((state) => state.user.logged);
 
+  const loggedUser = JSON.parse(localStorage.getItem('user'));
+
   useEffect(() => {
     // if logged, save token in user state
-    const loggedUser = JSON.parse(localStorage.getItem('user'));
     if (loggedUser) {
       dispatch(setToken(loggedUser.token));
     }
@@ -48,6 +49,13 @@ function App() {
   useEffect(() => {
     // when url is changing, redirecting to the top of the page
     window.scrollTo({ top: 0, left: 0 });
+  }, [location]);
+
+  useEffect(() => {
+    if (loggedUser && loggedUser.items.exp < (Date.now())) {
+      localStorage.removeItem('user');
+      dispatch(logout());
+    }
   }, [location]);
 
   if (logged) {

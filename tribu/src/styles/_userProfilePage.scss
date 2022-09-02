@@ -69,9 +69,45 @@
       flex-wrap: wrap;
       background-color: vars.$color7;
     }
-}
+  }
 }
 
+.CityInterests{
+  margin: auto;
+  display: flex;
+  
+  &_text{
+  text-align: center;
+  margin: vars.$size4 auto;
+  font-size: vars.$size3;
+  line-height: vars.$size4;
+  }
+
+  &_emptycard{
+  background-image: url(../assets/images/no-interest-bg.jpg);
+  border-radius: 10px;
+  width: 300px;
+  height: 500px;
+  opacity: 0.5;
+  margin: auto;
+
+    &-button{
+    border: 1px solid vars.$colorpink;
+    border-radius: 100%;
+    background-color: vars.$colorpink;
+    color: vars.$colorwhite;
+    font-weight: bolder;
+    font-size: vars.$size7;
+    font-family: 'Nunito';
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 40%;
+    left: 35%;
+    opacity: 1;
+    }
+  }
+}
 //*===========================================*//
 //*               Media Queries               *//
 //*===========================================*//
@@ -163,7 +199,7 @@
     &_interests {
       &-title {
         font-size: vars.$size4;
-        margin: vars.$size6 auto vars.$size5;
+        margin: vars.$size6 auto vars.$size4;
         width: 85%;
       }
     }

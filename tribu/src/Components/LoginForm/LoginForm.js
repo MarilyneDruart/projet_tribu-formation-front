@@ -57,8 +57,13 @@ function LoginForm() {
       .then((response) => {
         const { token } = response.data;
 
-        localStorage.setItem('user', JSON.stringify({
+        const items = {
           token,
+          exp: Date.now() + 28800,
+        };
+
+        localStorage.setItem('user', JSON.stringify({
+          items,
         }));
         dispatch(closeLoginForm());
         dispatch(setToken(token));

@@ -45,6 +45,7 @@ function UserProfilePage() {
       <div className="UserProfilePage_interests">
         <h4 className="UserProfilePage_interests-title">Mes partages avec la communauté</h4>
         <div className="UserProfilePage_interests-container">
+
           {post.length > 0 && post.map((interests) => (
             <article className="CityInterests_card" key={interests.id}>
               <Link to={`/ville/${citySlug}/${interests.id}`}>
@@ -81,17 +82,28 @@ function UserProfilePage() {
               </Link>
             </article>
           ))}
+
           {post.length === 0 && (
-            <button
-              type="button"
-              className="UserProfilePage_interest-button"
-              onClick={() => {
-                dispatch(toggleInterestForm());
-              }}
-            >
-              Partage ton premier intérêt avec la tribu !
-            </button>
+            <div>
+              <div className="CityInterests_text">
+                <p> Tu n&apos;as pas encore d&apos;intérêt</p>
+                <p> Partage ton premier intérêt avec la Tribu :</p>
+              </div>
+              <div className="CityInterests_emptycard">
+                <button
+                  type="button"
+                  className="CityInterests_emptycard-button"
+                  onClick={() => {
+                    dispatch(toggleInterestForm());
+                    window.scrollTo({ top: 0 });
+                  }}
+                >
+                  <ion-icon name="add-outline" />
+                </button>
+              </div>
+            </div>
           )}
+
         </div>
       </div>
       <div className="CityPage_buttonContainer">
