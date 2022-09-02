@@ -26,10 +26,12 @@
     background: vars.$colorpink;
     color: vars.$colorwhite;
     font-weight: bold;
+    padding: 0.4rem 0 0;
     font-family: 'Nunito';
     position: absolute;
     top: 10%;
     left: 45%;
+    font-size: vars.$size3;
   }
 
   &_title {

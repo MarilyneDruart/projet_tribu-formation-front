@@ -84,7 +84,7 @@ function LoginForm() {
           type="button"
           onClick={() => dispatch(closeLoginForm())}
         >
-          X
+          <ion-icon name="close-outline" />
         </button>
       </h1>
       <form

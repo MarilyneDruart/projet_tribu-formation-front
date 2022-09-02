@@ -3,7 +3,7 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Toaster } from 'react-hot-toast';
 import { fetchCities } from '../../actions/cities';
-import { setToken, logout } from '../../actions/loginForm';
+import { setToken } from '../../actions/loginForm';
 
 import Header from '../Header/Header';
 import Home from '../Home/Home';
@@ -46,13 +46,6 @@ function App() {
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0 });
   }, [location]);
-
-  useEffect(() => {
-    const handleTabClose = () => {
-      dispatch(logout());
-    };
-    window.addEventListener('beforeunload', handleTabClose);
-  }, []);
 
   if (logged) {
     dispatch((fetchUser()));

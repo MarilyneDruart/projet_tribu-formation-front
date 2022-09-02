@@ -12,7 +12,6 @@ import NewInterestForm from '../NewInterestForm/NewInterestForm';
 
 import '../../styles/styles.scss';
 import logo from '../../assets/images/logo.png';
-import profileIcon from '../../assets/images/profil-icon-white.png';
 
 function Header() {
   const dispatch = useDispatch();
@@ -77,8 +76,7 @@ function Header() {
                   className="header_profile-button"
                   onClick={() => { }}
                 >
-                  <img className="header_profile-icon" src={profileIcon} alt="icone de profil" />
-                  Mon profil
+                  <ion-icon className="header_profile-icon" name="person-circle-outline" />
                 </button>
               </Link>
 

@@ -24,11 +24,13 @@
     border-radius: 20px;
     background: vars.$colorpink;
     color: white;
+    padding: 0.4rem 0 0;
     font-weight: bold;
     font-family: 'Nunito';
     position: absolute;
     top: 5%;
     left: 45%;
+    font-size: vars.$size3;
   }
 
   &_title {

@@ -101,7 +101,7 @@ function NewAccountForm() {
           type="button"
           onClick={() => dispatch(closeInscriptionForm())}
         >
-          X
+          <ion-icon name="close-outline" />
         </button>
       </h1>
       <form
