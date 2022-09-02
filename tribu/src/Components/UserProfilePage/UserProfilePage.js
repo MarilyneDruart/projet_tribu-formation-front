@@ -1,13 +1,14 @@
 /* eslint-disable max-len */
 import { React } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-
 // Imports locaux
 import '../../styles/styles.scss';
 import Loading from '../Loading/Loading';
+import { toggleInterestForm } from '../../actions/interests';
 
 function UserProfilePage() {
+  const dispatch = useDispatch();
   const {
     firstname,
     lastname,
@@ -80,7 +81,29 @@ function UserProfilePage() {
               </Link>
             </article>
           ))}
+          {post.length === 0 && (
+            <button
+              type="button"
+              className="UserProfilePage_interest-button"
+              onClick={() => {
+                dispatch(toggleInterestForm());
+              }}
+            >
+              Partage ton premier intérêt avec la tribu !
+            </button>
+          )}
         </div>
+      </div>
+      <div className="CityPage_buttonContainer">
+        <button
+          type="button"
+          className="CityPage_back-to-top-button"
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        >
+          <ion-icon className="CityPage_back-to-top-button-icon" name="arrow-up-outline" />
+        </button>
       </div>
     </div>
   );

@@ -65,13 +65,11 @@ function LoginForm() {
         dispatch(fetchUser());
         toast.success('Connexion à la Tribu réussie !');
         reset();
+        navigate('/');
       })
       .catch((error) => {
         console.log(error);
         toast.error('La Tribu ne reconnaît pas cet identifiant ou ce mot de passe');
-      })
-      .finally(() => {
-        navigate('/');
       });
   };
 

@@ -33,17 +33,20 @@ function App() {
   const logged = useSelector((state) => state.user.logged);
 
   useEffect(() => {
+    // if logged, save token in user state
     const loggedUser = JSON.parse(localStorage.getItem('user'));
     if (loggedUser) {
       dispatch(setToken(loggedUser.token));
     }
 
+    // Fetching all useful datas from database
     dispatch(fetchCities());
     dispatch((fetchInterests()));
     dispatch((fetchCategories()));
   }, []);
 
   useEffect(() => {
+    // when url is changing, redirecting to the top of the page
     window.scrollTo({ top: 0, left: 0 });
   }, [location]);
 
