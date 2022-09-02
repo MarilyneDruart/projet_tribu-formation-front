@@ -1,5 +1,10 @@
 import React, { useEffect } from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import {
+  Route,
+  Routes,
+  useLocation,
+  useNavigate,
+} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Toaster } from 'react-hot-toast';
 import { fetchCities } from '../../actions/cities';
@@ -28,6 +33,7 @@ import { fetchUser } from '../../actions/user';
 function App() {
   const location = useLocation();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const citiesLoading = useSelector((state) => state.cities.loading);
   const logged = useSelector((state) => state.user.logged);
@@ -55,6 +61,7 @@ function App() {
     if (loggedUser && loggedUser.items.exp < (Date.now())) {
       localStorage.removeItem('user');
       dispatch(logout());
+      navigate('/');
     }
   }, [location]);
 

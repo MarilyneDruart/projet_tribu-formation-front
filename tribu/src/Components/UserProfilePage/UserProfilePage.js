@@ -85,14 +85,14 @@ function UserProfilePage() {
 
           {post.length === 0 && (
             <div>
-              <div className="CityInterests_text">
+              <div className="NoCityInterests_text">
                 <p> Tu n&apos;as pas encore d&apos;intérêt</p>
                 <p> Partage ton premier intérêt avec la Tribu :</p>
               </div>
-              <div className="CityInterests_emptycard">
+              <div className="NoCityInterests_emptycard">
                 <button
                   type="button"
-                  className="CityInterests_emptycard-button"
+                  className="NoCityInterests_emptycard-button"
                   onClick={() => {
                     dispatch(toggleInterestForm());
                     window.scrollTo({ top: 0 });
