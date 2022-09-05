@@ -103,7 +103,8 @@
     position: relative;
     top: 40%;
     left: 35%;
-    opacity: 1;
+    opacity: initial;
+    z-index: 3;
     }
   }
 }

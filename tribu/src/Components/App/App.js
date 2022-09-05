@@ -3,12 +3,12 @@ import {
   Route,
   Routes,
   useLocation,
-  useNavigate,
+  // useNavigate,
 } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Toaster } from 'react-hot-toast';
 import { fetchCities } from '../../actions/cities';
-import { logout, setToken } from '../../actions/loginForm';
+import { setToken } from '../../actions/loginForm';
 
 import Header from '../Header/Header';
 import Home from '../Home/Home';
@@ -33,17 +33,18 @@ import { fetchUser } from '../../actions/user';
 function App() {
   const location = useLocation();
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const citiesLoading = useSelector((state) => state.cities.loading);
   const logged = useSelector((state) => state.user.logged);
 
   const loggedUser = JSON.parse(localStorage.getItem('user'));
+  console.log(loggedUser);
 
   useEffect(() => {
     // if logged, save token in user state
     if (loggedUser) {
-      dispatch(setToken(loggedUser.token));
+      dispatch(setToken(loggedUser.items.token));
     }
 
     // Fetching all useful datas from database
@@ -57,13 +58,13 @@ function App() {
     window.scrollTo({ top: 0, left: 0 });
   }, [location]);
 
-  useEffect(() => {
-    if (loggedUser && loggedUser.items.exp < (Date.now())) {
-      localStorage.removeItem('user');
-      dispatch(logout());
-      navigate('/');
-    }
-  }, [location]);
+  // useEffect(() => {
+  //   if (loggedUser && loggedUser.items.exp < (Date.now())) {
+  //     localStorage.removeItem('user');
+  //     dispatch(logout());
+  //     navigate('/');
+  //   }
+  // }, [location]);
 
   if (logged) {
     dispatch((fetchUser()));
