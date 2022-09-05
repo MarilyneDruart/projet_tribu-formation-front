@@ -60,6 +60,7 @@ function App() {
   // useEffect(() => {
   //   if (loggedUser && loggedUser.items.exp < (Date.now())) {
   //     localStorage.removeItem('user');
+  //     console.log(loggedUser.items.exp);
   //     dispatch(logout());
   //     navigate('/');
   //   }

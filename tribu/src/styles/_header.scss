@@ -51,6 +51,7 @@
     display: flex;
     align-items: center;
     font-size: vars.$size4;
+    box-shadow: 0px 0px 5px black;
   }
 
   &_inscription-button {
@@ -76,6 +77,7 @@
     font-weight: bold;
     padding: vars.$size1;
     font-family: 'Nunito';
+    box-shadow: 0px 0px 5px black;
   }
 
   &_icon-button {
@@ -91,6 +93,7 @@
     bottom: 5px;
     right: 5px;
     z-index: 7;
+    box-shadow: 0px 0px 10px black;
   }
   &_add-button:hover {
     width: 200px;

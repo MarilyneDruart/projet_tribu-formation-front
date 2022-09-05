@@ -1,5 +1,10 @@
 @use 'vars';
 
+.InterestsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
 .Interest {
   display: flex;
   flex-direction: column;
@@ -9,6 +14,7 @@
   border-radius: 10px;
   overflow: hidden;
   width: 90%;
+  margin: vars.$size5 auto;
 
   &_status0{
     background-color: vars.$colorgrey;
@@ -38,6 +44,7 @@
 
       &_item {
         margin-bottom: vars.$size1;
+        
       }
     }
 
@@ -113,16 +120,22 @@
 
 .navbuttons {
   display: flex;
+  flex-direction: row;
   justify-content: center;
 
   &_item {
+    margin: 2rem;
     border: 1px solid vars.$colorpink;
-    border-radius: vars.$size4;
+    border-radius: 100%;
     background-color: vars.$colorpink;
     color: vars.$colorwhite;
     font-weight: bold;
-    padding: vars.$size1;
-    margin: 0 vars.$size4;
+    padding: vars.$size1 vars.$size1 0 ;
+    font-family: 'Nunito';
+    width: 70px;
+    height: 70px;
+    font-size: vars.$size4;
+    box-shadow: 0px 0px 5px black;
   }
 }
 

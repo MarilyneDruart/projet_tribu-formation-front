@@ -31,7 +31,7 @@ function Interest() {
   }
 
   return (
-    <div className="container">
+    <div className="InterestsContainer">
       <div className={`Interest Interest_status${currentCity.status}`}>
 
         <div className="Interest_description">
@@ -85,12 +85,12 @@ function Interest() {
       <div className="navbuttons">
         <Link to={`/ville/${slug}/`}>
           <button className="navbuttons_item" type="button">
-            Retour à la ville
+            <ion-icon name="arrow-undo-outline" />
           </button>
         </Link>
         <Link to="/">
           <button className="navbuttons_item" type="button">
-            Accueil
+            <ion-icon name="home-outline" />
           </button>
         </Link>
       </div>

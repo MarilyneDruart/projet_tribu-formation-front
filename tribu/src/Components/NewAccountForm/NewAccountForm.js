@@ -88,6 +88,9 @@ function NewAccountForm() {
       })
       .catch((error) => {
         console.log(error);
+        if (error.response.data === 'L\'utilisateur avec cet email existe déjà') {
+          toast.error('Cet email est déjà utilisé');
+        }
         toast.error('Ton compte n\'a pas pu être créé, essaie à nouveau !');
       });
     reset();

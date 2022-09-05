@@ -31,7 +31,7 @@ function CityInterests() {
         {name}
       </h2>
       <div className="container">
-        {cityInterestsList.reverse().map((interests) => (
+        {cityInterestsList.map((interests) => (
           <div>
             <article className={`CityInterests_card CityInterests_card-status${interests.status}`} key={interests.id}>
               <Link to={`/ville/${slug}/${interests.id}`}>

@@ -10,6 +10,7 @@ import toast from 'react-hot-toast';
 // Imports locaux
 import '../../styles/styles.scss';
 import { closeInterestForm, fetchInterests } from '../../actions/interests';
+import { fetchUser } from '../../actions/user';
 
 const validationSchema = yup.object({
   title: yup
@@ -85,6 +86,7 @@ function NewInterestForm() {
         // fetching interests list when adding a new element
         // in order to display this new element dynamically
         dispatch(fetchInterests());
+        dispatch(fetchUser());
         toast.success('Ton intérêt a bien été créé !');
       })
       .catch((error) => {
