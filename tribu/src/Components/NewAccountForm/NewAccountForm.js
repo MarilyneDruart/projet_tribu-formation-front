@@ -111,7 +111,7 @@ function NewAccountForm() {
       >
         <input
           {...register('firstname')}
-          className="new-account_field"
+          className="new-account_field new-account_field-caps"
           type="text"
           placeholder="Ton prénom"
         />
@@ -119,7 +119,7 @@ function NewAccountForm() {
 
         <input
           {...register('lastname')}
-          className="new-account_field"
+          className="new-account_field new-account_field-caps"
           type="text"
           placeholder="Ton nom"
         />
@@ -145,7 +145,7 @@ function NewAccountForm() {
 
         <textarea
           {...register('presentation')}
-          className="new-account_field"
+          className="new-account_field new-account_field-caps"
           placeholder="Parle-nous de toi"
           rows="3"
         />
