@@ -88,6 +88,9 @@ function NewAccountForm() {
       })
       .catch((error) => {
         console.log(error);
+        if (error.response.data === 'L\'utilisateur avec cet email existe déjà') {
+          toast.error('Cet email est déjà utilisé');
+        }
         toast.error('Ton compte n\'a pas pu être créé, essaie à nouveau !');
       });
     reset();
@@ -113,7 +116,7 @@ function NewAccountForm() {
           {...register('firstname')}
           className="new-account_field new-account_field-caps"
           type="text"
-          placeholder="Ton prénom"
+          placeholder="Ton prénom*"
         />
         <p className="new-account_error-message">{errors.firstname?.message}</p>
 
@@ -121,7 +124,7 @@ function NewAccountForm() {
           {...register('lastname')}
           className="new-account_field new-account_field-caps"
           type="text"
-          placeholder="Ton nom"
+          placeholder="Ton nom*"
         />
         <p className="new-account_error-message">{errors.lastname?.message}</p>
 
@@ -129,7 +132,7 @@ function NewAccountForm() {
           {...register('city')}
           className="new-account_field"
         >
-          <option value="">Choisis ta ville</option>
+          <option value="">Choisis ta ville*</option>
           {citiesList.map((city) => (
             <option key={city.id} value={`${city.id}`}>{city.name}</option>))}
         </select>
@@ -139,13 +142,13 @@ function NewAccountForm() {
           {...register('email')}
           className="new-account_field"
           type="email"
-          placeholder="Ton email"
+          placeholder="Ton email*"
         />
         <p className="new-account_error-message">{errors.email?.message}</p>
 
         <textarea
           {...register('presentation')}
-          className="new-account_field new-account_field-caps"
+          className="new-account_field"
           placeholder="Parle-nous de toi"
           rows="3"
         />
@@ -155,7 +158,7 @@ function NewAccountForm() {
           {...register('password')}
           className="new-account_field"
           type="password"
-          placeholder="Ton mot de passe"
+          placeholder="Ton mot de passe*"
         />
         <p className="new-account_error-message">{errors.password?.message}</p>
 
@@ -163,7 +166,7 @@ function NewAccountForm() {
           {...register('passwordConfirm')}
           className="new-account_field"
           type="password"
-          placeholder="Confirme ton mot de passe"
+          placeholder="Confirme ton mot de passe*"
         />
         <p className="new-account_error-message">{errors.passwordConfirm?.message}</p>
 

@@ -8,7 +8,7 @@ import calendar from '../../assets/images/timetable.png';
 import Loading from '../Loading/Loading';
 import LikeButton from '../Buttons/LikeButton';
 import ParticipateButton from '../Buttons/ParticipateButton';
-import dateInFrench from '../../utils/functions';
+import { dateInFrench, convertDate } from '../../utils/functions';
 
 function Interest() {
   const { slug, id } = useParams();
@@ -31,8 +31,8 @@ function Interest() {
   }
 
   return (
-    <div className="container">
-      <div className="Interest">
+    <div className="InterestsContainer">
+      <div className={`Interest Interest_status${currentCity.status}`}>
 
         <div className="Interest_description">
           <div className="Interest_description_category">
@@ -70,7 +70,7 @@ function Interest() {
             {currentCity.user.lastname}
           </p>
           <p className="Interest_description_publishdate">
-            {dateInFrench(currentCity.createdAt)}
+            {convertDate(currentCity.createdAt)}
           </p>
           {currentCity.category.map((category) => (
             category.name === 'Evénements' && <ParticipateButton />
@@ -85,12 +85,12 @@ function Interest() {
       <div className="navbuttons">
         <Link to={`/ville/${slug}/`}>
           <button className="navbuttons_item" type="button">
-            Retour à la ville
+            <ion-icon name="arrow-undo-outline" />
           </button>
         </Link>
         <Link to="/">
           <button className="navbuttons_item" type="button">
-            Accueil
+            <ion-icon name="home-outline" />
           </button>
         </Link>
       </div>

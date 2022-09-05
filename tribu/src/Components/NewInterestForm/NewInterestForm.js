@@ -9,7 +9,8 @@ import toast from 'react-hot-toast';
 
 // Imports locaux
 import '../../styles/styles.scss';
-import { closeInterestForm } from '../../actions/interests';
+import { closeInterestForm, fetchInterests } from '../../actions/interests';
+import { fetchUser } from '../../actions/user';
 
 const validationSchema = yup.object({
   title: yup
@@ -32,7 +33,8 @@ const validationSchema = yup.object({
     .array()
     .required('Sélectionne au moins une catégorie'),
   address: yup
-    .string(),
+    .string()
+    .required('La localisation de ton lieu secret pour en profiter'),
 }).required();
 
 function NewInterestForm() {
@@ -81,6 +83,10 @@ function NewInterestForm() {
       .then((response) => {
         console.log(response);
         dispatch(closeInterestForm());
+        // fetching interests list when adding a new element
+        // in order to display this new element dynamically
+        dispatch(fetchInterests());
+        dispatch(fetchUser());
         toast.success('Ton intérêt a bien été créé !');
       })
       .catch((error) => {
@@ -110,7 +116,7 @@ function NewInterestForm() {
           {...register('title')}
           className="new-interest_field"
           type="text"
-          placeholder="Donne un titre à ton intérêt"
+          placeholder="Donne un titre à ton intérêt*"
         />
         <p className="new-interest_error-message">{errors.title?.message}</p>
 
@@ -125,13 +131,13 @@ function NewInterestForm() {
         <textarea
           {...register('content')}
           className="new-interest_field"
-          placeholder="Donne-nous ton avis"
+          placeholder="Donne-nous ton avis*"
           rows="3"
         />
         <p className="new-interest_error-message">{errors.content?.message}</p>
 
         <fieldset>
-          <legend>Choisis une ou plusieurs catégories</legend>
+          <legend className="new-interest_field-legend">Choisis une ou plusieurs catégories* :</legend>
           {categoriesList.map((category) => (
             <div key={category.id} className="new-interest_checkbox">
               <input
@@ -161,7 +167,7 @@ function NewInterestForm() {
           {...register('address')}
           className="new-interest_field"
           type="text"
-          placeholder="l'adresse de ton intérêt"
+          placeholder="L'adresse de ton intérêt*"
         />
         <p className="new-interest_error-message">{errors.address?.message}</p>
 

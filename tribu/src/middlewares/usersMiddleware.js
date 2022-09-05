@@ -13,7 +13,6 @@ const usersMiddleware = (store) => (next) => (action) => {
       axios
         .get('https://pierre-henri-kocan-server.eddi.cloud/projet-reseau-social-back/public/api/users/')
         .then((response) => {
-          console.log(response.data);
           store.dispatch(setUser(
             response.data.id,
             response.data.email,

@@ -32,6 +32,7 @@
     top: 10%;
     left: 45%;
     font-size: vars.$size3;
+    box-shadow: 0px 0px 5px black;
   }
 
   &_title {
@@ -69,6 +70,7 @@
     letter-spacing: 0.05rem;
     font-size: vars.$size2;
     font-family: 'Nunito';
+    box-shadow: 0px 0px 5px vars.$colorpink;
   }
 }
 

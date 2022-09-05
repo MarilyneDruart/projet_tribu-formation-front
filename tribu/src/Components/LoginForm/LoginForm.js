@@ -98,7 +98,7 @@ function LoginForm() {
           {...register('username')}
           className="Login_field"
           type="email"
-          placeholder="Ton email"
+          placeholder="Ton email*"
         />
         <p className="Login_error-message">{errors.username?.message}</p>
 
@@ -106,7 +106,7 @@ function LoginForm() {
           {...register('password')}
           className="Login_field"
           type="password"
-          placeholder="Ton mot de passe"
+          placeholder="Ton mot de passe*"
         />
         <p className="Login_error-message">{errors.password?.message}</p>
 

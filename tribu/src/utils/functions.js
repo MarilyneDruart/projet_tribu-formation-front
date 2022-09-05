@@ -1,5 +1,5 @@
 // Converting YYYY-MM-DD into french format
-const dateInFrench = (dateToChange) => {
+export const dateInFrench = (dateToChange) => {
   const day = (dateToChange.slice(8, 10));
   let month = (dateToChange.slice(5, 7));
   const year = (dateToChange.slice(0, 4));
@@ -11,4 +11,11 @@ const dateInFrench = (dateToChange) => {
   return `le ${day} ${month} ${year}`;
 };
 
-export default dateInFrench;
+// Converting YYYY-MM-DD into DD-MM-YYYY
+export const convertDate = (dateToConvert) => {
+  const day = (dateToConvert.slice(8, 10));
+  const month = (dateToConvert.slice(5, 7));
+  const year = (dateToConvert.slice(0, 4));
+
+  return `${day}-${month}-${year}`;
+};
