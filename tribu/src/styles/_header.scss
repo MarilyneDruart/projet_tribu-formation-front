@@ -38,6 +38,7 @@
   &_buttons {
     padding-top: vars.$size2;
     margin: vars.$size1 0;
+    cursor: pointer;
 
     &-duo {
       display: flex;
