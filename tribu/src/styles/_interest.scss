@@ -10,6 +10,11 @@
   overflow: hidden;
   width: 90%;
 
+  &_status0{
+    background-color: vars.$colorgrey;
+    opacity: 0.6;
+  }
+
   &_image {
     padding: 0
   }

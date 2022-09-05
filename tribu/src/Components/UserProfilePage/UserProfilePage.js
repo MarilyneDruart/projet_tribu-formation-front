@@ -47,7 +47,7 @@ function UserProfilePage() {
         <div className="UserProfilePage_interests-container">
 
           {post.length > 0 && post.map((interests) => (
-            <article className="CityInterests_card" key={interests.id}>
+            <article className={`CityInterests_card CityInterests_card-status${interests.status}`} key={interests.id}>
               <Link to={`/ville/${citySlug}/${interests.id}`}>
                 <div className="CityInterests_header">
                   <img src={interests.image} alt={interests.title} />
