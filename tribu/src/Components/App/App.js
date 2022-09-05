@@ -39,7 +39,6 @@ function App() {
   const logged = useSelector((state) => state.user.logged);
 
   const loggedUser = JSON.parse(localStorage.getItem('user'));
-  console.log(loggedUser);
 
   useEffect(() => {
     // if logged, save token in user state

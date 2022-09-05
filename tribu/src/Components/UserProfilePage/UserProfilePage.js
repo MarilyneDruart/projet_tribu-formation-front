@@ -90,6 +90,7 @@ function UserProfilePage() {
                 <p> Partage ton premier intérêt avec la Tribu :</p>
               </div>
               <div className="NoCityInterests_emptycard">
+                <div className="NoCityInterests_emptycard-background" />
                 <button
                   type="button"
                   className="NoCityInterests_emptycard-button"

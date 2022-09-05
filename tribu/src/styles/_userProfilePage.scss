@@ -83,13 +83,15 @@
   }
 
   &_emptycard{
-  background-image: url(../assets/images/no-interest-bg.jpg);
-  border-radius: 10px;
-  width: 300px;
-  height: 500px;
-  opacity: 0.5;
-  margin: auto;
 
+    &-background{
+    background-image: url(../assets/images/no-interest-bg.jpg);
+    border-radius: 10px;
+    width: 300px;
+    height: 500px;
+    margin: auto;
+    opacity: 0.5;
+    }
     &-button{
     border: 1px solid vars.$colorpink;
     border-radius: 100%;
@@ -101,10 +103,8 @@
     display: flex;
     align-items: center;
     position: relative;
-    top: 40%;
+    top: -50%;
     left: 35%;
-    opacity: initial;
-    z-index: 3;
     }
   }
 }

@@ -32,6 +32,7 @@ const validationSchema = yup.object({
   email: yup
     .string()
     .email('L\'email est invalide')
+    .lowercase()
     .required('L\'email est obligatoire'),
   // avatar: yup.string(),
   presentation: yup.string(),
