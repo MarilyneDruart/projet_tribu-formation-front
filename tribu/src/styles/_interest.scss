@@ -26,10 +26,19 @@
     align-content: space-between;
     padding: vars.$size3;
 
+    &_category {
+      display: flex;
+      flex-wrap: wrap;
+
+      &_item {
+        margin-bottom: vars.$size1;
+      }
+    }
+
     &_title {
       font-size: vars.$size4;
       font-weight: bold;
-      margin: vars.$size2;
+      margin: vars.$size2 0;
       color: vars.$color1;
     }
 
