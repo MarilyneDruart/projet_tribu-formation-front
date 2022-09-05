@@ -51,6 +51,11 @@
     background-color: rgb(234, 234, 240);
     font-family: 'Nunito';
     resize: none;
+
+    &-legend {
+      margin: vars.$size2 0;
+      padding-top: vars.$size2;
+    }
   }
   
   &_checkbox {
