@@ -31,12 +31,12 @@ function CityInterests() {
         {name}
       </h2>
       <div className="container">
-        {cityInterestsList.map((interests) => (
+        {cityInterestsList.reverse().map((interests) => (
           <div>
             <article className={`CityInterests_card CityInterests_card-status${interests.status}`} key={interests.id}>
               <Link to={`/ville/${slug}/${interests.id}`}>
                 <div className="CityInterests_header">
-                  <img className={`CityInterests_header-status${interests.status}`} src={interests.image} alt={interests.title} />
+                  <img src={interests.image} alt={interests.title} />
                 </div>
                 <div className="CityInterests_content">
                   <div className="CityInterests_category">

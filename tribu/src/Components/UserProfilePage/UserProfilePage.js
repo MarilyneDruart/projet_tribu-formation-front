@@ -46,7 +46,7 @@ function UserProfilePage() {
         <h4 className="UserProfilePage_interests-title">Mes partages avec la communauté</h4>
         <div className="UserProfilePage_interests-container">
 
-          {post.length > 0 && post.map((interests) => (
+          {post.length > 0 && post.reverse().map((interests) => (
             <article className={`CityInterests_card CityInterests_card-status${interests.status}`} key={interests.id}>
               <Link to={`/ville/${citySlug}/${interests.id}`}>
                 <div className="CityInterests_header">

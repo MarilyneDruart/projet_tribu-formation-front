@@ -12,7 +12,8 @@
 
   &_status0{
     background-color: vars.$colorgrey;
-    opacity: 0.6;
+    filter: saturate(0);
+    opacity: 0.8;
   }
 
   &_image {

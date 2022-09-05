@@ -39,22 +39,21 @@
   }
 
   &_card-status0 {
+    margin-top: 2rem;
     background-color: vars.$colorgrey;
     filter: saturate(0);
+    opacity: 0.5;
   }
 
   &_title-status0{
     color: white;
     font-size: vars.$size3;
     font-weight: bold;
+    text-shadow: black 1px 0px 10px;
     position: relative;
     top: -400px;
     left: 7%;
   }
-
-  // &_header-status0{
-  //   filter: saturate(0);
-  // }
 
   &_title-status1{
     display: none;
