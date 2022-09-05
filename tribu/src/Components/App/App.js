@@ -1,5 +1,10 @@
 import React, { useEffect } from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import {
+  Route,
+  Routes,
+  useLocation,
+  // useNavigate,
+} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Toaster } from 'react-hot-toast';
 import { fetchCities } from '../../actions/cities';
@@ -28,24 +33,37 @@ import { fetchUser } from '../../actions/user';
 function App() {
   const location = useLocation();
   const dispatch = useDispatch();
+  // const navigate = useNavigate();
 
   const citiesLoading = useSelector((state) => state.cities.loading);
   const logged = useSelector((state) => state.user.logged);
 
+  const loggedUser = JSON.parse(localStorage.getItem('user'));
+
   useEffect(() => {
-    const loggedUser = JSON.parse(localStorage.getItem('user'));
+    // if logged, save token in user state
     if (loggedUser) {
-      dispatch(setToken(loggedUser.token));
+      dispatch(setToken(loggedUser.items.token));
     }
 
+    // Fetching all useful datas from database
     dispatch(fetchCities());
     dispatch((fetchInterests()));
     dispatch((fetchCategories()));
   }, []);
 
   useEffect(() => {
+    // when url is changing, redirecting to the top of the page
     window.scrollTo({ top: 0, left: 0 });
   }, [location]);
+
+  // useEffect(() => {
+  //   if (loggedUser && loggedUser.items.exp < (Date.now())) {
+  //     localStorage.removeItem('user');
+  //     dispatch(logout());
+  //     navigate('/');
+  //   }
+  // }, [location]);
 
   if (logged) {
     dispatch((fetchUser()));

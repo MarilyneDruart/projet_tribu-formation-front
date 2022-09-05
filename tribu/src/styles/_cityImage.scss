@@ -15,7 +15,7 @@
     top: 60%;
     position: relative;
     width: 100%;
-    padding: 1rem;
+    padding: 2rem;
     text-align: center;
     background: rgba(0,0,0,0.5);
   }
@@ -26,4 +26,21 @@
     letter-spacing: 0.3rem;
     text-transform: uppercase;
 }
+}
+
+
+//*===========================================*//
+//*               Media Queries               *//
+//*===========================================*//
+
+/* width 800px --> */
+@media screen and (min-width: 800px) {
+  .CityImage {
+    &_content {
+      padding: 3rem;
+    }
+    &_title {
+      font-size: vars.$size5;
+  }  
+  }
 }

@@ -12,7 +12,6 @@ import NewInterestForm from '../NewInterestForm/NewInterestForm';
 
 import '../../styles/styles.scss';
 import logo from '../../assets/images/logo.png';
-import profileIcon from '../../assets/images/profil-icon-white.png';
 
 function Header() {
   const dispatch = useDispatch();
@@ -34,6 +33,12 @@ function Header() {
         <div className="header_logo">
           <Link to="/">
             <img src={logo} className="header_logo" alt="Logo Tribu" />
+          </Link>
+        </div>
+
+        <div className="header_title">
+          <Link to="/">
+            <h1>Meet, Visit, Share it, Repeat</h1>
           </Link>
         </div>
 
@@ -71,15 +76,17 @@ function Header() {
                   className="header_profile-button"
                   onClick={() => { }}
                 >
-                  <img className="header_profile-icon" src={profileIcon} alt="icone de profil" />
-                  Mon profil
+                  <ion-icon className="header_profile-icon" name="person-circle-outline" />
                 </button>
               </Link>
 
               <button
                 type="button"
                 className="header_icon-button header_add-button"
-                onClick={() => { dispatch(toggleInterestForm()); }}
+                onClick={() => {
+                  dispatch(toggleInterestForm());
+                  window.scrollTo({ top: 0 });
+                }}
               >
                 <div className="header_add-icon" />
                 <div className="header_button-text">Partage un intérêt</div>
@@ -101,12 +108,6 @@ function Header() {
           )}
 
         </div>
-      </div>
-
-      <div className="header_title">
-        <Link to="/">
-          <h1>Meet, Visit, Share it, Repeat</h1>
-        </Link>
       </div>
 
       {inscriptionFormIsDisplayed && <NewAccountForm />}

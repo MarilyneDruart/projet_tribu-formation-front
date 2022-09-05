@@ -7,7 +7,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 2rem;
+    margin-top: vars.$size4;
+    margin-bottom: vars.$size4;
     background-color: vars.$colorgreen;
     border-radius: 20px;
 
@@ -50,8 +51,15 @@
     margin: auto;
 
     &-title {
+      color:vars.$color1;
       font-size: vars.$size3;
-      margin: vars.$size3;
+      text-align: center;
+      font-weight: bold;
+      margin: vars.$size3 auto vars.$size3;
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
+      padding: vars.$size2;
+      width: 90%;
     }
 
     &-container {
@@ -61,9 +69,45 @@
       flex-wrap: wrap;
       background-color: vars.$color7;
     }
-}
+  }
 }
 
+.NoCityInterests{
+  margin: auto;
+  
+  &_text{
+  text-align: center;
+  margin: vars.$size4 auto;
+  font-size: vars.$size3;
+  line-height: vars.$size4;
+  }
+
+  &_emptycard{
+
+    &-background{
+    background-image: url(../assets/images/no-interest-bg.jpg);
+    border-radius: 10px;
+    width: 300px;
+    height: 500px;
+    margin: auto;
+    opacity: 0.5;
+    }
+    &-button{
+    border: 5px solid vars.$colorwhite;
+    border-radius: 100%;
+    background-color: vars.$colorpink;
+    color: vars.$colorwhite;
+    font-weight: bolder;
+    font-size: vars.$size7;
+    font-family: 'Nunito';
+    display: flex;
+    align-items: center;
+    position: relative;
+    bottom: 300px;
+    left: 37%;
+    }
+  }
+}
 //*===========================================*//
 //*               Media Queries               *//
 //*===========================================*//
@@ -76,6 +120,7 @@
     &_card {
       width: 80%;
       flex-direction: row;
+      margin-top: vars.$size5;
 
       &-right{
         text-align: left;
@@ -88,8 +133,27 @@
       height: 200px;
       }
     }
+    
+    &_interests {
+      &-title {
+        margin: vars.$size5 auto vars.$size5;
+        width: 90%;
+      }
+    }
   }
+
+  .NoCityInterests{
+    &_emptycard{
+      &-button{
+      bottom: 300px;
+      left: 39%;
+      }
+    }
+  }
+
 }
+
+
 
 
 /* width 1000px --> 1599px */
@@ -98,6 +162,7 @@
     &_card {
       width: 60%;
       flex-direction: row;
+      margin-top: vars.$size5;
       
       &-right{
         text-align: left;
@@ -111,6 +176,22 @@
       height: 100%;
       }
     }
+
+    &_interests {
+      &-title {
+        font-size: vars.$size4;
+        margin: vars.$size6 auto vars.$size5;
+        width: 85%;
+      }
+    }
+  }
+
+  .NoCityInterests{
+    &_emptycard{
+      &-button{
+      left: 39%;
+      }
+    }
   }
 }
 
@@ -120,17 +201,34 @@
     &_card {
       width: 50%;
       flex-direction: row;
+      margin-top: vars.$size7;
       
       &-right{
         text-align: left;
       }
       
       &-img {
-      background-color: rgb(101,201,255);
-      border-radius: 100%;
-      margin-left: -7rem;
-      margin-top: 0;
-      height: 100%;
+        background-color: rgb(101,201,255);
+        border-radius: 100%;
+        margin-left: -7rem;
+        margin-top: 0;
+        height: 100%;
+      }
+    }
+
+    &_interests {
+      &-title {
+        font-size: vars.$size4;
+        margin: vars.$size6 auto vars.$size4;
+        width: 85%;
+      }
+    }
+  }
+
+  .NoCityInterests{
+    &_emptycard{
+      &-button{
+      left: 39%;
       }
     }
   }

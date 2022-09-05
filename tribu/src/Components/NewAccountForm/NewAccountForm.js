@@ -32,6 +32,7 @@ const validationSchema = yup.object({
   email: yup
     .string()
     .email('L\'email est invalide')
+    .lowercase()
     .required('L\'email est obligatoire'),
   // avatar: yup.string(),
   presentation: yup.string(),
@@ -101,7 +102,7 @@ function NewAccountForm() {
           type="button"
           onClick={() => dispatch(closeInscriptionForm())}
         >
-          X
+          <ion-icon name="close-outline" />
         </button>
       </h1>
       <form
@@ -110,7 +111,7 @@ function NewAccountForm() {
       >
         <input
           {...register('firstname')}
-          className="new-account_field"
+          className="new-account_field new-account_field-caps"
           type="text"
           placeholder="Ton prénom"
         />
@@ -118,7 +119,7 @@ function NewAccountForm() {
 
         <input
           {...register('lastname')}
-          className="new-account_field"
+          className="new-account_field new-account_field-caps"
           type="text"
           placeholder="Ton nom"
         />
@@ -144,7 +145,7 @@ function NewAccountForm() {
 
         <textarea
           {...register('presentation')}
-          className="new-account_field"
+          className="new-account_field new-account_field-caps"
           placeholder="Parle-nous de toi"
           rows="3"
         />

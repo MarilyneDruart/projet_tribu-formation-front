@@ -1,13 +1,14 @@
 /* eslint-disable max-len */
 import { React } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-
 // Imports locaux
 import '../../styles/styles.scss';
 import Loading from '../Loading/Loading';
+import { toggleInterestForm } from '../../actions/interests';
 
 function UserProfilePage() {
+  const dispatch = useDispatch();
   const {
     firstname,
     lastname,
@@ -44,6 +45,7 @@ function UserProfilePage() {
       <div className="UserProfilePage_interests">
         <h4 className="UserProfilePage_interests-title">Mes partages avec la communauté</h4>
         <div className="UserProfilePage_interests-container">
+
           {post.length > 0 && post.map((interests) => (
             <article className="CityInterests_card" key={interests.id}>
               <Link to={`/ville/${citySlug}/${interests.id}`}>
@@ -80,7 +82,41 @@ function UserProfilePage() {
               </Link>
             </article>
           ))}
+
+          {post.length === 0 && (
+            <div>
+              <div className="NoCityInterests_text">
+                <p> Tu n&apos;as pas encore d&apos;intérêt</p>
+                <p> Partage ton premier intérêt avec la Tribu :</p>
+              </div>
+              <div className="NoCityInterests_emptycard">
+                <div className="NoCityInterests_emptycard-background" />
+                <button
+                  type="button"
+                  className="NoCityInterests_emptycard-button"
+                  onClick={() => {
+                    dispatch(toggleInterestForm());
+                    window.scrollTo({ top: 0 });
+                  }}
+                >
+                  <ion-icon name="add-outline" />
+                </button>
+              </div>
+            </div>
+          )}
+
         </div>
+      </div>
+      <div className="CityPage_buttonContainer">
+        <button
+          type="button"
+          className="CityPage_back-to-top-button"
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        >
+          <ion-icon className="CityPage_back-to-top-button-icon" name="arrow-up-outline" />
+        </button>
       </div>
     </div>
   );

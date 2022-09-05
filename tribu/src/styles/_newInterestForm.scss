@@ -5,10 +5,10 @@
   height: auto;
   margin: vars.$size5 auto vars.$size7 auto;
   max-width: 80%;
-  position: fixed;
-  top: 0;
+  position: absolute;
   left: calc(100%/10);
   right: calc(100%/10);
+  top: calc(100%/10);
   padding: vars.$size7 vars.$size2 vars.$size2;
   border: 1px solid vars.$color4;
   border-radius: 10px;
@@ -24,11 +24,13 @@
     border-radius: 20px;
     background: vars.$colorpink;
     color: white;
+    padding: 0.4rem 0 0;
     font-weight: bold;
     font-family: 'Nunito';
     position: absolute;
     top: 5%;
     left: 45%;
+    font-size: vars.$size3;
   }
 
   &_title {
