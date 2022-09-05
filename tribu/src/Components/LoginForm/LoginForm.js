@@ -57,21 +57,24 @@ function LoginForm() {
       .then((response) => {
         const { token } = response.data;
 
-        localStorage.setItem('user', JSON.stringify({
+        const items = {
           token,
+          exp: Date.now() + 28800,
+        };
+
+        localStorage.setItem('user', JSON.stringify({
+          items,
         }));
         dispatch(closeLoginForm());
         dispatch(setToken(token));
         dispatch(fetchUser());
         toast.success('Connexion à la Tribu réussie !');
         reset();
+        navigate('/');
       })
       .catch((error) => {
         console.log(error);
         toast.error('La Tribu ne reconnaît pas cet identifiant ou ce mot de passe');
-      })
-      .finally(() => {
-        navigate('/');
       });
   };
 
@@ -84,7 +87,7 @@ function LoginForm() {
           type="button"
           onClick={() => dispatch(closeLoginForm())}
         >
-          X
+          <ion-icon name="close-outline" />
         </button>
       </h1>
       <form

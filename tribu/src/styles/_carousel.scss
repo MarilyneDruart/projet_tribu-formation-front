@@ -62,8 +62,8 @@
   }
 
   &_indicator_item {
-    width: 15px;
-    height: 15px;
+    width: 13px;
+    height: 13px;
     border: none;
     background: #fff;
     opacity: 0.5;
@@ -83,4 +83,18 @@
 
 .active {
   opacity: 1;
+}
+
+//*===========================================*//
+//*               Media Queries               *//
+//*===========================================*//
+
+/* width min 370px */
+@media screen and (min-width: 370px) {
+.Carousel {
+  &_indicator_item {
+    width: 15px;
+    height: 15px;
+    }
+  }
 }

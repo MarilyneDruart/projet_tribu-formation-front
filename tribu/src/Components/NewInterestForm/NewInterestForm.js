@@ -99,7 +99,7 @@ function NewInterestForm() {
           type="button"
           onClick={() => dispatch(closeInterestForm())}
         >
-          X
+          <ion-icon name="close-outline" />
         </button>
       </h1>
       <form

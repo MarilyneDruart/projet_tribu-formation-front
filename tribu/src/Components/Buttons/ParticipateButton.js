@@ -7,6 +7,7 @@ import '../../styles/styles.scss';
 
 function ParticipateButton() {
   const logged = useSelector((state) => state.user.logged);
+  const participationCounter = 0;
 
   return (
     <div className="ParticipateButton">
@@ -19,6 +20,7 @@ function ParticipateButton() {
       >
         Je participe !
       </button>
+
     </div>
   );
 }

@@ -33,6 +33,18 @@ function CityPage() {
       <p className="CityPage_description">{currentCity.description}</p>
 
       <CityInterests />
+
+      <div className="CityPage_buttonContainer">
+        <button
+          type="button"
+          className="CityPage_back-to-top-button"
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        >
+          <ion-icon className="CityPage_back-to-top-button-icon" name="arrow-up-outline" />
+        </button>
+      </div>
     </div>
 
   );
