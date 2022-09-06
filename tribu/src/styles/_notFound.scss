@@ -7,12 +7,16 @@
   overflow: hidden;
   width: 100vw;
   height: 100vh;
+  z-index: 100;
+  position: absolute;
 
   &_text {
     color: vars.$colorwhite;
-    font-size: vars.$size5;
+    font-size: vars.$size4;
     text-align: center;
     text-shadow: 1px 0 20px black;
+    margin-top: vars.$size7;
+    line-height: vars.$size4;
   }
 }
 .sky {
