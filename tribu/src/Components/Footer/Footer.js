@@ -1,15 +1,15 @@
 import React from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 // Imports locaux
 import '../../styles/styles.scss';
 
 function Footer() {
   const classNames = ({ isActive }) => `Footer_NavLink ${isActive ? 'Footer_NavLink--active' : ''}`;
-  const { pathname } = useLocation();
-  console.log(pathname);
+  // const { pathname } = useLocation();
+  // console.log(pathname);
 
-  if (pathname === '/PageIntrouvable') return null;
+  // if (pathname === '/PageIntrouvable') return null;
 
   return (
     <div className="Footer">
