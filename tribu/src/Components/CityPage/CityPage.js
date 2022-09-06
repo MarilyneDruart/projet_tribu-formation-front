@@ -14,7 +14,7 @@ function CityPage() {
   const findCity = (citiesList, searchedSlug) => {
     const city = citiesList.find((testedCity) => testedCity.slug === searchedSlug);
     if (slug !== searchedSlug) {
-      <Navigate to="/NotFound" replace />;
+      <Navigate to="/PageIntrouvable" replace />;
     }
 
     return city;
