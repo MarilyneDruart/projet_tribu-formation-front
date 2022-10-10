@@ -23,16 +23,14 @@ Démarrez votre nouvelle vie !
 
 In the project directory named tribu, you can run :
 
-- NPM : ```sudo apt install npm```
-        ```npm install```
-        ```yarn start```
-- React : ```yarn add react```
-- Redux : ```yarn add redux```
-- React-Redux : ```yarn add react-redux```
-- React-router-dom : ```yarn add react-router-dom```
-- Axios : ```yarn add axios```
-- React-Hook-Form : ```yarn add react-hook-form```
-- Yup : ```yarn add yup```
-- PropTypes : ```yarn add proptypes```
-- SASS : ```yarn add sass```
-- React-hot-toast : ```yarn add react-hot-toast```
+- npm : ```npm install```
+- React : ```npm install react```
+- Redux : ```npm install redux```
+- React-Redux : ```npm install react-redux```
+- React-router-dom : ```npm install react-router-dom```
+- Axios : ```npm install axios```
+- React-Hook-Form : ```npm install react-hook-form```
+- Yup : ```npm install yup```
+- PropTypes : ```npm install proptypes```
+- SASS : ```npm install sass```
+- React-hot-toast : ```npm install react-hot-toast```
