@@ -24,6 +24,8 @@ Démarrez votre nouvelle vie !
 In the project directory named tribu, you can run :
 
 - npm : ```npm install```
+
+
 - React : ```npm install react```
 - Redux : ```npm install redux```
 - React-Redux : ```npm install react-redux```
