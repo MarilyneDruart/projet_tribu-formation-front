@@ -18,3 +18,21 @@ Démarrez votre nouvelle vie !
 - [Svitlana Burlak](https://github.com/svitlanaburlak)
 - [Marilyne Druart](https://github.com/MarilyneDruart)
 - [Pierre-Henri Kocan](https://github.com/Pierre-Henri-Kocan)
+
+# Installation
+
+In the project directory, you can run :
+
+- NPM : ```sudo apt install npm```
+        ```npm install```
+        ```yarn start```
+- React : ```yarn add react```
+- Redux : ```yarn add redux```
+- React-Redux : ```yarn add react-redux```
+- React-router-dom : ```yarn add react-router-dom```
+- Axios : ```yarn add axios```
+- React-Hook-Form : ```yarn add react-hook-form```
+- Yup : ```yarn add yup```
+- PropTypes : ```yarn add proptypes```
+- SASS : ```yarn add sass```
+- React-hot-toast : ```yarn add react-hot-toast```
