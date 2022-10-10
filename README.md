@@ -21,7 +21,7 @@ Démarrez votre nouvelle vie !
 
 # Installation
 
-In the project directory, you can run :
+In the project directory named tribu, you can run :
 
 - NPM : ```sudo apt install npm```
         ```npm install```
